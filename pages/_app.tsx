@@ -1,25 +1,13 @@
 import type { AppProps } from 'next/app';
-import styled, { createGlobalStyle } from 'styled-components';
 import Head from 'next/head';
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-		font-family: 'Source Code Pro', monospace;
-		font-size: '17px';
-  }
-`;
-
-const Container = styled.div`
-	width: 85%;
-	margin: auto;
-`;
+import Nav from '../components/Nav';
+import DarkMode from '../components/DarkMode';
+import Container from '../components/Container';
+import GlobalStyles from '../components/GlobalStyles';
 
 const App = ({ Component, pageProps }: AppProps) => {
 	return (
-		<>
+		<DarkMode>
 			<Head>
 				<link rel='preconnect' href='https://fonts.gstatic.com' />
 				<link
@@ -28,11 +16,12 @@ const App = ({ Component, pageProps }: AppProps) => {
 				/>
 				<title>Hazem Krimi</title>
 			</Head>
-			<GlobalStyle />
+			<GlobalStyles />
 			<Container>
+				<Nav />
 				<Component {...pageProps} />
 			</Container>
-		</>
+		</DarkMode>
 	);
 };
 
