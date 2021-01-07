@@ -1,6 +1,10 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+interface Props {
+	icon: string;
+	onClick?: () => void;
+}
 
 const Btn = styled.button`
 	display: inline;
@@ -10,11 +14,6 @@ const Btn = styled.button`
 	color: none;
 	outline: none;
 `;
-
-export interface Props {
-	icon: string;
-	onClick?: () => void;
-}
 
 const IconButton: FC<Props> = ({ icon, onClick }) => {
 	return (
