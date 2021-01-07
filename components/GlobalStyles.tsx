@@ -1,8 +1,7 @@
 import { FC, useContext } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { DarkModeContext } from '../components/DarkMode';
-
-export interface Props {
+interface Props {
 	dark: boolean;
 }
 
@@ -16,8 +15,10 @@ const Global = createGlobalStyle<Props>`
   }
 
 	body {
-		background: ${({ dark }) => (dark ? '#262626' : '#F9F9F9')};
-    color: ${({ dark }) => (dark ? 'white' : 'black')};
+		background: ${({ dark, theme }) =>
+			dark ? theme.colors.dark.background : theme.colors.light.background};
+    color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
+		transition: color 250ms ease-in-out, background 250ms ease-in-out;
 	}
 `;
 
