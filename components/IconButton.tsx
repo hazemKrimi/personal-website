@@ -12,13 +12,12 @@ const Btn = styled.button`
 	background: none;
 	border: none;
 	color: none;
-	outline: none;
 `;
 
-const IconButton: FC<Props> = ({ icon, onClick }) => {
+const IconButton: FC<Props & { className?: string }> = ({ icon, onClick, className }) => {
 	return (
-		<Btn onClick={onClick}>
-			<Image src={icon} alt='Icon Button' width={24} height={24} />
+		<Btn onClick={onClick} className={className}>
+			<Image src={icon} width={24} height={24} />
 		</Btn>
 	);
 };

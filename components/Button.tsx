@@ -12,7 +12,6 @@ const Btn = styled.button<Props>`
 	display: inline;
 	cursor: pointer;
 	background: none;
-	outline: none;
 	color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
 	padding: 1rem;
 	border: ${({ variant, dark, theme }) =>
@@ -23,7 +22,7 @@ const Btn = styled.button<Props>`
 	font-size: ${({ variant }) => (variant === 'outline' ? '1.05rem' : 'inherit')};
 	text-transform: ${({ variant }) => (variant === 'outline' ? 'uppercase' : 'inherit')};
 	padding: ${({ variant }) => (variant === 'outline' ? '.5rem 1rem' : '0rem')};
-
+	text-align: left;
 	transition: color 250ms ease-in-out;
 	z-index: 1;
 
@@ -73,11 +72,16 @@ const Btn = styled.button<Props>`
 	}
 `;
 
-const Button: FC<Props> = ({ variant = 'text', onClick, children }) => {
+const Button: FC<Props & { className?: string }> = ({
+	variant = 'text',
+	onClick,
+	children,
+	className
+}) => {
 	const { dark } = useContext(DarkModeContext);
 
 	return (
-		<Btn variant={variant} dark={dark} onClick={onClick}>
+		<Btn variant={variant} dark={dark} onClick={onClick} className={className}>
 			{children}
 		</Btn>
 	);
