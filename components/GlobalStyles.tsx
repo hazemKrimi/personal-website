@@ -12,6 +12,8 @@ const Global = createGlobalStyle<Props>`
     box-sizing: border-box;
 		font-family: 'Source Code Pro', monospace;
 		font-size: 17px;
+		outline: none;
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
 
 	body {
