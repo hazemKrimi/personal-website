@@ -19,7 +19,7 @@ const Bar = styled.nav`
 		font-size: 1.7rem;
 
 		@media (max-width: 768px) {
-			font-size: 1.2rem;
+			font-size: 1rem;
 		}
 	}
 
