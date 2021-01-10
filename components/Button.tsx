@@ -26,6 +26,10 @@ const Btn = styled.button<Props>`
 	transition: color 250ms ease-in-out;
 	z-index: 1;
 
+	@media (max-width: 768px) {
+		padding: ${({ variant }) => (variant === 'outline' ? '.5rem .75rem' : '0rem')};
+	}
+
 	&::before {
 		content: '';
 		position: absolute;
