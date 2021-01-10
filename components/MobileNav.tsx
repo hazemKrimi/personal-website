@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC, useContext, useRef, useEffect } from 'react';
 import { DarkModeContext } from './DarkMode';
 import styled from 'styled-components';
 import IconButton from './IconButton';
@@ -27,7 +27,7 @@ const Bar = styled.nav<StyledProps>`
 	transition: transform 250ms ease-in-out;
 	display: grid;
 	grid-template-rows: auto;
-	row-gap: 0.3rem;
+	row-gap: 10px;
 	padding: 1rem 1rem 5rem 1rem;
 
 	.close {
@@ -36,27 +36,57 @@ const Bar = styled.nav<StyledProps>`
 		margin-top: 0.5rem;
 	}
 
-	.mobile {
-		color: ${({ theme, dark }) =>
-			dark ? theme.colors.light.text : theme.colors.dark.text} !important;
+	.mobile-button-wrapper {
+		display: flex;
 		margin: 0rem 1rem;
+
+		button {
+			color: ${({ theme, dark }) =>
+				dark ? theme.colors.light.text : theme.colors.dark.text} !important;
+		}
 	}
 `;
 
 const MobileNav: FC<Props> = ({ open, close }) => {
 	const { dark, toggle } = useContext(DarkModeContext);
+	const ref = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		document.addEventListener('mousedown', (event: MouseEvent) => {
+			if (ref.current && ref.current.contains(event.target as Node)) {
+				document.addEventListener('mouseup', event => {
+					if (ref.current && !ref.current.contains(event.target as Node)) return;
+				});
+			} else {
+				document.addEventListener('mouseup', event => {
+					if (ref.current && !ref.current.contains(event.target as Node)) close();
+				});
+			}
+		});
+
+		return () => {
+			document.removeEventListener('mousedown', () => {});
+			document.removeEventListener('mouseup', () => {});
+		};
+	});
 
 	return (
-		<Bar dark={dark} open={open}>
+		<Bar dark={dark} open={open} ref={ref}>
 			<div className='close'>
 				<IconButton icon={dark ? '/dark-close.svg' : '/light-close.svg'} onClick={close} />
 			</div>
-			<Button className='mobile'>About</Button>
-			<Button className='mobile'>Blog</Button>
-			<Button className='mobile'>Portfolio</Button>
-			<Button className='mobile' onClick={() => toggle()}>
-				{dark ? 'Light Mode' : 'Dark Mode'}
-			</Button>
+			<div className='mobile-button-wrapper'>
+				<Button>About</Button>
+			</div>
+			<div className='mobile-button-wrapper'>
+				<Button>Blog</Button>
+			</div>
+			<div className='mobile-button-wrapper'>
+				<Button>Portfolio</Button>
+			</div>
+			<div className='mobile-button-wrapper'>
+				<Button onClick={() => toggle()}>{dark ? 'Light Mode' : 'Dark Mode'}</Button>
+			</div>
 		</Bar>
 	);
 };
