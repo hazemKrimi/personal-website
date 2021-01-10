@@ -80,7 +80,7 @@ const Nav: FC = () => {
 				</Button>
 			</div>
 			<div className='mobile-buttons'>
-				<Button variant='outline' onClick={() => router.push('/resume.pdf')}>
+				<Button variant='outline' onClick={() => router.push('/hazem-krimi.pdf')}>
 					Resume
 				</Button>
 				<IconButton
