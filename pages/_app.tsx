@@ -5,6 +5,7 @@ import DarkMode from '../components/DarkMode';
 import Container from '../components/Container';
 import GlobalStyles from '../components/GlobalStyles';
 import Theme from '../components/Theme';
+import Footer from '../components/Footer';
 
 const App = ({ Component, pageProps }: AppProps) => {
 	return (
@@ -23,6 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 					<Container>
 						<Nav />
 						<Component {...pageProps} />
+						<Footer />
 					</Container>
 				</Theme>
 			</DarkMode>
