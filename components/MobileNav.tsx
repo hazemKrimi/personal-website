@@ -1,5 +1,6 @@
 import { FC, useContext, useRef, useEffect } from 'react';
 import { DarkModeContext } from './DarkMode';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import IconButton from './IconButton';
 import Button from './Button';
@@ -53,6 +54,7 @@ const Bar = styled.nav<StyledProps>`
 const MobileNav: FC<Props> = ({ open, close }) => {
 	const { dark, toggle } = useContext(DarkModeContext);
 	const ref = useRef<HTMLDivElement>(null);
+	const router = useRouter();
 
 	useEffect(() => {
 		document.addEventListener('mousedown', (event: MouseEvent) => {
@@ -79,7 +81,14 @@ const MobileNav: FC<Props> = ({ open, close }) => {
 				<IconButton icon={dark ? '/dark-close.svg' : '/light-close.svg'} onClick={close} />
 			</div>
 			<div className='mobile-button-wrapper'>
-				<Button>About</Button>
+				<Button
+					onClick={() => {
+						close();
+						router.push('/about');
+					}}
+				>
+					About
+				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>
 				<Button>Blog</Button>

@@ -1,10 +1,10 @@
 import { FC, useContext, useState } from 'react';
 import { DarkModeContext } from './DarkMode';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Button from './Button';
 import IconButton from './IconButton';
-import { useRouter } from 'next/router';
 import MobileNav from './MobileNav';
 
 const Bar = styled.nav`
@@ -72,15 +72,15 @@ const Nav: FC = () => {
 			</div>
 			<div className='buttons'>
 				<IconButton icon={dark ? '/sun.svg' : '/moon.svg'} onClick={toggle} />
-				<Button>About</Button>
+				<Button onClick={() => router.push('/about')}>About</Button>
 				<Button>Blog</Button>
 				<Button>Portfolio</Button>
-				<Button variant='outline' onClick={() => router.push('/resume.pdf')}>
+				<Button variant='outline' onClick={() => window.open('/hazem-krimi.pdf', '_blank')}>
 					Resume
 				</Button>
 			</div>
 			<div className='mobile-buttons'>
-				<Button variant='outline' onClick={() => router.push('/hazem-krimi.pdf')}>
+				<Button variant='outline' onClick={() => window.open('/hazem-krimi.pdf', '_blank')}>
 					Resume
 				</Button>
 				<IconButton
