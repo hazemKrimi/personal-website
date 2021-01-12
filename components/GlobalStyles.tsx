@@ -12,6 +12,7 @@ const Global = createGlobalStyle<Props>`
     box-sizing: border-box;
 		font-family: 'Source Code Pro', monospace;
 		font-size: 17px;
+		line-height: 1.5;
 		outline: none;
 		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
@@ -21,6 +22,15 @@ const Global = createGlobalStyle<Props>`
 			dark ? theme.colors.dark.background : theme.colors.light.background};
     color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
 		transition: color 250ms ease-in-out, background 250ms ease-in-out;
+		scroll-behavior: smooth;
+	}
+
+	body::-webkit-scrollbar {
+		width: 0.5rem;
+	}
+	
+	body::-webkit-scrollbar-thumb {
+		background-color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
 	}
 `;
 
