@@ -58,20 +58,7 @@ const Btn = styled.button<Props>`
 				: 'inherit'};
 	}
 
-	&:focus {
-		color: ${({ variant, dark, theme }) =>
-			variant === 'outline'
-				? dark
-					? theme.colors.dark.background
-					: theme.colors.light.background
-				: 'inherit'};
-	}
-
 	&:hover::before {
-		transform: scaleX(1);
-	}
-
-	&:focus::before {
 		transform: scaleX(1);
 	}
 `;
