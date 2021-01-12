@@ -26,9 +26,12 @@ const Bar = styled.nav<StyledProps>`
 	background: ${({ theme, dark }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
 	transition: transform 250ms ease-in-out;
 	display: grid;
-	grid-template-rows: auto;
-	row-gap: 10px;
+	grid-template-rows: 30% repeat(4, 50px);
 	padding: 1rem 1rem 5rem 1rem;
+
+	@media (orientation: landscape) {
+		grid-template-rows: auto;
+	}
 
 	.close {
 		justify-self: flex-end;
