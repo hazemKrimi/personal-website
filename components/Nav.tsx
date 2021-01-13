@@ -8,14 +8,17 @@ import IconButton from './IconButton';
 import MobileNav from './MobileNav';
 
 const Bar = styled.nav`
-	user-select: none;
 	width: 100%;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	align-items: center;
 	padding: 1rem 0rem;
 
-	h2 {
+	* {
+		user-select: none;
+	}
+
+	h1 {
 		font-size: 1.7rem;
 
 		@media (max-width: 768px) {
@@ -66,9 +69,9 @@ const Nav: FC = () => {
 
 	return (
 		<Bar>
-			<div className='logo'>
+			<div className='logo' onClick={() => router.push('/')}>
 				<Image className='logo-image' src='/logo.jpg' alt='Logo Image' width={48} height={48} />
-				<h2>Hazem Krimi</h2>
+				<h1>Hazem Krimi</h1>
 			</div>
 			<div className='buttons'>
 				<IconButton icon={dark ? '/sun.svg' : '/moon.svg'} onClick={toggle} />
