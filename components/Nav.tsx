@@ -76,8 +76,8 @@ const Nav: FC = () => {
 			<div className='buttons'>
 				<IconButton icon={dark ? '/sun.svg' : '/moon.svg'} onClick={toggle} />
 				<Button onClick={() => router.push('/about')}>About</Button>
-				<Button>Blog</Button>
 				<Button>Portfolio</Button>
+				<Button>Blog</Button>
 				<Button variant='outline' onClick={() => window.open('/hazem-krimi.pdf', '_blank')}>
 					Resume
 				</Button>

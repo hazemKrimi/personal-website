@@ -91,10 +91,10 @@ const MobileNav: FC<Props> = ({ open, close }) => {
 				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>
-				<Button>Blog</Button>
+				<Button>Portfolio</Button>
 			</div>
 			<div className='mobile-button-wrapper'>
-				<Button>Portfolio</Button>
+				<Button>Blog</Button>
 			</div>
 			<div className='mobile-button-wrapper'>
 				<Button onClick={() => toggle()}>{dark ? 'Light Mode' : 'Dark Mode'}</Button>
