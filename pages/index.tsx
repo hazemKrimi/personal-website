@@ -1,8 +1,29 @@
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
+import { useRouter } from 'next/router';
+import { getPortfolioProjects } from '../lib/portfolio';
+import { getBlogPosts } from '../lib/blog';
 import styled from 'styled-components';
 import Hero from '../components/Hero';
 import Button from '../components/Button';
 import Card from '../components/Card';
+
+interface Props {
+	blogPosts: {
+		title: string;
+		author: string;
+		description: string;
+		slug: string;
+		date: string;
+		tags?: string[];
+	}[];
+	portfolioProjects: {
+		title: string;
+		description: string;
+		slug: string;
+		date: string;
+		tags?: string[];
+	}[];
+}
 
 const Wrapper = styled.div`
 	padding: 1rem 0rem;
@@ -34,16 +55,12 @@ const Wrapper = styled.div`
 	.portfolio,
 	.blog {
 		margin: 1rem 0rem;
-
-		@media (max-width: 768px) {
-			margin: 0.5rem 0rem;
-		}
 	}
 
 	.projects-wrapper,
 	.articles-wrapper {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		grid-auto-rows: minmax(100px, auto);
 		align-items: stretch;
 		justify-items: center;
@@ -51,42 +68,38 @@ const Wrapper = styled.div`
 	}
 `;
 
-const Index: FC = () => {
-	const [projects] = useState<{ title: string; description: string }[]>([
-		{ title: 'Project 1', description: 'Description 1' }
-	]);
-	const [articles] = useState<{ title: string; description: string; tags: string[] }[]>([
-		{ title: 'Article 1', description: 'Description 1', tags: ['Tag 1', 'Tag 2'] },
-		{ title: 'Article 1', description: 'Description 1', tags: ['Tag 1', 'Tag 2'] },
-		{ title: 'Article 1', description: 'Description 1', tags: ['Tag 1', 'Tag 2'] },
-		{
-			title: 'Article 1',
-			description: 'Description 1',
-			tags: ['Tag 1', 'Tag 2', 'Tag 3', 'Tag 4', 'Tag 5', 'Tag 6']
-		}
-	]);
+const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
+	const router = useRouter();
 
 	return (
 		<Wrapper>
 			<Hero />
 			<div className='content'>
 				<h1>Portfolio</h1>
-				<Button className='blue'>See More</Button>
+				<Button className='blue' onClick={() => router.push('/portfolio')}>
+					See More
+				</Button>
 				<div className='portfolio'>
 					<div className='projects-wrapper'>
-						{projects.length !== 0 ? (
-							projects.map((project, index) => <Card {...project} key={index} />)
+						{portfolioProjects.length !== 0 ? (
+							portfolioProjects.map(({ slug, ...rest }) => (
+								<Card {...rest} key={slug} onClick={() => router.push(`/portfolio/${slug}`)} />
+							))
 						) : (
 							<h4>Nothing for now</h4>
 						)}
 					</div>
 				</div>
 				<h1>Blog</h1>
-				<Button className='blue'>See More</Button>
+				<Button className='blue' onClick={() => router.push('/blog')}>
+					See More
+				</Button>
 				<div className='blog'>
 					<div className='articles-wrapper'>
-						{articles.length !== 0 ? (
-							articles.map((article, index) => <Card {...article} key={index} />)
+						{blogPosts.length !== 0 ? (
+							blogPosts.map(({ slug, ...rest }) => (
+								<Card {...rest} key={slug} onClick={() => router.push(`/blog/${slug}`)} />
+							))
 						) : (
 							<h4>Nothing for now</h4>
 						)}
@@ -98,3 +111,14 @@ const Index: FC = () => {
 };
 
 export default Index;
+
+export async function getStaticProps() {
+	const blogPosts = getBlogPosts();
+	const portfolioProjects = getPortfolioProjects();
+	return {
+		props: {
+			blogPosts,
+			portfolioProjects
+		}
+	};
+}
