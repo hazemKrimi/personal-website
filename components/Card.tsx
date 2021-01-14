@@ -6,6 +6,7 @@ interface Props {
 	title: string;
 	description: string;
 	tags?: string[];
+	onClick?: () => void;
 }
 
 const StyledCard = styled.div<{ dark: boolean }>`
@@ -44,11 +45,11 @@ const StyledCard = styled.div<{ dark: boolean }>`
 	}
 `;
 
-const Card: FC<Props> = ({ title, description, tags }) => {
+const Card: FC<Props> = ({ title, description, tags, onClick }) => {
 	const { dark } = useContext(DarkModeContext);
 
 	return (
-		<StyledCard dark={dark}>
+		<StyledCard dark={dark} onClick={onClick}>
 			<div>
 				<h3>{title}</h3>
 				<p>{description}</p>
