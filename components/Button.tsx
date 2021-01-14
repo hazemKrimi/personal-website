@@ -13,7 +13,6 @@ const Btn = styled.button<Props>`
 	cursor: pointer;
 	background: none;
 	color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
-	padding: 1rem;
 	border: ${({ variant, dark, theme }) =>
 		variant === 'outline'
 			? `2px solid ${dark ? theme.colors.dark.text : theme.colors.light.text}`
