@@ -24,6 +24,10 @@ const Global = createGlobalStyle<Props>`
 		}
   }
 
+	ul, ol {
+		margin-inline-start: 1.9rem;
+	}
+
 	body {
 		background: ${({ dark, theme }) =>
 			dark ? theme.colors.dark.background : theme.colors.light.background};
