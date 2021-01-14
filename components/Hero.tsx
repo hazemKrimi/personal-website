@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 	height: auto;
 
 	@media (max-width: 768px) {
-		min-height: 60vh;
+		min-height: 65vh;
 	}
 
 	h2 {
@@ -32,18 +32,6 @@ const Wrapper = styled.div`
 	.red {
 		color: #d75050;
 	}
-
-	.blue {
-		color: #1573ca;
-		display: block;
-		text-align: right;
-		width: 100%;
-		margin-top: 1rem;
-
-		@media (max-width: 768px) {
-			margin-top: 0.5rem;
-		}
-	}
 `;
 
 const Hero: FC = () => {
@@ -51,7 +39,7 @@ const Hero: FC = () => {
 		<Wrapper>
 			<Typing speed={1} hideCursor={true} loop={false}>
 				<h2>Hi.</h2>
-				<h2>I can Build Stuff.</h2>
+				<h2>I Can Build Stuff.</h2>
 				<h2 className='green'>
 					Full Stack Developer ✔️<span className='small'>check</span>
 				</h2>
