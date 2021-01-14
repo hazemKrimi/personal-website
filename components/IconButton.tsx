@@ -12,7 +12,7 @@ const Btn = styled.button`
 	cursor: pointer;
 	background: none;
 	border: none;
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 `;
 
