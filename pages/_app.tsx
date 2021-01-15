@@ -16,7 +16,6 @@ const App = ({ Component, pageProps }: AppProps) => {
 					href='https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap'
 					rel='stylesheet'
 				/>
-				<title>Hazem Krimi</title>
 			</Head>
 			<DarkMode>
 				<Theme>
