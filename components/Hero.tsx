@@ -37,7 +37,7 @@ const Wrapper = styled.div`
 const Hero: FC = () => {
 	return (
 		<Wrapper>
-			<Typing speed={1} hideCursor={true} loop={false}>
+			<Typing speed={10} hideCursor={true} loop={false}>
 				<h2>Hi.</h2>
 				<h2>I Can Build Stuff.</h2>
 				<h2 className='green'>
