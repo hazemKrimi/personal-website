@@ -1,5 +1,6 @@
 import { FC, useContext } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
+import Head from 'next/head';
 import styled from 'styled-components';
 import Image from 'next/image';
 import IconButton from '../components/IconButton';
@@ -65,73 +66,96 @@ const About: FC = () => {
 	const { dark } = useContext(DarkModeContext);
 
 	return (
-		<Wrapper dark={dark}>
-			<div className='content'>
-				<div>
-					<h1>About Me</h1>
-					<div className='about'>
-						<p>
-							I am Hazem Krimi, a Full Stack JavaScript Developer helping companies and individuals
-							build modern web and mobile applications I am a student and a freelance full stack
-							developer. <br></br> I have a good experience building web and cross platform mobile
-							apps using various technologies like React, React Native, Node.js, MongoDB, Firebase
-							and I am constantly exploring and learning Software Engineering to make sure I get the
-							job done faster and easier.
-						</p>
+		<>
+			<Head>
+				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+				<meta name='author' content='Hazem Krimi' />
+				<meta
+					name='description'
+					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+				/>
+				<link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+				<link rel='canonical' href='https://hazemkrimi.tech' />
+				<meta property='og:image' content='/logo.jpg' />
+				<meta
+					property='og:description'
+					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+				/>
+				<meta property='og:title' content='Hazem Krimi' />
+				<meta
+					name='keywords'
+					content='Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
+				/>
+				<title>About | Hazem Krimi</title>
+			</Head>
+			<Wrapper dark={dark}>
+				<div className='content'>
+					<div>
+						<h1>About Me</h1>
+						<div className='about'>
+							<p>
+								I am Hazem Krimi, a Full Stack JavaScript Developer helping companies and
+								individuals build modern web and mobile applications I am a student and a freelance
+								full stack developer. <br></br> I have a good experience building web and cross
+								platform mobile apps using various technologies like React, React Native, Node.js,
+								MongoDB, Firebase and I am constantly exploring and learning Software Engineering to
+								make sure I get the job done faster and easier.
+							</p>
+						</div>
+					</div>
+					<div>
+						<h1>Contact Me</h1>
+						<div className='contact'>
+							<IconButton
+								icon={dark ? '/light-mail.svg' : '/dark-mail.svg'}
+								width={36}
+								height={36}
+								onClick={() => window.open('mailto:me@hazemkrimi.tech', '_blank')}
+							/>
+							<IconButton
+								icon={dark ? '/light-github.svg' : '/dark-github.svg'}
+								width={36}
+								height={36}
+								onClick={() => window.open('https://github.com/hazemKrimi', '_blank')}
+							/>
+							<IconButton
+								icon={dark ? '/light-twitter.svg' : '/dark-twitter.svg'}
+								width={36}
+								height={36}
+								onClick={() => window.open('https://twitter.com/HazemKrimi', '_blank')}
+							/>
+							<IconButton
+								icon={dark ? '/light-linkedin.svg' : '/dark-linkedin.svg'}
+								width={36}
+								height={36}
+								onClick={() => window.open('https://linkedin.com/in/hazemkrimi', '_blank')}
+							/>
+							<IconButton
+								icon={dark ? '/light-codepen.svg' : '/dark-codepen.svg'}
+								width={36}
+								height={36}
+								onClick={() => window.open('https://codepen.io/hazemkrimi', '_blank')}
+							/>
+							<IconButton
+								icon={dark ? '/light-dribbble.svg' : '/dark-dribbble.svg'}
+								width={36}
+								height={36}
+								onClick={() => window.open('https://dribbble.com/HazemKrimi', '_blank')}
+							/>
+							<IconButton
+								icon={dark ? '/light-instagram.svg' : '/dark-instagram.svg'}
+								width={36}
+								height={36}
+								onClick={() => window.open('https://instagram.com/hazemkrimi', '_blank')}
+							/>
+						</div>
 					</div>
 				</div>
-				<div>
-					<h1>Contact Me</h1>
-					<div className='contact'>
-						<IconButton
-							icon={dark ? '/light-mail.svg' : '/dark-mail.svg'}
-							width={36}
-							height={36}
-							onClick={() => window.open('mailto:krimihazem1@gmail.com', '_blank')}
-						/>
-						<IconButton
-							icon={dark ? '/light-github.svg' : '/dark-github.svg'}
-							width={36}
-							height={36}
-							onClick={() => window.open('https://github.com/hazemKrimi', '_blank')}
-						/>
-						<IconButton
-							icon={dark ? '/light-twitter.svg' : '/dark-twitter.svg'}
-							width={36}
-							height={36}
-							onClick={() => window.open('https://twitter.com/HazemKrimi', '_blank')}
-						/>
-						<IconButton
-							icon={dark ? '/light-linkedin.svg' : '/dark-linkedin.svg'}
-							width={36}
-							height={36}
-							onClick={() => window.open('https://linkedin.com/in/hazemkrimi', '_blank')}
-						/>
-						<IconButton
-							icon={dark ? '/light-codepen.svg' : '/dark-codepen.svg'}
-							width={36}
-							height={36}
-							onClick={() => window.open('https://codepen.io/hazemkrimi', '_blank')}
-						/>
-						<IconButton
-							icon={dark ? '/light-dribbble.svg' : '/dark-dribbble.svg'}
-							width={36}
-							height={36}
-							onClick={() => window.open('https://dribbble.com/HazemKrimi', '_blank')}
-						/>
-						<IconButton
-							icon={dark ? '/light-instagram.svg' : '/dark-instagram.svg'}
-							width={36}
-							height={36}
-							onClick={() => window.open('https://instagram.com/hazemkrimi', '_blank')}
-						/>
-					</div>
+				<div className='photo'>
+					<Image src='/logo.jpg' width='auto' height='auto' layout='responsive' />
 				</div>
-			</div>
-			<div className='photo'>
-				<Image src='/logo.jpg' width='auto' height='auto' layout='responsive' />
-			</div>
-		</Wrapper>
+			</Wrapper>
+		</>
 	);
 };
 

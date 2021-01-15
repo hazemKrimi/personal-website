@@ -2,10 +2,12 @@ import { FC } from 'react';
 import { useRouter } from 'next/router';
 import { getPortfolioProjects } from '../lib/portfolio';
 import { getBlogPosts } from '../lib/blog';
+import { GetStaticProps } from 'next';
 import styled from 'styled-components';
 import Hero from '../components/Hero';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import Head from 'next/head';
 
 interface Props {
 	blogPosts: {
@@ -72,47 +74,70 @@ const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
 	const router = useRouter();
 
 	return (
-		<Wrapper>
-			<Hero />
-			<div className='content'>
-				<h1>Portfolio</h1>
-				<Button className='blue' onClick={() => router.push('/portfolio')}>
-					See More
-				</Button>
-				<div className='portfolio'>
-					<div className='projects-wrapper'>
-						{portfolioProjects.length !== 0 ? (
-							portfolioProjects.map(({ slug, ...rest }) => (
-								<Card {...rest} key={slug} onClick={() => router.push(`/portfolio/${slug}`)} />
-							))
-						) : (
-							<h4>Nothing for now</h4>
-						)}
+		<>
+			<Head>
+				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+				<meta name='author' content='Hazem Krimi' />
+				<meta
+					name='description'
+					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+				/>
+				<link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+				<link rel='canonical' href='https://hazemkrimi.tech' />
+				<meta property='og:image' content='/logo.jpg' />
+				<meta
+					property='og:description'
+					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+				/>
+				<meta property='og:title' content='Hazem Krimi' />
+				<meta
+					name='keywords'
+					content='Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
+				/>
+				<title>Hazem Krimi</title>
+			</Head>
+			<Wrapper>
+				<Hero />
+				<div className='content'>
+					<h1>Portfolio</h1>
+					<Button className='blue' onClick={() => router.push('/portfolio')}>
+						See More
+					</Button>
+					<div className='portfolio'>
+						<div className='projects-wrapper'>
+							{portfolioProjects.length !== 0 ? (
+								portfolioProjects.map(({ slug, ...rest }) => (
+									<Card {...rest} key={slug} onClick={() => router.push(`/portfolio/${slug}`)} />
+								))
+							) : (
+								<h4>Nothing for now</h4>
+							)}
+						</div>
+					</div>
+					<h1>Blog</h1>
+					<Button className='blue' onClick={() => router.push('/blog')}>
+						See More
+					</Button>
+					<div className='blog'>
+						<div className='articles-wrapper'>
+							{blogPosts.length !== 0 ? (
+								blogPosts.map(({ slug, ...rest }) => (
+									<Card {...rest} key={slug} onClick={() => router.push(`/blog/${slug}`)} />
+								))
+							) : (
+								<h4>Nothing for now</h4>
+							)}
+						</div>
 					</div>
 				</div>
-				<h1>Blog</h1>
-				<Button className='blue' onClick={() => router.push('/blog')}>
-					See More
-				</Button>
-				<div className='blog'>
-					<div className='articles-wrapper'>
-						{blogPosts.length !== 0 ? (
-							blogPosts.map(({ slug, ...rest }) => (
-								<Card {...rest} key={slug} onClick={() => router.push(`/blog/${slug}`)} />
-							))
-						) : (
-							<h4>Nothing for now</h4>
-						)}
-					</div>
-				</div>
-			</div>
-		</Wrapper>
+			</Wrapper>
+		</>
 	);
 };
 
 export default Index;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
 	const blogPosts = getBlogPosts();
 	const portfolioProjects = getPortfolioProjects();
 	return {
@@ -121,4 +146,4 @@ export async function getStaticProps() {
 			portfolioProjects
 		}
 	};
-}
+};
