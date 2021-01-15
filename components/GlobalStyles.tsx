@@ -16,6 +16,20 @@ const Global = createGlobalStyle<Props>`
 		outline: none;
 		user-select: text;
 		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+		
+		@media(max-width: 768px) {
+			overflow-x: scroll;
+		}
+
+		&::-webkit-scrollbar {
+			width: 0;
+			height: 0; 
+			background: transparent; 
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: transparent;
+		}
 
 		&::selection {
 			background: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
@@ -37,11 +51,12 @@ const Global = createGlobalStyle<Props>`
 	}
 
 	body::-webkit-scrollbar {
-		width: 0.5rem;
+		width: 0.5rem !important;
 	}
 	
 	body::-webkit-scrollbar-thumb {
-		background-color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
+		background-color: ${({ dark, theme }) =>
+			dark ? theme.colors.dark.text : theme.colors.light.text} !important;
 	}
 `;
 
