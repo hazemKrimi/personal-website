@@ -2,7 +2,7 @@ import { FC, useContext } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
 import styled from 'styled-components';
 interface Props {
-	variant?: 'outline' | 'text' | 'action';
+	variant?: 'outline' | 'text';
 	onClick?: () => void;
 	dark?: boolean;
 }
