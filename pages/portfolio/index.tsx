@@ -63,7 +63,7 @@ const Index: FC<Props> = ({ portfolioProjects }) => {
 					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
 				/>
 				<link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
-				<link rel='canonical' href='https://hazemkrimi.tech' />
+				<link rel='canonical' href='https://hazemkrimi.tech/portfolio' />
 				<meta property='og:image' content='/logo.jpg' />
 				<meta
 					property='og:description'
@@ -98,11 +98,11 @@ const Index: FC<Props> = ({ portfolioProjects }) => {
 
 export default Index;
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
 	const portfolioProjects = getPortfolioProjects();
 	return {
 		props: {
 			portfolioProjects
 		}
 	};
-}
+};
