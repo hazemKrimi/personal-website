@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { getPortfolioPorjectsSlugs, getPortfolioProjectdata } from '../../lib/portfolio';
 import { useRouter } from 'next/router';
 import { MdxRemote } from 'next-mdx-remote/types';
@@ -100,6 +100,10 @@ const components = AllComponents;
 const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 	const content = hydrate(source, { components });
 	const router = useRouter();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	return (
 		<>

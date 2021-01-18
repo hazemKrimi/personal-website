@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { getBlogPostsSlugs, getBlogPostdata } from '../../lib/blog';
 import { useRouter } from 'next/router';
 import { MdxRemote } from 'next-mdx-remote/types';
@@ -109,6 +109,10 @@ const components = AllComponents;
 const BlogPost: FC<Props> = ({ source, frontMatter }) => {
 	const content = hydrate(source, { components });
 	const router = useRouter();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	return (
 		<>
