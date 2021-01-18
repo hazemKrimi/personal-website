@@ -106,9 +106,11 @@ const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
 					<div className='portfolio'>
 						<div className='projects-wrapper'>
 							{portfolioProjects.length !== 0 ? (
-								portfolioProjects.map(({ slug, ...rest }) => (
-									<Card {...rest} key={slug} onClick={() => router.push(`/portfolio/${slug}`)} />
-								))
+								portfolioProjects
+									.slice(0, 3)
+									.map(({ slug, ...rest }) => (
+										<Card {...rest} key={slug} onClick={() => router.push(`/portfolio/${slug}`)} />
+									))
 							) : (
 								<h4>Nothing for now</h4>
 							)}
@@ -121,9 +123,11 @@ const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
 					<div className='blog'>
 						<div className='articles-wrapper'>
 							{blogPosts.length !== 0 ? (
-								blogPosts.map(({ slug, ...rest }) => (
-									<Card {...rest} key={slug} onClick={() => router.push(`/blog/${slug}`)} />
-								))
+								blogPosts
+									.slice(0, 3)
+									.map(({ slug, ...rest }) => (
+										<Card {...rest} key={slug} onClick={() => router.push(`/blog/${slug}`)} />
+									))
 							) : (
 								<h4>Nothing for now</h4>
 							)}
