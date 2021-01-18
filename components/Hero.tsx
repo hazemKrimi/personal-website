@@ -7,6 +7,7 @@ const Wrapper = styled.div`
 	display: grid;
 	align-items: center;
 	height: auto;
+	text-align: center;
 
 	@media (max-width: 768px) {
 		min-height: 65vh;
