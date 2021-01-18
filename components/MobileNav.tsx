@@ -78,7 +78,10 @@ const MobileNav: FC<Props> = ({ open, close }) => {
 	return (
 		<Bar dark={dark} open={open} ref={ref}>
 			<div className='close'>
-				<IconButton icon={dark ? '/dark-close.svg' : '/light-close.svg'} onClick={close} />
+				<IconButton
+					icon={dark ? '/icons/dark-close.svg' : '/icons/light-close.svg'}
+					onClick={close}
+				/>
 			</div>
 			<div className='mobile-button-wrapper'>
 				<Button onClick={() => toggle()}>{dark ? 'Light Mode' : 'Dark Mode'}</Button>

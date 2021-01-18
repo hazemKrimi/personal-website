@@ -74,7 +74,7 @@ const Nav: FC = () => {
 				<h1>Hazem Krimi</h1>
 			</div>
 			<div className='buttons'>
-				<IconButton icon={dark ? '/sun.svg' : '/moon.svg'} onClick={toggle} />
+				<IconButton icon={dark ? '/icons/sun.svg' : '/icons/moon.svg'} onClick={toggle} />
 				<Button onClick={() => router.push('/about')}>About</Button>
 				<Button onClick={() => router.push('/portfolio')}>Portfolio</Button>
 				<Button onClick={() => router.push('/blog')}>Blog</Button>
@@ -87,7 +87,7 @@ const Nav: FC = () => {
 					Resume
 				</Button>
 				<IconButton
-					icon={dark ? '/light-menu.svg' : '/dark-menu.svg'}
+					icon={dark ? '/icons/light-menu.svg' : '/icons/dark-menu.svg'}
 					onClick={() => setMobileNavOpen(true)}
 				/>
 			</div>

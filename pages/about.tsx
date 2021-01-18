@@ -107,43 +107,43 @@ const About: FC = () => {
 						<h1>Contact Me</h1>
 						<div className='contact'>
 							<IconButton
-								icon={dark ? '/light-mail.svg' : '/dark-mail.svg'}
+								icon={dark ? '/icons/light-mail.svg' : '/icons/dark-mail.svg'}
 								width={36}
 								height={36}
 								onClick={() => window.open('mailto:me@hazemkrimi.tech', '_blank')}
 							/>
 							<IconButton
-								icon={dark ? '/light-github.svg' : '/dark-github.svg'}
+								icon={dark ? '/icons/light-github.svg' : '/icons/dark-github.svg'}
 								width={36}
 								height={36}
 								onClick={() => window.open('https://github.com/hazemKrimi', '_blank')}
 							/>
 							<IconButton
-								icon={dark ? '/light-twitter.svg' : '/dark-twitter.svg'}
+								icon={dark ? '/icons/light-twitter.svg' : '/icons/dark-twitter.svg'}
 								width={36}
 								height={36}
 								onClick={() => window.open('https://twitter.com/HazemKrimi', '_blank')}
 							/>
 							<IconButton
-								icon={dark ? '/light-linkedin.svg' : '/dark-linkedin.svg'}
+								icon={dark ? '/icons/light-linkedin.svg' : '/icons/dark-linkedin.svg'}
 								width={36}
 								height={36}
 								onClick={() => window.open('https://linkedin.com/in/hazemkrimi', '_blank')}
 							/>
 							<IconButton
-								icon={dark ? '/light-codepen.svg' : '/dark-codepen.svg'}
+								icon={dark ? '/icons/light-codepen.svg' : '/icons/dark-codepen.svg'}
 								width={36}
 								height={36}
 								onClick={() => window.open('https://codepen.io/hazemkrimi', '_blank')}
 							/>
 							<IconButton
-								icon={dark ? '/light-dribbble.svg' : '/dark-dribbble.svg'}
+								icon={dark ? '/icons/light-dribbble.svg' : '/icons/dark-dribbble.svg'}
 								width={36}
 								height={36}
 								onClick={() => window.open('https://dribbble.com/HazemKrimi', '_blank')}
 							/>
 							<IconButton
-								icon={dark ? '/light-instagram.svg' : '/dark-instagram.svg'}
+								icon={dark ? '/icons/light-instagram.svg' : '/icons/dark-instagram.svg'}
 								width={36}
 								height={36}
 								onClick={() => window.open('https://instagram.com/hazemkrimi', '_blank')}

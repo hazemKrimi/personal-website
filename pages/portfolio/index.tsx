@@ -78,7 +78,7 @@ const Index: FC<Props> = ({ portfolioProjects }) => {
 			</Head>
 			<Wrapper>
 				<div className='back' onClick={() => router.back()}>
-					<IconButton icon='/arrow-left.svg' />
+					<IconButton icon='/icons/arrow-left.svg' />
 					<span>Back</span>
 				</div>
 				<h1>Portfolio</h1>
