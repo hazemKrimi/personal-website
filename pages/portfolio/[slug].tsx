@@ -2,6 +2,7 @@ import { FC, useEffect } from 'react';
 import { getPortfolioPorjectsSlugs, getPortfolioProjectdata } from '../../lib/portfolio';
 import { useRouter } from 'next/router';
 import { MdxRemote } from 'next-mdx-remote/types';
+import { MDXProvider } from '@mdx-js/react';
 import { MDXEmbedProvider } from 'mdx-embed';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import renderToString from 'next-mdx-remote/render-to-string';
@@ -11,6 +12,7 @@ import matter from 'gray-matter';
 import AllComponents from '../../components/All';
 import Head from 'next/head';
 import IconButton from '../../components/IconButton';
+import CodeBlock from '../../components/CodeBlock';
 
 interface Props {
 	source: MdxRemote.Source;
@@ -80,11 +82,7 @@ const Wrapper = styled.div`
 			font-size: 1.1rem;
 		}
 
-		p,
-		h1,
-		h2,
-		h3,
-		button {
+		& > * {
 			margin: 0.5rem 0rem;
 		}
 
@@ -144,11 +142,20 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 					</div>
 					<h1>{frontMatter.title}</h1>
 					<p>{frontMatter.description}</p>
+					{frontMatter.tags && (
+						<div className='tags-wrapper'>
+							{frontMatter.tags.map((tag: string, index: number) => (
+								<span key={index}>#{tag}&nbsp;</span>
+							))}
+						</div>
+					)}
 					<hr />
 				</div>
-				<MDXEmbedProvider>
-					<div className='content'>{content}</div>
-				</MDXEmbedProvider>
+				<MDXProvider components={{ code: CodeBlock }}>
+					<MDXEmbedProvider>
+						<div className='content'>{content}</div>
+					</MDXEmbedProvider>
+				</MDXProvider>
 			</Wrapper>
 		</>
 	);
