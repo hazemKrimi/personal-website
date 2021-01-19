@@ -94,11 +94,11 @@ const About: FC = () => {
 						<h1>About Me</h1>
 						<div className='about'>
 							<p>
-								I am Hazem Krimi, a software developer and a student. I have experience as a full
-								stack developer but I lean more to the front end and I have built a lot of web apps
-								and some mobile apps. Also, I am always learning and experimenting with new
-								technologies (currently learning about the ethereum blockchain) and other topics
-								other than software engineering.
+								I am a software developer and a student. I have experience as a full stack developer
+								but I lean more to the front end and I have built a lot of web apps and some mobile
+								apps. Also, I am always learning and experimenting with new technologies (currently
+								learning about the ethereum blockchain) and other topics other than software
+								engineering.
 							</p>
 						</div>
 					</div>
