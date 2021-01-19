@@ -38,20 +38,20 @@ const Wrapper = styled.div`
 const Hero: FC = () => {
 	return (
 		<Wrapper>
-			<Typing speed={10} hideCursor={true} loop={false}>
-				<h2>Hi.</h2>
-				<h2>I Can Build Stuff.</h2>
+			<Typing speed={15} hideCursor={true} loop={false}>
+				<h2>Hi</h2>
+				<h2>I Like Building Things</h2>
 				<h2 className='green'>
-					Full Stack Developer ✔️<span className='small'>check</span>
+					Software Developer ✔️<span className='small'>check</span>
 				</h2>
-				<h2 className='green'>
-					Passionate ✔️<span className='small'>check</span>
+				<h2 className='red'>
+					Designer 🛑<span className='small'>error: need more practise and feedback</span>
 				</h2>
 				<h2 className='orange'>
 					Hard Working ⚠️<span className='small'>warning: not always the case</span>
 				</h2>
-				<h2 className='red'>
-					Designer 🛑<span className='small'>error: need more practise and feedback</span>
+				<h2 className='green'>
+					Life Long Learner ✔️<span className='small'>check</span>
 				</h2>
 			</Typing>
 		</Wrapper>
