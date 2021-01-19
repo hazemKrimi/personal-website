@@ -94,12 +94,11 @@ const About: FC = () => {
 						<h1>About Me</h1>
 						<div className='about'>
 							<p>
-								I am Hazem Krimi, a Full Stack JavaScript Developer helping companies and
-								individuals build modern web and mobile applications I am a student and a freelance
-								full stack developer. <br></br> I have a good experience building web and cross
-								platform mobile apps using various technologies like React, React Native, Node.js,
-								MongoDB, Firebase and I am constantly exploring and learning Software Engineering to
-								make sure I get the job done faster and easier.
+								I am Hazem Krimi, a software developer and a student. I have experience as a full
+								stack developer but I lean more to the front end. I have built a lot of web apps and
+								some mobile apps. Also, I am always learning and experimenting with new technologies
+								(currently learning about the ethereum blockchain) and other topics other than
+								software engineering.
 							</p>
 						</div>
 					</div>
@@ -152,7 +151,7 @@ const About: FC = () => {
 					</div>
 				</div>
 				<div className='photo'>
-					<Image src='/logo.jpg' width='auto' height='auto' layout='responsive' />
+					<Image src='/picture.jpg' width='auto' height='auto' layout='responsive' />
 				</div>
 			</Wrapper>
 		</>
