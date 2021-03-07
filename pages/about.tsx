@@ -141,12 +141,6 @@ const About: FC = () => {
 								height={36}
 								onClick={() => window.open('https://dribbble.com/HazemKrimi', '_blank')}
 							/>
-							<IconButton
-								icon={dark ? '/icons/light-instagram.svg' : '/icons/dark-instagram.svg'}
-								width={36}
-								height={36}
-								onClick={() => window.open('https://instagram.com/hazemkrimi', '_blank')}
-							/>
 						</div>
 					</div>
 				</div>
