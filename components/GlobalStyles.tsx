@@ -11,7 +11,7 @@ const Global = createGlobalStyle<Props>`
     padding: 0;
     box-sizing: border-box;
 		font-family: 'Source Code Pro', monospace;
-		font-size: 17px;
+		font-size: 16px;
 		line-height: 1.5;
 		outline: none;
 		user-select: text;
