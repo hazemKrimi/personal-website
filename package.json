@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@formspree/react": "^2.2.3",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.0.4",
     "gray-matter": "^4.0.2",
