@@ -3,7 +3,6 @@ import { DarkModeContext } from '../components/DarkMode';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Image from 'next/image';
-import IconButton from '../components/IconButton';
 
 const Wrapper = styled.div<{ dark: boolean }>`
 	padding: 1rem 0rem;
@@ -46,19 +45,6 @@ const Wrapper = styled.div<{ dark: boolean }>`
 	}
 
 	.contact {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, 36px);
-		column-gap: 1rem;
-		align-items: center;
-		justify-content: flex-start;
-
-		* {
-			user-select: none;
-		}
-
-		@media (max-width: 768px) {
-			column-gap: 0.5rem;
-		}
 	}
 `;
 
@@ -104,44 +90,7 @@ const About: FC = () => {
 					</div>
 					<div>
 						<h1>Contact Me</h1>
-						<div className='contact'>
-							<IconButton
-								icon={dark ? '/icons/light-mail.svg' : '/icons/dark-mail.svg'}
-								width={36}
-								height={36}
-								onClick={() => window.open('mailto:me@hazemkrimi.tech', '_blank')}
-							/>
-							<IconButton
-								icon={dark ? '/icons/light-github.svg' : '/icons/dark-github.svg'}
-								width={36}
-								height={36}
-								onClick={() => window.open('https://github.com/hazemKrimi', '_blank')}
-							/>
-							<IconButton
-								icon={dark ? '/icons/light-twitter.svg' : '/icons/dark-twitter.svg'}
-								width={36}
-								height={36}
-								onClick={() => window.open('https://twitter.com/HazemKrimi', '_blank')}
-							/>
-							<IconButton
-								icon={dark ? '/icons/light-linkedin.svg' : '/icons/dark-linkedin.svg'}
-								width={36}
-								height={36}
-								onClick={() => window.open('https://linkedin.com/in/hazemkrimi', '_blank')}
-							/>
-							<IconButton
-								icon={dark ? '/icons/light-codepen.svg' : '/icons/dark-codepen.svg'}
-								width={36}
-								height={36}
-								onClick={() => window.open('https://codepen.io/hazemkrimi', '_blank')}
-							/>
-							<IconButton
-								icon={dark ? '/icons/light-dribbble.svg' : '/icons/dark-dribbble.svg'}
-								width={36}
-								height={36}
-								onClick={() => window.open('https://dribbble.com/HazemKrimi', '_blank')}
-							/>
-						</div>
+						<div className='contact'></div>
 					</div>
 				</div>
 				<div className='photo'>
