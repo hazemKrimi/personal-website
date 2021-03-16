@@ -1,8 +1,12 @@
-import { FC, useContext } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
+import { useForm, ValidationError } from '@formspree/react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Image from 'next/image';
+import Input from '../components/Input';
+import Button from '../components/Button';
+import MDXButton from '../components/MDXButton';
 
 const Wrapper = styled.div<{ dark: boolean }>`
 	padding: 1rem 0rem;
@@ -32,12 +36,11 @@ const Wrapper = styled.div<{ dark: boolean }>`
 	.content {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
 	}
 
 	.about,
 	.contact {
-		margin-top: 1rem;
+		margin: 1rem 0rem;
 
 		@media (max-width: 768px) {
 			margin: 1rem 0rem;
@@ -45,11 +48,27 @@ const Wrapper = styled.div<{ dark: boolean }>`
 	}
 
 	.contact {
+		display: grid;
+		grid-template-columns: auto;
+		row-gap: 1.5rem;
+
+		.error {
+			color: #d75050;
+		}
+
+		.success {
+			color: #73d26b;
+		}
+
+		@media (max-width: 768px) {
+			row-gap: 0.5rem;
+		}
 	}
 `;
 
 const About: FC = () => {
 	const { dark } = useContext(DarkModeContext);
+	const [state, handleSubmit] = useForm('xoqpgyge');
 
 	return (
 		<>
@@ -90,7 +109,30 @@ const About: FC = () => {
 					</div>
 					<div>
 						<h1>Contact Me</h1>
-						<div className='contact'></div>
+						<form className='contact' onSubmit={handleSubmit}>
+							<Input type='text' placeholder='Name' variant='small' name='name' />
+							<ValidationError className='error' prefix='Name' field='name' errors={state.errors} />
+							<Input type='text' placeholder='Email' variant='small' name='email' />
+							<ValidationError
+								className='error'
+								prefix='Email'
+								field='email'
+								errors={state.errors}
+							/>
+							<Input type='text' placeholder='Message' variant='big' name='message' />
+							<ValidationError
+								className='error'
+								prefix='Message'
+								field='message'
+								errors={state.errors}
+							/>
+							<MDXButton type='submit' variant='action'>
+								Submit
+							</MDXButton>
+							{state.submitting && state.succeeded && (
+								<p className='success'>Message sent successfully</p>
+							)}
+						</form>
 					</div>
 				</div>
 				<div className='photo'>
