@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 interface Props {
 	variant?: 'outline' | 'text' | 'action';
+	type?: 'button' | 'submit';
 	link?: string;
 	dark?: boolean;
 }
@@ -36,6 +37,7 @@ const Btn = styled.button<Props>`
 
 const MDXButton: FC<Props & { className?: string }> = ({
 	variant = 'text',
+	type = 'button',
 	link,
 	children,
 	className
@@ -45,6 +47,7 @@ const MDXButton: FC<Props & { className?: string }> = ({
 	return (
 		<Btn
 			variant={variant}
+			type={type}
 			dark={dark}
 			onClick={() => {
 				if (link) window.open(link, '_blank');
