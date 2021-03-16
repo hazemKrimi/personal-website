@@ -18,7 +18,7 @@ const StyledCard = styled.div<{ dark: boolean }>`
 	display: grid;
 	align-items: center;
 	background: ${({ dark, theme }) => (dark ? '#2f2f2f' : theme.colors.dark.text)};
-	box-shadow: ${({ dark }) => !dark && `6px 2px 15px 0px rgba(0, 0, 0, 0.15)`};
+	box-shadow: ${({ dark }) => !dark && `1px 1px 10px 0px rgba(0, 0, 0, 0.15)`};
 	transition: box-shadow 250ms ease-in-out, color 0ms ease-in-out;
 
 	@media (max-width: 768px) {
