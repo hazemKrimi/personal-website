@@ -70,7 +70,13 @@ const Nav: FC = () => {
 	return (
 		<Bar>
 			<div className='logo' onClick={() => router.push('/')}>
-				<Image className='logo-image' src='/logo.jpg' alt='Logo Image' width={48} height={48} />
+				<Image
+					className='logo-image'
+					src={dark ? '/light-logo.svg' : '/dark-logo.svg'}
+					alt='Logo Image'
+					width={48}
+					height={48}
+				/>
 				<h1>Hazem Krimi</h1>
 			</div>
 			<div className='buttons'>
