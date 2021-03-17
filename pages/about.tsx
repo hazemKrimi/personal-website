@@ -1,11 +1,10 @@
-import React, { FC, useContext, useState } from 'react';
+import React, { FC, useContext } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
 import { useForm, ValidationError } from '@formspree/react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Input from '../components/Input';
-import Button from '../components/Button';
 import MDXButton from '../components/MDXButton';
 
 const Wrapper = styled.div<{ dark: boolean }>`
