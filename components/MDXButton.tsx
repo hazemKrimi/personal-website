@@ -7,6 +7,7 @@ interface Props {
 	type?: 'button' | 'submit';
 	link?: string;
 	dark?: boolean;
+	disabled?: boolean;
 }
 
 const Btn = styled.button<Props>`
@@ -29,13 +30,20 @@ const Btn = styled.button<Props>`
 		['action', 'outline'].includes(variant as string) ? 'center' : 'left'};
 	transition: color 250ms ease-in-out;
 
+	${({ disabled }) =>
+		disabled &&
+		`
+		background: gray;
+		cursor: default;
+	`}
+
 	@media (max-width: 768px) {
 		padding: ${({ variant }) =>
 			['action', 'outline'].includes(variant as string) ? '.5rem .75rem' : '0rem'};
 	}
 `;
 
-const MDXButton: FC<Props & { className?: string; disabled?: boolean }> = ({
+const MDXButton: FC<Props & { className?: string }> = ({
 	variant = 'text',
 	type = 'button',
 	link,
