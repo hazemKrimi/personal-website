@@ -7,6 +7,7 @@ interface Props {
 	type: 'text' | 'email';
 	variant: 'small' | 'big';
 	name: string;
+	value: string;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
@@ -31,6 +32,7 @@ const Input: FC<Props & { className?: string }> = ({
 	type = 'text',
 	variant = 'small',
 	name,
+	value,
 	placeholder,
 	className,
 	onChange
@@ -42,6 +44,7 @@ const Input: FC<Props & { className?: string }> = ({
 			dark={dark}
 			type={type}
 			name={name}
+			value={value}
 			placeholder={placeholder}
 			className={className}
 			onChange={onChange}
@@ -50,6 +53,7 @@ const Input: FC<Props & { className?: string }> = ({
 		<BigField
 			dark={dark}
 			name={name}
+			value={value}
 			placeholder={placeholder}
 			className={className}
 			onChange={onChange}
