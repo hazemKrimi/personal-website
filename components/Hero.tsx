@@ -1,7 +1,6 @@
 import { FC, useContext } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
 import styled from 'styled-components';
-import Image from 'next/image';
 import Typing from 'react-typing-animation';
 
 const Wrapper = styled.div`
@@ -23,11 +22,23 @@ const Wrapper = styled.div`
 
 	h2 {
 		font-size: 1.5rem;
+
+		@media (min-width: 1440px) {
+			font-size: 2rem;
+		}
+
+		@media (min-width: 2560px) {
+			font-size: 3.5rem;
+		}
 	}
 
 	.small {
 		font-size: 1rem;
 		font-weight: normal;
+
+		@media (min-width: 1440px) {
+			font-size: 1.5rem;
+		}
 	}
 
 	.green {
@@ -59,11 +70,11 @@ const Hero: FC = () => {
 				</h2>
 			</Typing>
 			<div className='illustration'>
-				<Image
+				<img
 					src={dark ? '/light-illustration.svg' : '/dark-illustration.svg'}
-					width='auto'
+					width='100%'
 					height='auto'
-					layout='responsive'
+					alt='Illustration'
 				/>
 			</div>
 		</Wrapper>
