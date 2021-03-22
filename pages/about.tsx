@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
 import { useForm, ValidationError } from '@formspree/react';
 import Head from 'next/head';
@@ -59,6 +59,11 @@ const Wrapper = styled.div<{ dark: boolean }>`
 			color: #73d26b;
 		}
 
+		.success-button {
+			cursor: default;
+			background: #73d26b;
+		}
+
 		@media (max-width: 768px) {
 			row-gap: 0.5rem;
 		}
@@ -67,7 +72,21 @@ const Wrapper = styled.div<{ dark: boolean }>`
 
 const About: FC = () => {
 	const { dark } = useContext(DarkModeContext);
-	const [state, handleSubmit] = useForm('xoqpgyge');
+	const [form, setForm] = useState<{ name: string; email: string; message: string }>({
+		name: '',
+		email: '',
+		message: ''
+	});
+	const [state, Submit] = useForm('xoqpgyge');
+
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		setForm({ ...form, [event.target.name]: event.target.value });
+	};
+
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+		await Submit(event);
+		setForm({ name: '', email: '', message: '' });
+	};
 
 	return (
 		<>
@@ -109,28 +128,51 @@ const About: FC = () => {
 					<div>
 						<h1>Contact Me</h1>
 						<form className='contact' onSubmit={handleSubmit}>
-							<Input type='text' placeholder='Name' variant='small' name='name' />
+							<Input
+								type='text'
+								placeholder='Name'
+								variant='small'
+								name='name'
+								value={form.name}
+								onChange={handleChange}
+							/>
 							<ValidationError className='error' prefix='Name' field='name' errors={state.errors} />
-							<Input type='text' placeholder='Email' variant='small' name='email' />
+							<Input
+								type='text'
+								placeholder='Email'
+								variant='small'
+								name='email'
+								value={form.email}
+								onChange={handleChange}
+							/>
 							<ValidationError
 								className='error'
 								prefix='Email'
 								field='email'
 								errors={state.errors}
 							/>
-							<Input type='text' placeholder='Message' variant='big' name='message' />
+							<Input
+								type='text'
+								placeholder='Message'
+								variant='big'
+								name='message'
+								value={form.message}
+								onChange={handleChange}
+							/>
 							<ValidationError
 								className='error'
 								prefix='Message'
 								field='message'
 								errors={state.errors}
 							/>
-							<MDXButton type='submit' variant='action'>
-								Submit
+							<MDXButton
+								type='submit'
+								variant='action'
+								disabled={state.submitting}
+								className={state.submitting && state.succeeded ? 'success-button' : ''}
+							>
+								{state.submitting && state.succeeded ? 'Message sent' : 'Submit'}
 							</MDXButton>
-							{state.submitting && state.succeeded && (
-								<p className='success'>Message sent successfully</p>
-							)}
 						</form>
 					</div>
 				</div>
