@@ -8,6 +8,7 @@ interface Props {
 	variant: 'small' | 'big';
 	name: string;
 	value: string;
+	required?: boolean;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
@@ -33,6 +34,7 @@ const Input: FC<Props & { className?: string }> = ({
 	variant = 'small',
 	name,
 	value,
+	required,
 	placeholder,
 	className,
 	onChange
@@ -45,6 +47,7 @@ const Input: FC<Props & { className?: string }> = ({
 			type={type}
 			name={name}
 			value={value}
+			required={required}
 			placeholder={placeholder}
 			className={className}
 			onChange={onChange}
@@ -54,6 +57,7 @@ const Input: FC<Props & { className?: string }> = ({
 			dark={dark}
 			name={name}
 			value={value}
+			required={required}
 			placeholder={placeholder}
 			className={className}
 			onChange={onChange}
