@@ -35,11 +35,12 @@ const Btn = styled.button<Props>`
 	}
 `;
 
-const MDXButton: FC<Props & { className?: string }> = ({
+const MDXButton: FC<Props & { className?: string; disabled?: boolean }> = ({
 	variant = 'text',
 	type = 'button',
 	link,
 	children,
+	disabled,
 	className
 }) => {
 	const { dark } = useContext(DarkModeContext);
@@ -52,6 +53,7 @@ const MDXButton: FC<Props & { className?: string }> = ({
 			onClick={() => {
 				if (link) window.open(link, '_blank');
 			}}
+			disabled={disabled}
 			className={className}
 		>
 			{children}
