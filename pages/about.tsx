@@ -46,6 +46,12 @@ const Wrapper = styled.div<{ dark: boolean }>`
 		}
 	}
 
+	.success {
+		color: #73d26b;
+		align-self: center;
+		font-weight: normal;
+	}
+
 	.contact {
 		display: grid;
 		grid-template-columns: auto;
@@ -53,15 +59,6 @@ const Wrapper = styled.div<{ dark: boolean }>`
 
 		.error {
 			color: #d75050;
-		}
-
-		.success {
-			color: #73d26b;
-		}
-
-		.success-button {
-			cursor: default;
-			background: #73d26b;
 		}
 
 		@media (max-width: 768px) {
@@ -84,8 +81,11 @@ const About: FC = () => {
 	};
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-		await Submit(event);
-		setForm({ name: '', email: '', message: '' });
+		try {
+			await Submit(event);
+		} finally {
+			setForm({ name: '', email: '', message: '' });
+		}
 	};
 
 	return (
@@ -126,13 +126,19 @@ const About: FC = () => {
 						</div>
 					</div>
 					<div>
-						<h1>Contact Me</h1>
+						<h1>
+							Contact Me{' '}
+							{state.succeeded && state.submitting && (
+								<span className='success'>Message sent ✔️</span>
+							)}
+						</h1>
 						<form className='contact' onSubmit={handleSubmit}>
 							<Input
 								type='text'
 								placeholder='Name'
 								variant='small'
 								name='name'
+								required
 								value={form.name}
 								onChange={handleChange}
 							/>
@@ -142,6 +148,7 @@ const About: FC = () => {
 								placeholder='Email'
 								variant='small'
 								name='email'
+								required
 								value={form.email}
 								onChange={handleChange}
 							/>
@@ -156,6 +163,7 @@ const About: FC = () => {
 								placeholder='Message'
 								variant='big'
 								name='message'
+								required
 								value={form.message}
 								onChange={handleChange}
 							/>
@@ -165,13 +173,8 @@ const About: FC = () => {
 								field='message'
 								errors={state.errors}
 							/>
-							<MDXButton
-								type='submit'
-								variant='action'
-								disabled={state.submitting}
-								className={state.submitting && state.succeeded ? 'success-button' : ''}
-							>
-								{state.submitting && state.succeeded ? 'Message sent' : 'Submit'}
+							<MDXButton type='submit' variant='action' disabled={state.submitting}>
+								Submit
 							</MDXButton>
 						</form>
 					</div>
