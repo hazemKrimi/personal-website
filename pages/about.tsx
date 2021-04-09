@@ -75,6 +75,7 @@ const About: FC = () => {
 		message: ''
 	});
 	const [state, Submit] = useForm('xoqpgyge');
+	const [submitted, setSubmitted] = useState<boolean>(false);
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		setForm({ ...form, [event.target.name]: event.target.value });
@@ -83,7 +84,9 @@ const About: FC = () => {
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		try {
 			await Submit(event);
+			setSubmitted(true);
 		} finally {
+			setTimeout(() => setSubmitted(false), 1000);
 			setForm({ name: '', email: '', message: '' });
 		}
 	};
@@ -126,12 +129,7 @@ const About: FC = () => {
 						</div>
 					</div>
 					<div>
-						<h1>
-							Contact Me{' '}
-							{state.succeeded && state.submitting && (
-								<span className='success'>Message sent ✔️</span>
-							)}
-						</h1>
+						<h1>Contact Me {submitted && <span className='success'>Message sent ✔️</span>}</h1>
 						<form className='contact' onSubmit={handleSubmit}>
 							<Input
 								type='text'
@@ -173,7 +171,7 @@ const About: FC = () => {
 								field='message'
 								errors={state.errors}
 							/>
-							<MDXButton type='submit' variant='action' disabled={state.submitting}>
+							<MDXButton type='submit' variant='action' disabled={state.submitting || submitted}>
 								Submit
 							</MDXButton>
 						</form>
