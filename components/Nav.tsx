@@ -84,7 +84,7 @@ const Nav: FC = () => {
 				<Button onClick={() => router.push('/about')}>About</Button>
 				<Button onClick={() => router.push('/portfolio')}>Portfolio</Button>
 				<Button onClick={() => router.push('/blog')}>Blog</Button>
-				<Button variant='outline' onClick={() => window.open('/hazem-krimi.pdf', '_blank')}>
+				<Button variant='outline' onClick={() => window.open('/resume.pdf', '_blank')}>
 					Resume
 				</Button>
 			</div>
