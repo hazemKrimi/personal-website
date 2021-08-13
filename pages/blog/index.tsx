@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useRouter } from 'next/router';
-import { getBlogPosts } from '../../lib/blog';
+import { getBlogPosts } from '../../utils/blog';
 import styled from 'styled-components';
 import Card from '../../components/Card';
 import IconButton from '../../components/IconButton';

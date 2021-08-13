@@ -15,6 +15,7 @@ export const getPortfolioProjects = () => {
 		const { data } = matter(fileContents);
 
 		const options = { month: 'long', day: 'numeric', year: 'numeric' };
+		// @ts-ignore
 		const formattedDate = new Date(data.date).toLocaleDateString('en-IN', options);
 
 		const frontmatter = {

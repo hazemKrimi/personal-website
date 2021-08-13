@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
-import { getPortfolioProjects } from '../lib/portfolio';
-import { getBlogPosts } from '../lib/blog';
+import { getPortfolioProjects } from '../utils/portfolio';
+import { getBlogPosts } from '../utils/blog';
 import { GetStaticProps } from 'next';
 import styled from 'styled-components';
 import Hero from '../components/Hero';

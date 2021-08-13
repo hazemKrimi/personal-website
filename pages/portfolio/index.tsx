@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { getPortfolioProjects } from '../../lib/portfolio';
+import { getPortfolioProjects } from '../../utils/portfolio';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Card from '../../components/Card';
