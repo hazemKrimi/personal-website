@@ -1,7 +1,6 @@
 import { FC, useContext } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
 import styled from 'styled-components';
-import Typing from 'react-typing-animation';
 
 const Wrapper = styled.div`
 	min-height: 45vh;
@@ -51,7 +50,7 @@ const Hero: FC = () => {
 
 	return (
 		<Wrapper>
-			<Typing speed={15} hideCursor={true} loop={false} className='intro'>
+			<div className='intro'>
 				<h2>Hi, I am Hazem</h2>
 				<h2>I Like Building Things</h2>
 				<h2 className='green'>
@@ -68,7 +67,7 @@ const Hero: FC = () => {
 				<h2 className='green'>
 					Life Long Learner ✔️<span className='small'>check</span>
 				</h2>
-			</Typing>
+			</div>
 			<div className='illustration'>
 				<img
 					src={dark ? '/light-illustration.svg' : '/dark-illustration.svg'}
