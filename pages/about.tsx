@@ -178,7 +178,7 @@ const About: FC = () => {
 					</div>
 				</div>
 				<div className='photo'>
-					<Image src='/picture.jpg' width='auto' height='auto' layout='responsive' />
+					<Image src='/picture.jpg' width='100%' height='100%' layout='responsive' />
 				</div>
 			</Wrapper>
 		</>
