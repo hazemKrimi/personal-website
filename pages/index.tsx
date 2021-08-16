@@ -59,6 +59,10 @@ const Wrapper = styled.div`
 		margin: 1rem 0rem;
 	}
 
+	.portfolio {
+		margin-bottom: 3rem;
+	}
+
 	.projects-wrapper,
 	.articles-wrapper {
 		display: grid;

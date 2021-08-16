@@ -43,8 +43,6 @@ const Wrapper = styled.div`
 		p,
 		.tags-wrapper {
 			text-align: left;
-			width: 85%;
-			margin: 0.5rem auto;
 		}
 
 		h1 {
@@ -66,23 +64,14 @@ const Wrapper = styled.div`
 	hr {
 		height: 0.1rem;
 		opacity: 0.3;
-		width: 85%;
 		margin: 1rem auto 0rem auto;
 
 		@media (max-width: 768px) {
-			width: 95%;
 			margin: 1rem auto 0rem auto;
 		}
 	}
 
 	.content {
-		width: 85%;
-		margin: 0rem auto;
-
-		@media (max-width: 768px) {
-			width: 95%;
-		}
-
 		h1 {
 			font-size: 1.5rem;
 		}
