@@ -48,6 +48,17 @@ const Global = createGlobalStyle<Props>`
     color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)}; 
 		transition: color 250ms ease-in-out, background 250ms ease-in-out;
 		scroll-behavior: smooth;
+
+		#nprogress .bar {
+			background: ${({ dark, theme }) =>
+				dark ? theme.colors.dark.text : theme.colors.light.text} !important;
+		}
+
+		#nprogress .peg {
+			box-shadow: 0 0 10px ${({ dark, theme }) =>
+				dark ? theme.colors.dark.text : theme.colors.light.text}, 0 0 5px ${({ dark, theme }) =>
+	dark ? theme.colors.dark.text : theme.colors.light.text} !important;
+		}
 	}
 
 	body::-webkit-scrollbar {
