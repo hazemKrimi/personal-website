@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 		cursor: pointer;
 		text-align: left;
 		color: #3f9aee;
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 	}
 
