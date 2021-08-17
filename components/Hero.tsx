@@ -1,6 +1,7 @@
 import { FC, useContext } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
 import styled from 'styled-components';
+import Image from 'next/image';
 
 const Wrapper = styled.div`
 	min-height: 45vh;
@@ -57,10 +58,6 @@ const Hero: FC = () => {
 					Software Developer ✔️<span className='small'>check</span>
 				</h2>
 				<h2 className='green'>
-					Designer ✔️
-					<span className='small'>check</span>
-				</h2>
-				<h2 className='green'>
 					Hard Working ✔️
 					<span className='small'>check</span>
 				</h2>
@@ -69,11 +66,11 @@ const Hero: FC = () => {
 				</h2>
 			</div>
 			<div className='illustration'>
-				<img
-					src={dark ? '/light-illustration.svg' : '/dark-illustration.svg'}
+				<Image
+					src={dark ? '/dark-illustration.svg' : '/light-illustration.svg'}
 					width='100%'
-					height='auto'
-					alt='Illustration'
+					height='100%'
+					layout='responsive'
 				/>
 			</div>
 		</Wrapper>
