@@ -13,10 +13,12 @@ import AllComponents from '../../components/All';
 import Head from 'next/head';
 import IconButton from '../../components/IconButton';
 import CodeBlock from '../../components/CodeBlock';
+import readingTime from 'reading-time';
 
 interface Props {
 	source: MdxRemote.Source;
 	frontMatter: any;
+	text: string;
 }
 
 const Wrapper = styled.div`
@@ -97,9 +99,10 @@ const Wrapper = styled.div`
 
 const components = AllComponents;
 
-const BlogPost: FC<Props> = ({ source, frontMatter }) => {
+const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 	const content = hydrate(source, { components });
 	const router = useRouter();
+	const stats = readingTime(text);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -149,7 +152,7 @@ const BlogPost: FC<Props> = ({ source, frontMatter }) => {
 					<h1>{frontMatter.title}</h1>
 					<p>{frontMatter.description}</p>
 					<p>
-						Written by <b>{frontMatter.author}</b> on <b>{frontMatter.date}</b>
+						By <b>{frontMatter.author}</b> on <b>{frontMatter.date}</b> ({stats.text})
 					</p>
 					{frontMatter.tags && (
 						<div className='tags-wrapper'>
@@ -190,7 +193,8 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
 	return {
 		props: {
 			source: mdxSource,
-			frontMatter: data
+			frontMatter: data,
+			text: content
 		}
 	};
 };
