@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 	height: auto;
 	text-align: left;
 
-	@media (max-width: 768px) {
+	@media (max-width: 425px) {
 		min-height: 65vh;
 		grid-template-columns: auto;
 
@@ -41,8 +41,8 @@ const Wrapper = styled.div`
 		}
 	}
 
-	.green {
-		color: #73d26b;
+	.blue {
+		color: #1573ca;
 	}
 `;
 
@@ -54,16 +54,9 @@ const Hero: FC = () => {
 			<div className='intro'>
 				<h2>Hi, I am Hazem</h2>
 				<h2>I Like Building Things</h2>
-				<h2 className='green'>
-					Software Developer ✔️<span className='small'>check</span>
-				</h2>
-				<h2 className='green'>
-					Hard Working ✔️
-					<span className='small'>check</span>
-				</h2>
-				<h2 className='green'>
-					Life Long Learner ✔️<span className='small'>check</span>
-				</h2>
+				<h2 className='blue'>Software Developer</h2>
+				<h2 className='blue'>Hard Working</h2>
+				<h2 className='blue'>Life Long Learner</h2>
 			</div>
 			<div className='illustration'>
 				<Image
