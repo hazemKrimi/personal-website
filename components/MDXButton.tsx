@@ -15,7 +15,7 @@ const Btn = styled.button<Props>`
 	display: ${({ variant }) =>
 		['action', 'outline'].includes(variant as string) ? 'block' : 'inline'};
 	width: ${({ variant }) => (['action', 'outline'].includes(variant as string) ? '100%' : 'auto')};
-	background: ${({ variant }) => (variant === 'action' ? '#3F9AEE' : 'none')};
+	background: ${({ variant }) => (variant === 'action' ? '#1573ca' : 'none')};
 	color: ${({ variant, dark }) => (variant === 'action' ? 'white' : dark ? 'white' : 'black')};
 	border: ${({ variant, dark }) =>
 		variant === 'outline' ? `2px solid ${dark ? 'white' : 'black'}` : 'none'};
