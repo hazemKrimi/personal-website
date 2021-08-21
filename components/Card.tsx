@@ -26,7 +26,7 @@ const StyledCard = styled.div<{ dark: boolean }>`
 	}
 
 	&:hover {
-		background: #3889d4;
+		background: #1573ca;
 		color: ${({ theme }) => theme.colors.dark.text};
 		box-shadow: ${({ dark }) => !dark && '5px 2px 26px 6px rgba(21, 115, 202, 0.30)'};
 	}
