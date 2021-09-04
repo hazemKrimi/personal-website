@@ -9,6 +9,10 @@ const reducer = (state: boolean, action: { type: string }) => {
 	switch (action.type) {
 		case 'TOGGLE':
 			return !state;
+		case 'DARK':
+			return true;
+		case 'LIGHT':
+			return false;
 		default:
 			return state;
 	}
@@ -16,10 +20,18 @@ const reducer = (state: boolean, action: { type: string }) => {
 
 const DarkMode: FC = ({ children }) => {
 	const [dark, dispatch] = useReducer(reducer, false);
-	const toggle = () => dispatch({ type: 'TOGGLE' });
+	const toggle = () => {
+		if (dark) window.localStorage.setItem('theme', 'light');
+		else window.localStorage.setItem('theme', 'dark');
+
+		dispatch({ type: 'TOGGLE' });
+	};
 
 	useEffect(() => {
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) toggle();
+		const root = window.document.documentElement;
+		const initialTheme = root.style.getPropertyValue('--theme');
+
+		dispatch({ type: initialTheme === 'dark' ? 'DARK' : 'LIGHT' });
 	}, []);
 
 	return <DarkModeContext.Provider value={{ dark, toggle }}>{children}</DarkModeContext.Provider>;
