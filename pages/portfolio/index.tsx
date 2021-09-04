@@ -10,6 +10,7 @@ interface Props {
 	portfolioProjects: {
 		title: string;
 		description: string;
+		image?: string;
 		slug: string;
 		date: string;
 		tags?: string[];

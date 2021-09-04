@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { getPortfolioPorjectsSlugs, getPortfolioProjectdata } from '../../utils/portfolio';
 import { useRouter } from 'next/router';
 import { MdxRemote } from 'next-mdx-remote/types';
@@ -37,6 +37,23 @@ const Wrapper = styled.div`
 			color: #3f9aee;
 			display: inline-flex;
 			align-items: center;
+		}
+
+		.image {
+			height: 0;
+			width: 100%;
+			overflow: hidden;
+			padding-top: calc(591.44 / 1127.34 * 100%);
+			position: relative;
+			margin-bottom: 1rem;
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
 		}
 
 		h1,
@@ -88,6 +105,7 @@ const components = AllComponents;
 const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 	const content = hydrate(source, { components });
 	const router = useRouter();
+	const metaRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -125,20 +143,25 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 				<title>{frontMatter.title} | Hazem Krimi</title>
 			</Head>
 			<Wrapper>
-				<div className='meta'>
+				<div className='meta' ref={metaRef}>
+					{frontMatter.image ? (
+						<div className='image'>
+							<img src={frontMatter.image} alt='portfolio project image' />
+						</div>
+					) : null}
 					<div className='back' onClick={() => router.back()}>
 						<IconButton icon='/icons/arrow-left.svg' />
 						<span>Back</span>
 					</div>
 					<h1>{frontMatter.title}</h1>
 					<p>{frontMatter.description}</p>
-					{frontMatter.tags && (
+					{frontMatter.tags ? (
 						<div className='tags-wrapper'>
 							{frontMatter.tags.map((tag: string, index: number) => (
 								<span key={index}>#{tag}&nbsp;</span>
 							))}
 						</div>
-					)}
+					) : null}
 					<hr />
 				</div>
 				<MDXProvider components={{ code: CodeBlock }}>

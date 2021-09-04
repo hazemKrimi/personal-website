@@ -11,6 +11,7 @@ interface Props {
 		title: string;
 		author: string;
 		description: string;
+		image?: string;
 		slug: string;
 		date: string;
 		tags?: string[];

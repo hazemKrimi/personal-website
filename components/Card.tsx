@@ -11,29 +11,35 @@ interface Props {
 	onClick?: () => void;
 }
 
-const StyledCard = styled.div<{ dark: boolean }>`
+const StyledCard = styled.div<{ dark: boolean; image: boolean }>`
 	cursor: pointer;
-	padding: 1rem 0rem;
 	width: 100%;
 	display: grid;
-	align-items: center;
-	background: ${({ dark, theme }) => (dark ? '#2f2f2f' : theme.colors.dark.text)};
+	grid-template-columns: auto 150px;
+	align-items: stretch;
 	box-shadow: ${({ dark }) => !dark && `1px 1px 10px 0px rgba(0, 0, 0, 0.15)`};
 	transition: box-shadow 250ms ease-in-out, color 0ms ease-in-out;
 
-	@media (max-width: 768px) {
-		padding: 0.5rem 0rem;
-	}
-
 	&:hover {
-		background: #1573ca;
-		color: ${({ theme }) => theme.colors.dark.text};
-		box-shadow: ${({ dark }) => !dark && '5px 2px 26px 6px rgba(21, 115, 202, 0.30)'};
+		& > div {
+			background: #1573ca;
+			color: ${({ theme }) => theme.colors.dark.text};
+		}
+
+		img {
+			filter: ${({ image }) => (image ? 'grayscale(80%)' : 'none')};
+		}
 	}
 
-	div {
+	& > div {
+		padding: 1rem 0rem;
+		background: ${({ dark, theme }) => (dark ? '#2f2f2f' : theme.colors.dark.text)};
 		display: grid;
 		row-gap: 0.5rem;
+
+		@media (max-width: 768px) {
+			padding: 0.75rem 0rem;
+		}
 	}
 
 	h3,
@@ -66,19 +72,23 @@ const Card: FC<Props> = ({ title, description, image, tags, onClick }) => {
 	const { dark } = useContext(DarkModeContext);
 
 	return (
-		<StyledCard dark={dark} onClick={onClick}>
+		<StyledCard dark={dark} onClick={onClick} image={!!image}>
 			<div>
 				<h3>{title}</h3>
-				{image && (
-					<Image src={image} className='image' width='auto' height='auto' layout='responsive' />
-				)}
 				<p>{description}</p>
 				{tags && (
 					<div className='tags-wrapper'>
-						{tags && tags.map((tag, index) => <span key={index}>#{tag}&nbsp;</span>)}
+						{tags.map((tag, index) => (
+							<span key={index}>#{tag}&nbsp;</span>
+						))}
 					</div>
 				)}
 			</div>
+			{image ? (
+				<Image src={image} width={100} height={100} layout='responsive' />
+			) : (
+				<Image src='/no-image.png' width={100} height={100} layout='responsive' />
+			)}
 		</StyledCard>
 	);
 };
