@@ -46,7 +46,7 @@ class Doc extends Document {
 					<script
 						dangerouslySetInnerHTML={{
 							__html: `
-								function getInitialColorMode() {
+								function getInitialTheme() {
 									const persistedColorPreference = window.localStorage.getItem('theme');
 									const hasPersistedPreference = typeof persistedColorPreference === 'string';
 
@@ -65,10 +65,10 @@ class Doc extends Document {
 								}
 
 								(() => {
-									const colorMode = getInitialColorMode();
+									const theme = getInitialTheme();
 									const root = document.documentElement;
 
-									root.style.setProperty('--theme', colorMode);
+									root.style.setProperty('--theme', theme);
 								})();
 							`
 						}}
