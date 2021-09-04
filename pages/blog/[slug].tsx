@@ -14,6 +14,7 @@ import Head from 'next/head';
 import IconButton from '../../components/IconButton';
 import CodeBlock from '../../components/CodeBlock';
 import readingTime from 'reading-time';
+import Image from 'next/image';
 
 interface Props {
 	source: MdxRemote.Source;
@@ -42,20 +43,7 @@ const Wrapper = styled.div`
 		}
 
 		.image {
-			height: 0;
-			width: 100%;
-			overflow: hidden;
-			padding-top: calc(591.44 / 1127.34 * 100%);
-			position: relative;
-			margin-bottom: 1rem;
-
-			img {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			}
+			margin: 1rem 0rem;
 		}
 
 		h1,
@@ -162,11 +150,6 @@ const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 			</Head>
 			<Wrapper>
 				<div className='meta'>
-					{frontMatter.image ? (
-						<div className='image'>
-							<img src={frontMatter.image} alt='portfolio project image' />
-						</div>
-					) : null}
 					<div className='back' onClick={() => router.back()}>
 						<IconButton icon='/icons/arrow-left.svg' />
 						<span>Back</span>
@@ -181,6 +164,11 @@ const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 							{frontMatter.tags.map((tag: string, index: number) => (
 								<span key={index}>#{tag}&nbsp;</span>
 							))}
+						</div>
+					) : null}
+					{frontMatter.image ? (
+						<div className='image'>
+							<Image src={frontMatter.image} width='100%' height='100%' layout='responsive' />
 						</div>
 					) : null}
 					<hr />
