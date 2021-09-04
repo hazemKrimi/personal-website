@@ -17,8 +17,7 @@ const StyledCard = styled.div<{ dark: boolean; image: boolean }>`
 	display: grid;
 	grid-template-columns: auto 150px;
 	align-items: stretch;
-	box-shadow: ${({ dark }) => !dark && `1px 1px 10px 0px rgba(0, 0, 0, 0.15)`};
-	transition: box-shadow 250ms ease-in-out, color 0ms ease-in-out;
+	transition: color 0ms ease-in-out;
 
 	&:hover {
 		& > div {
