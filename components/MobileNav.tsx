@@ -45,7 +45,7 @@ const Bar = styled.nav<StyledProps>`
 		margin: 0rem 1rem;
 
 		button {
-			color: var(--text) !important;
+			color: var(--text-inverted) !important;
 		}
 	}
 `;

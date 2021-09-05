@@ -81,6 +81,10 @@ class Doc extends Document {
 										'--text',
 										theme === 'light' ? 'black' : 'white'
 									);
+									root.style.setProperty(
+										'--text-inverted',
+										theme === 'light' ? 'white' : 'black'
+									);
 								})();
 							`
 						}}

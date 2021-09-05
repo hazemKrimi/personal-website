@@ -28,11 +28,13 @@ const DarkMode: FC = ({ children }) => {
 			root.style.setProperty('--background', '#F9F9F9');
 			root.style.setProperty('--secondary-background', 'white');
 			root.style.setProperty('--text', 'black');
+			root.style.setProperty('--text-inverted', 'white');
 		} else {
 			window.localStorage.setItem('theme', 'dark');
 			root.style.setProperty('--background', '#262626');
 			root.style.setProperty('--secondary-background', '#2F2F2F');
 			root.style.setProperty('--text', 'white');
+			root.style.setProperty('--text-inverted', 'black');
 		}
 
 		dispatch({ type: 'TOGGLE' });
