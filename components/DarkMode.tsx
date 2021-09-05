@@ -21,8 +21,19 @@ const reducer = (state: boolean, action: { type: string }) => {
 const DarkMode: FC = ({ children }) => {
 	const [dark, dispatch] = useReducer(reducer, false);
 	const toggle = () => {
-		if (dark) window.localStorage.setItem('theme', 'light');
-		else window.localStorage.setItem('theme', 'dark');
+		const root = window.document.documentElement;
+
+		if (dark) {
+			window.localStorage.setItem('theme', 'light');
+			root.style.setProperty('--background', '#F9F9F9');
+			root.style.setProperty('--secondary-background', 'white');
+			root.style.setProperty('--text', 'black');
+		} else {
+			window.localStorage.setItem('theme', 'dark');
+			root.style.setProperty('--background', '#262626');
+			root.style.setProperty('--secondary-background', '#2F2F2F');
+			root.style.setProperty('--text', 'white');
+		}
 
 		dispatch({ type: 'TOGGLE' });
 	};

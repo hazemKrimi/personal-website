@@ -32,9 +32,8 @@ const Global = createGlobalStyle<Props>`
 		}
 
 		&::selection {
-			background: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
-			color: ${({ dark, theme }) =>
-				dark ? theme.colors.dark.background : theme.colors.light.background};
+			background: var(--text);
+			color: var(--background);
 		}
   }
 
@@ -49,21 +48,17 @@ const Global = createGlobalStyle<Props>`
 
 	body {
 		margin: 0 0 100px;
-		background: ${({ dark, theme }) =>
-			dark ? theme.colors.dark.background : theme.colors.light.background};
-    color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)}; 
+		background: var(--background);
+    color: var(--text); 
 		transition: color 250ms ease-in-out, background 250ms ease-in-out;
 		scroll-behavior: smooth;
 
 		#nprogress .bar {
-			background: ${({ dark, theme }) =>
-				dark ? theme.colors.dark.text : theme.colors.light.text} !important;
+			background: var(--text) !important;
 		}
 
 		#nprogress .peg {
-			box-shadow: 0 0 10px ${({ dark, theme }) =>
-				dark ? theme.colors.dark.text : theme.colors.light.text}, 0 0 5px ${({ dark, theme }) =>
-	dark ? theme.colors.dark.text : theme.colors.light.text} !important;
+			box-shadow: 0 0 10px var(--text), 0 0 5px var(--text) !important;
 		}
 	}
 
@@ -72,8 +67,7 @@ const Global = createGlobalStyle<Props>`
 	}
 	
 	body::-webkit-scrollbar-thumb {
-		background-color: ${({ dark, theme }) =>
-			dark ? theme.colors.dark.text : theme.colors.light.text} !important;
+		background-color: var(--text) !important;
 	}
 `;
 

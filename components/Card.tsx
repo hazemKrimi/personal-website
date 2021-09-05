@@ -21,7 +21,7 @@ const StyledCard = styled.div<{ dark: boolean; image: boolean }>`
 
 	&:hover {
 		& > div {
-			background: #1573ca;
+			background: ${({ theme }) => theme.colors.blue};
 			color: ${({ theme }) => theme.colors.dark.text};
 		}
 
@@ -32,7 +32,7 @@ const StyledCard = styled.div<{ dark: boolean; image: boolean }>`
 
 	& > div {
 		padding: 1rem 0rem;
-		background: ${({ dark, theme }) => (dark ? '#2f2f2f' : theme.colors.dark.text)};
+		background: var(--secondary-background);
 		display: grid;
 		row-gap: 0.5rem;
 

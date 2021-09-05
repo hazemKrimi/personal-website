@@ -24,7 +24,7 @@ const Bar = styled.nav<StyledProps>`
 	transform: ${({ open }) => (open ? 'translateX(0%)' : 'translateX(100%)')};
 	width: 80%;
 	height: 100vh;
-	background: ${({ theme, dark }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
+	background: var(--text);
 	transition: transform 250ms ease-in-out;
 	display: grid;
 	grid-template-rows: 30% repeat(4, 50px);
@@ -45,8 +45,7 @@ const Bar = styled.nav<StyledProps>`
 		margin: 0rem 1rem;
 
 		button {
-			color: ${({ theme, dark }) =>
-				dark ? theme.colors.light.text : theme.colors.dark.text} !important;
+			color: var(--text) !important;
 		}
 	}
 `;

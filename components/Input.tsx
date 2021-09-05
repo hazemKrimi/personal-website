@@ -15,16 +15,16 @@ interface Props {
 const SmallField = styled.input<{ dark: boolean }>`
 	border: none;
 	padding: 1rem;
-	background: ${({ dark, theme }) => (dark ? '#2f2f2f' : theme.colors.dark.text)};
-	color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
+	background: var(--secondary-background);
+	color: var(--text);
 `;
 
 const BigField = styled.textarea<{ dark: boolean }>`
 	resize: none;
 	border: none;
 	padding: 1rem;
-	background: ${({ dark, theme }) => (dark ? '#2f2f2f' : theme.colors.dark.text)};
-	color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
+	background: var(--secondary-background);
+	color: var(--text);
 `;
 
 const Input: FC<Props & { className?: string }> = ({

@@ -47,7 +47,7 @@ const Wrapper = styled.div`
 	}
 
 	.blue {
-		color: #1573ca;
+		color: ${({ theme }) => theme.colors.blue};
 
 		@media (max-width: 768px) {
 			margin-top: 0.5rem;

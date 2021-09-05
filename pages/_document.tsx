@@ -69,6 +69,18 @@ class Doc extends Document {
 									const root = document.documentElement;
 
 									root.style.setProperty('--theme', theme);
+									root.style.setProperty(
+										'--background',
+										theme === 'light' ? '#F9F9F9' : '#262626'
+									);
+									root.style.setProperty(
+										'--secondary-background',
+										theme === 'light' ? 'white' : '#2F2F2F'
+									);
+									root.style.setProperty(
+										'--text',
+										theme === 'light' ? 'black' : 'white'
+									);
 								})();
 							`
 						}}

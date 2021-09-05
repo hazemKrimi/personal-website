@@ -12,11 +12,8 @@ const Btn = styled.button<Props>`
 	display: inline;
 	cursor: pointer;
 	background: none;
-	color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)};
-	border: ${({ variant, dark, theme }) =>
-		variant === 'outline'
-			? `2px solid ${dark ? theme.colors.dark.text : theme.colors.light.text}`
-			: 'none'};
+	color: var(--text);
+	border: ${({ variant }) => (variant === 'outline' ? '2px solid var(--text)' : 'none')};
 	font-weight: bold;
 	font-size: ${({ variant }) => (variant === 'outline' ? '1.05rem' : 'inherit')};
 	text-transform: ${({ variant }) => (variant === 'outline' ? 'uppercase' : 'inherit')};
@@ -37,24 +34,14 @@ const Btn = styled.button<Props>`
 		bottom: 0;
 		right: 0;
 		z-index: -1;
-		background-color: ${({ variant, dark, theme }) =>
-			variant === 'outline'
-				? dark
-					? theme.colors.dark.text
-					: theme.colors.light.text
-				: 'inherit'};
+		background-color: ${({ variant }) => (variant === 'outline' ? 'var(--text)' : 'inherit')};
 		transition: transform 250ms ease-in-out;
 		transform: scaleX(0);
 		transform-origin: left;
 	}
 
 	&:hover {
-		color: ${({ variant, dark, theme }) =>
-			variant === 'outline'
-				? dark
-					? theme.colors.dark.background
-					: theme.colors.light.background
-				: 'inherit'};
+		color: ${({ variant }) => (variant === 'outline' ? 'var(--background)' : 'inherit')};
 	}
 
 	&:hover::before {

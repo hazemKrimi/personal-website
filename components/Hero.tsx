@@ -42,7 +42,7 @@ const Wrapper = styled.div`
 	}
 
 	.blue {
-		color: #1573ca;
+		color: ${({ theme }) => theme.colors.blue};
 	}
 `;
 
