@@ -38,11 +38,17 @@ const Global = createGlobalStyle<Props>`
 		}
   }
 
+	html {
+		position: relative;
+		min-height: 100%;
+	}
+	
 	ul, ol {
 		margin-inline-start: 1.9rem;
 	}
 
 	body {
+		margin: 0 0 100px;
 		background: ${({ dark, theme }) =>
 			dark ? theme.colors.dark.background : theme.colors.light.background};
     color: ${({ dark, theme }) => (dark ? theme.colors.dark.text : theme.colors.light.text)}; 
