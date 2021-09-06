@@ -22,6 +22,8 @@ const DarkMode: FC = ({ children }) => {
 	const [dark, dispatch] = useReducer(reducer, false);
 	const toggle = () => {
 		const root = window.document.documentElement;
+		const lightFavicon = document.querySelector('link#light-favicon')!;
+		const darkFavicon = document.querySelector('link#dark-favicon')!;
 
 		if (dark) {
 			window.localStorage.setItem('theme', 'light');
@@ -29,12 +31,14 @@ const DarkMode: FC = ({ children }) => {
 			root.style.setProperty('--secondary-background', 'white');
 			root.style.setProperty('--text', 'black');
 			root.style.setProperty('--text-inverted', 'white');
+			document.head.append(darkFavicon);
 		} else {
 			window.localStorage.setItem('theme', 'dark');
 			root.style.setProperty('--background', '#262626');
 			root.style.setProperty('--secondary-background', '#2F2F2F');
 			root.style.setProperty('--text', 'white');
 			root.style.setProperty('--text-inverted', 'black');
+			document.head.append(lightFavicon);
 		}
 
 		dispatch({ type: 'TOGGLE' });

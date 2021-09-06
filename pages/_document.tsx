@@ -31,6 +31,8 @@ class Doc extends Document {
 		return (
 			<Html>
 				<Head>
+					<link rel='shortcut icon' href='light-favicon.png' id='light-favicon'></link>
+					<link rel='shortcut icon' href='dark-favicon.png' id='dark-favicon'></link>
 					<script async src='https://www.googletagmanager.com/gtag/js?id=G-FMD81GLKS3'></script>
 					<script
 						dangerouslySetInnerHTML={{
@@ -67,6 +69,8 @@ class Doc extends Document {
 								(() => {
 									const theme = getInitialTheme();
 									const root = document.documentElement;
+									const lightFavicon = document.querySelector('link#light-favicon');
+									const darkFavicon = document.querySelector('link#dark-favicon');
 
 									root.style.setProperty('--theme', theme);
 									root.style.setProperty(
@@ -85,6 +89,7 @@ class Doc extends Document {
 										'--text-inverted',
 										theme === 'light' ? 'white' : 'black'
 									);
+									document.head.append(theme === 'light' ? darkFavicon : lightFavicon);
 								})();
 							`
 						}}

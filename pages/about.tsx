@@ -100,9 +100,8 @@ const About: FC = () => {
 					name='description'
 					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
 				/>
-				<link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
 				<link rel='canonical' href='https://hazemkrimi.tech/about' />
-				<meta property='og:image' content='/logo.jpg' />
+				<meta property='og:image' content='/logo.png' />
 				<meta
 					property='og:description'
 					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
