@@ -81,6 +81,10 @@ const Wrapper = styled.div`
 			margin: 0.5rem 0rem;
 		}
 
+		button {
+			margin: 1rem 0rem;
+		}
+
 		p * {
 			width: 100%;
 			height: auto;
