@@ -84,9 +84,9 @@ const Card: FC<Props> = ({ title, description, image, tags, onClick }) => {
 				)}
 			</div>
 			{image ? (
-				<Image src={image} width={100} height={100} layout='responsive' />
+				<Image src={image} width='100%' height='100%' layout='responsive' />
 			) : (
-				<Image src='/no-image.png' width={100} height={100} layout='responsive' />
+				<Image src='/no-image.png' width='100%' height='100%' layout='responsive' />
 			)}
 		</StyledCard>
 	);
