@@ -99,6 +99,11 @@ const Wrapper = styled.div`
 			width: 100%;
 			height: auto;
 		}
+
+		ul,
+		ol {
+			margin-left: 1.5rem;
+		}
 	}
 `;
 

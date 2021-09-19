@@ -85,6 +85,11 @@ const Wrapper = styled.div`
 			width: 100%;
 			height: auto;
 		}
+
+		ul,
+		ol {
+			margin-left: 1.5rem;
+		}
 	}
 `;
 
@@ -144,7 +149,7 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 							))}
 						</div>
 					) : null}
-					{frontMatter.image ? (
+					{frontMatter.image && !frontMatter.hideImage ? (
 						<div className='image'>
 							<Image src={frontMatter.image} width='100%' height='100%' layout='responsive' />
 						</div>
