@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { useRouter } from 'next/router';
 import { getPortfolioProjects } from '../utils/portfolio';
 import { getBlogPosts } from '../utils/blog';
 import { GetStaticProps } from 'next';
@@ -75,8 +74,6 @@ const Wrapper = styled.div`
 `;
 
 const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
-	const router = useRouter();
-
 	return (
 		<>
 			<Head>
@@ -103,7 +100,7 @@ const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
 				<Hero />
 				<div className='content'>
 					<h1>Portfolio</h1>
-					<Button className='blue' onClick={() => router.push('/portfolio')}>
+					<Button href='/portfolio' className='blue'>
 						See More
 					</Button>
 					<div className='portfolio'>
@@ -112,7 +109,7 @@ const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
 								portfolioProjects
 									.slice(0, 3)
 									.map(({ slug, ...rest }) => (
-										<Card {...rest} key={slug} onClick={() => router.push(`/portfolio/${slug}`)} />
+										<Card {...rest} key={slug} href={`/portfolio/${slug}`} />
 									))
 							) : (
 								<h4>Nothing for now</h4>
@@ -120,7 +117,7 @@ const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
 						</div>
 					</div>
 					<h1>Blog</h1>
-					<Button className='blue' onClick={() => router.push('/blog')}>
+					<Button href='/blog' className='blue'>
 						See More
 					</Button>
 					<div className='blog'>
@@ -128,9 +125,7 @@ const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
 							{blogPosts.length !== 0 ? (
 								blogPosts
 									.slice(0, 3)
-									.map(({ slug, ...rest }) => (
-										<Card {...rest} key={slug} onClick={() => router.push(`/blog/${slug}`)} />
-									))
+									.map(({ slug, ...rest }) => <Card {...rest} key={slug} href={`/blog/${slug}`} />)
 							) : (
 								<h4>Nothing for now</h4>
 							)}

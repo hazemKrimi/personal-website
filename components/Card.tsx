@@ -2,12 +2,15 @@ import { FC, useContext } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
 import styled from 'styled-components';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Props {
 	title: string;
 	description: string;
 	image?: string;
 	tags?: string[];
+	href: string;
+	target?: HTMLAnchorElement['target'];
 	onClick?: () => void;
 }
 
@@ -18,6 +21,8 @@ const StyledCard = styled.div<{ dark: boolean; image: boolean }>`
 	grid-template-columns: auto 150px;
 	align-items: stretch;
 	transition: color 0ms ease-in-out;
+	text-decoration: none;
+	color: var(--text);
 
 	&:hover {
 		& > div {
@@ -67,28 +72,30 @@ const StyledCard = styled.div<{ dark: boolean; image: boolean }>`
 	}
 `;
 
-const Card: FC<Props> = ({ title, description, image, tags, onClick }) => {
+const Card: FC<Props> = ({ title, description, image, tags, href, target, onClick }) => {
 	const { dark } = useContext(DarkModeContext);
 
 	return (
-		<StyledCard dark={dark} onClick={onClick} image={!!image}>
-			<div>
-				<h3>{title}</h3>
-				<p>{description}</p>
-				{tags && (
-					<div className='tags-wrapper'>
-						{tags.map((tag, index) => (
-							<span key={index}>#{tag}&nbsp;</span>
-						))}
-					</div>
+		<Link href={href} passHref>
+			<StyledCard as='a' target={target} dark={dark} onClick={onClick} image={!!image}>
+				<div>
+					<h3>{title}</h3>
+					<p>{description}</p>
+					{tags && (
+						<div className='tags-wrapper'>
+							{tags.map((tag, index) => (
+								<span key={index}>#{tag}&nbsp;</span>
+							))}
+						</div>
+					)}
+				</div>
+				{image ? (
+					<Image src={image} width='100%' height='100%' layout='responsive' />
+				) : (
+					<Image src='/no-image.png' width='100%' height='100%' layout='responsive' />
 				)}
-			</div>
-			{image ? (
-				<Image src={image} width='100%' height='100%' layout='responsive' />
-			) : (
-				<Image src='/no-image.png' width='100%' height='100%' layout='responsive' />
-			)}
-		</StyledCard>
+			</StyledCard>
+		</Link>
 	);
 };
 

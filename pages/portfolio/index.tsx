@@ -85,7 +85,7 @@ const Index: FC<Props> = ({ portfolioProjects }) => {
 				<div className='projects-wrapper'>
 					{portfolioProjects.length !== 0 ? (
 						portfolioProjects.map(({ slug, ...rest }) => (
-							<Card {...rest} key={slug} onClick={() => router.push(`/portfolio/${slug}`)} />
+							<Card {...rest} key={slug} href={`/portfolio/${slug}`} />
 						))
 					) : (
 						<h4>Nothing for now</h4>

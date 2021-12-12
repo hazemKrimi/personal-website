@@ -1,11 +1,13 @@
 import { FC, useContext } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 interface Props {
 	variant?: 'outline' | 'text' | 'action';
 	type?: 'button' | 'submit';
 	link?: string;
+	target?: HTMLAnchorElement['target'];
 	dark?: boolean;
 	disabled?: boolean;
 }
@@ -29,6 +31,7 @@ const Btn = styled.button<Props>`
 		['action', 'outline'].includes(variant as string) ? '.5rem 1rem' : '0rem'};
 	text-align: ${({ variant }) =>
 		['action', 'outline'].includes(variant as string) ? 'center' : 'left'};
+	text-decoration: none;
 	transition: color 250ms ease-in-out;
 
 	${({ disabled }) =>
@@ -48,23 +51,29 @@ const MDXButton: FC<Props & { className?: string }> = ({
 	variant = 'text',
 	type = 'button',
 	link,
+	target,
 	children,
 	disabled,
 	className
 }) => {
 	const { dark } = useContext(DarkModeContext);
 
-	return (
-		<Btn
-			variant={variant}
-			type={type}
-			dark={dark}
-			onClick={() => {
-				if (link) window.open(link, '_blank');
-			}}
-			disabled={disabled}
-			className={className}
-		>
+	return link ? (
+		<Link href={link} passHref>
+			<Btn
+				as='a'
+				target={target}
+				variant={variant}
+				type={type}
+				dark={dark}
+				disabled={disabled}
+				className={className}
+			>
+				{children}
+			</Btn>
+		</Link>
+	) : (
+		<Btn variant={variant} type={type} dark={dark} disabled={disabled} className={className}>
 			{children}
 		</Btn>
 	);

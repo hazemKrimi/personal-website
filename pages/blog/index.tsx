@@ -86,7 +86,7 @@ const Index: FC<Props> = ({ blogPosts }) => {
 				<div className='articles-wrapper'>
 					{blogPosts.length !== 0 ? (
 						blogPosts.map(({ slug, ...rest }) => (
-							<Card {...rest} key={slug} onClick={() => router.push(`/blog/${slug}`)} />
+							<Card {...rest} key={slug} href={`/blog/${slug}`} />
 						))
 					) : (
 						<h4>Nothing for now</h4>

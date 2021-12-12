@@ -55,7 +55,6 @@ const Hero: FC = () => {
 				<h2>Hi, I am Hazem</h2>
 				<h2>I Like Building Things</h2>
 				<h2 className='blue'>Software Developer</h2>
-				<h2 className='blue'>Hard Working</h2>
 				<h2 className='blue'>Life Long Learner</h2>
 			</div>
 			<div className='illustration'>

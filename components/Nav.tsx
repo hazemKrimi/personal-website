@@ -1,7 +1,7 @@
 import { FC, useContext, useState } from 'react';
 import { DarkModeContext } from './DarkMode';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
 import IconButton from './IconButton';
@@ -26,7 +26,8 @@ const Bar = styled.nav`
 		}
 	}
 
-	div {
+	div,
+	a.logo {
 		display: grid;
 		align-items: center;
 		column-gap: 1rem;
@@ -36,7 +37,9 @@ const Bar = styled.nav`
 		}
 	}
 
-	.logo {
+	a.logo {
+		text-decoration: none;
+		color: var(--text);
 		cursor: pointer;
 		grid-template-columns: repeat(2, auto);
 		justify-content: flex-start;
@@ -65,31 +68,32 @@ const Bar = styled.nav`
 const Nav: FC = () => {
 	const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
 	const { dark, toggle } = useContext(DarkModeContext);
-	const router = useRouter();
 
 	return (
 		<Bar>
-			<div className='logo' onClick={() => router.push('/')}>
-				<Image
-					className='logo-image'
-					src={dark ? '/light-logo.svg' : '/dark-logo.svg'}
-					alt='Logo Image'
-					width={48}
-					height={48}
-				/>
-				<h1>Hazem Krimi</h1>
-			</div>
+			<Link href='/' passHref>
+				<a className='logo'>
+					<Image
+						className='logo-image'
+						src={dark ? '/light-logo.svg' : '/dark-logo.svg'}
+						alt='Logo Image'
+						width={48}
+						height={48}
+					/>
+					<h1>Hazem Krimi</h1>
+				</a>
+			</Link>
 			<div className='buttons'>
 				<IconButton icon={dark ? '/icons/sun.svg' : '/icons/moon.svg'} onClick={toggle} />
-				<Button onClick={() => router.push('/about')}>About</Button>
-				<Button onClick={() => router.push('/portfolio')}>Portfolio</Button>
-				<Button onClick={() => router.push('/blog')}>Blog</Button>
-				<Button variant='outline' onClick={() => window.open('/resume.pdf', '_blank')}>
+				<Button href='/about'>About</Button>
+				<Button href='/portfolio'>Portfolio</Button>
+				<Button href='/blog'>Blog</Button>
+				<Button href='/resume.pdf' target='_blank' variant='outline'>
 					Resume
 				</Button>
 			</div>
 			<div className='mobile-buttons'>
-				<Button variant='outline' onClick={() => window.open('/hazem-krimi.pdf', '_blank')}>
+				<Button href='/resume.pdf' target='_blank' variant='outline'>
 					Resume
 				</Button>
 				<IconButton

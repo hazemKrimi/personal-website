@@ -53,31 +53,36 @@ const Footer: FC = () => {
 					icon={dark ? '/icons/light-github.svg' : '/icons/dark-github.svg'}
 					width={16}
 					height={16}
-					onClick={() => window.open('https://github.com/hazemKrimi', '_blank')}
+					href='https://github.com/hazemKrimi'
+					target='_blank'
 				/>
 				<IconButton
 					icon={dark ? '/icons/light-twitter.svg' : '/icons/dark-twitter.svg'}
 					width={16}
 					height={16}
-					onClick={() => window.open('https://twitter.com/HazemKrimi', '_blank')}
+					href='https://twitter.com/HazemKrimi'
+					target='_blank'
 				/>
 				<IconButton
 					icon={dark ? '/icons/light-linkedin.svg' : '/icons/dark-linkedin.svg'}
 					width={16}
 					height={16}
-					onClick={() => window.open('https://linkedin.com/in/hazemkrimi', '_blank')}
+					href='https://linkedin.com/in/hazemkrimi'
+					target='_blank'
 				/>
 				<IconButton
 					icon={dark ? '/icons/light-codepen.svg' : '/icons/dark-codepen.svg'}
 					width={16}
 					height={16}
-					onClick={() => window.open('https://codepen.io/hazemkrimi', '_blank')}
+					href='https://codepen.io/hazemkrimi'
+					target='_blank'
 				/>
 				<IconButton
 					icon={dark ? '/icons/light-dribbble.svg' : '/icons/dark-dribbble.svg'}
 					width={16}
 					height={16}
-					onClick={() => window.open('https://dribbble.com/HazemKrimi', '_blank')}
+					href='https://dribbble.com/HazemKrimi'
+					target='_blank'
 				/>
 			</div>
 			<p>Hazem Krimi &copy; {new Date().getFullYear()}</p>

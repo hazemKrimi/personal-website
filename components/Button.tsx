@@ -1,13 +1,17 @@
 import { FC, useContext } from 'react';
 import { DarkModeContext } from '../components/DarkMode';
 import styled from 'styled-components';
+import Link from 'next/link';
+
 interface Props {
 	variant?: 'outline' | 'text';
+	href: string;
+	target?: HTMLAnchorElement['target'];
 	onClick?: () => void;
 	dark?: boolean;
 }
 
-const Btn = styled.button<Props>`
+const Btn = styled.button<Omit<Props, 'href'>>`
 	position: relative;
 	display: inline;
 	cursor: pointer;
@@ -19,6 +23,7 @@ const Btn = styled.button<Props>`
 	text-transform: ${({ variant }) => (variant === 'outline' ? 'uppercase' : 'inherit')};
 	padding: ${({ variant }) => (variant === 'outline' ? '.5rem 1rem' : '0rem')};
 	text-align: left;
+	text-decoration: none;
 	transition: color 250ms ease-in-out;
 	z-index: 1;
 
@@ -41,7 +46,9 @@ const Btn = styled.button<Props>`
 	}
 
 	&:hover {
-		color: ${({ variant }) => (variant === 'outline' ? 'var(--background)' : 'inherit')};
+		@media (min-width: 768px) {
+			color: ${({ variant }) => (variant === 'outline' ? 'var(--background)' : 'inherit')};
+		}
 	}
 
 	&:hover::before {
@@ -51,6 +58,8 @@ const Btn = styled.button<Props>`
 
 const Button: FC<Props & { className?: string }> = ({
 	variant = 'text',
+	href,
+	target,
 	onClick,
 	children,
 	className
@@ -58,9 +67,18 @@ const Button: FC<Props & { className?: string }> = ({
 	const { dark } = useContext(DarkModeContext);
 
 	return (
-		<Btn variant={variant} dark={dark} onClick={onClick} className={className}>
-			{children}
-		</Btn>
+		<Link href={href} passHref>
+			<Btn
+				as='a'
+				target={target}
+				variant={variant}
+				dark={dark}
+				onClick={onClick}
+				className={className}
+			>
+				{children}
+			</Btn>
+		</Link>
 	);
 };
 
