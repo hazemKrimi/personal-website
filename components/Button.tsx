@@ -46,9 +46,7 @@ const Btn = styled.button<Omit<Props, 'href'>>`
 	}
 
 	&:hover {
-		@media (min-width: 768px) {
-			color: ${({ variant }) => (variant === 'outline' ? 'var(--background)' : 'inherit')};
-		}
+		color: ${({ variant }) => (variant === 'outline' ? 'var(--background)' : 'inherit')};
 	}
 
 	&:hover::before {
