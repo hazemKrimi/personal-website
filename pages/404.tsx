@@ -1,32 +1,8 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
 import Head from 'next/head';
 import IconButton from '../components/IconButton';
-
-const Wrapper = styled.div`
-	min-height: 75vh;
-	display: grid;
-	justify-items: center;
-	text-align: center;
-
-	@media (max-width: 768px) {
-		min-height: 65vh;
-	}
-
-	h1 {
-		font-size: 1.7rem;
-		align-self: flex-end;
-	}
-
-	.back {
-		cursor: pointer;
-		color: #3f9aee;
-		display: flex;
-		align-items: center;
-		align-self: flex-start;
-	}
-`;
+import { Wrapper } from './styles/404';
 
 const NotFound: FC = () => {
 	const router = useRouter();

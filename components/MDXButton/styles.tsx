@@ -1,18 +1,7 @@
-import { FC, useContext } from 'react';
-import { DarkModeContext } from '../components/DarkMode';
-import Link from 'next/link';
 import styled from 'styled-components';
+import { Props } from './types';
 
-interface Props {
-	variant?: 'outline' | 'text' | 'action';
-	type?: 'button' | 'submit';
-	link?: string;
-	target?: HTMLAnchorElement['target'];
-	dark?: boolean;
-	disabled?: boolean;
-}
-
-const Btn = styled.button<Props>`
+export const Btn = styled.button<Props>`
 	cursor: pointer;
 	display: ${({ variant }) =>
 		['action', 'outline'].includes(variant as string) ? 'block' : 'inline'};
@@ -46,37 +35,3 @@ const Btn = styled.button<Props>`
 			['action', 'outline'].includes(variant as string) ? '.5rem .75rem' : '0rem'};
 	}
 `;
-
-const MDXButton: FC<Props & { className?: string }> = ({
-	variant = 'text',
-	type = 'button',
-	link,
-	target,
-	children,
-	disabled,
-	className
-}) => {
-	const { dark } = useContext(DarkModeContext);
-
-	return link ? (
-		<Link href={link} passHref>
-			<Btn
-				as='a'
-				target={target}
-				variant={variant}
-				type={type}
-				dark={dark}
-				disabled={disabled}
-				className={className}
-			>
-				{children}
-			</Btn>
-		</Link>
-	) : (
-		<Btn variant={variant} type={type} dark={dark} disabled={disabled} className={className}>
-			{children}
-		</Btn>
-	);
-};
-
-export default MDXButton;

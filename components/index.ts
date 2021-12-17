@@ -2,7 +2,7 @@ import { CodePen, Gist, YouTube, CodeSandbox, Vimeo, Tweet } from 'mdx-embed';
 import Image from 'next/image';
 import MDXButton from './MDXButton';
 
-const All = {
+export default {
 	Button: MDXButton,
 	Image,
 	CodePen,
@@ -12,5 +12,3 @@ const All = {
 	Tweet,
 	YouTube
 };
-
-export default All;

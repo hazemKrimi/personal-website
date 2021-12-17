@@ -7,9 +7,9 @@ import { MDXEmbedProvider } from 'mdx-embed';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
-import styled from 'styled-components';
 import matter from 'gray-matter';
-import AllComponents from '../../components/All';
+import components from '../../components';
+import { Wrapper } from '../styles/portfolio/slug';
 import Head from 'next/head';
 import IconButton from '../../components/IconButton';
 import CodeBlock from '../../components/CodeBlock';
@@ -19,85 +19,6 @@ interface Props {
 	source: MdxRemote.Source;
 	frontMatter: any;
 }
-
-const Wrapper = styled.div`
-	min-height: 75vh;
-	padding: 1rem 0rem;
-	display: grid;
-	grid-template-rows: auto 1fr;
-	row-gap: 2rem;
-
-	@media (max-width: 768px) {
-		row-gap: 1rem;
-	}
-
-	.meta {
-		.back {
-			cursor: pointer;
-			text-align: left;
-			color: #3f9aee;
-			display: inline-flex;
-			align-items: center;
-		}
-
-		.image {
-			margin: 1rem 0rem;
-		}
-
-		h1,
-		p {
-			text-align: left;
-		}
-
-		h1 {
-			font-size: 2rem;
-		}
-
-		h2 {
-			font-size: 1.2rem;
-		}
-	}
-
-	hr {
-		height: 0.1rem;
-		opacity: 0.3;
-		margin: 1rem auto 0rem auto;
-	}
-
-	.content {
-		h1 {
-			font-size: 1.5rem;
-		}
-
-		h2 {
-			font-size: 1.3rem;
-		}
-
-		h3 {
-			font-size: 1.1rem;
-		}
-
-		& > * {
-			margin: 0.5rem 0rem;
-		}
-
-		button {
-			margin: 1rem 0rem;
-		}
-
-		p * {
-			width: 100%;
-			height: auto;
-		}
-
-		ul,
-		ol {
-			margin-left: 1.5rem;
-		}
-	}
-`;
-
-const components = AllComponents;
 
 const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 	const content = hydrate(source, { components });

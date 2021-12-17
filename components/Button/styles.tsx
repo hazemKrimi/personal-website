@@ -1,17 +1,7 @@
-import { FC, useContext } from 'react';
-import { DarkModeContext } from '../components/DarkMode';
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Props } from './types';
 
-interface Props {
-	variant?: 'outline' | 'text';
-	href: string;
-	target?: HTMLAnchorElement['target'];
-	onClick?: () => void;
-	dark?: boolean;
-}
-
-const Btn = styled.button<Omit<Props, 'href'>>`
+export const Btn = styled.button<Omit<Props, 'href'>>`
 	position: relative;
 	display: inline;
 	cursor: pointer;
@@ -53,31 +43,3 @@ const Btn = styled.button<Omit<Props, 'href'>>`
 		transform: scaleX(1);
 	}
 `;
-
-const Button: FC<Props & { className?: string }> = ({
-	variant = 'text',
-	href,
-	target,
-	onClick,
-	children,
-	className
-}) => {
-	const { dark } = useContext(DarkModeContext);
-
-	return (
-		<Link href={href} passHref>
-			<Btn
-				as='a'
-				target={target}
-				variant={variant}
-				dark={dark}
-				onClick={onClick}
-				className={className}
-			>
-				{children}
-			</Btn>
-		</Link>
-	);
-};
-
-export default Button;

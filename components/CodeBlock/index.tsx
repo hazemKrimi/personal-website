@@ -1,30 +1,7 @@
 import { FC } from 'react';
-import styled from 'styled-components';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/vsDark';
-
-const Pre = styled.pre`
-	text-align: left;
-	margin: 1em 0;
-	padding: 0.5em;
-	overflow: scroll;
-`;
-
-const Line = styled.div`
-	display: table-row;
-`;
-
-const LineNo = styled.span`
-	display: table-cell;
-	text-align: right;
-	padding-right: 1em;
-	user-select: none;
-	opacity: 0.5;
-`;
-
-const LineContent = styled.span`
-	display: table-cell;
-`;
+import { Line, LineContent, LineNo, Pre } from './styles';
 
 const CodeBlock: FC<{ className: string }> = ({ children, className }) => {
 	const language = className.replace(/language-/, '') as Language;
