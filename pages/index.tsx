@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { getPortfolioProjects } from '../utils/portfolio';
 import { getBlogPosts } from '../utils/blog';
 import { GetStaticProps } from 'next';
-import { Wrapper } from './styles/home';
+import { Wrapper } from '../styles/home';
 import Hero from '../components/Hero';
 import Button from '../components/Button';
 import Card from '../components/Card';

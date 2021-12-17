@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 import { getBlogPosts } from '../../utils/blog';
-import { Wrapper } from '../styles/blog';
+import { Wrapper } from '../../styles/blog';
 import Card from '../../components/Card';
 import IconButton from '../../components/IconButton';
 import Head from 'next/head';

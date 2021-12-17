@@ -9,7 +9,7 @@ import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 import matter from 'gray-matter';
 import components from '../../components';
-import { Wrapper } from '../styles/portfolio/slug';
+import { Wrapper } from '../../styles/portfolio/slug';
 import Head from 'next/head';
 import IconButton from '../../components/IconButton';
 import CodeBlock from '../../components/CodeBlock';

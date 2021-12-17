@@ -7,7 +7,7 @@ import { MDXEmbedProvider } from 'mdx-embed';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
-import { Wrapper } from '../styles/blog/slug';
+import { Wrapper } from '../../styles/blog/slug';
 import matter from 'gray-matter';
 import components from '../../components';
 import Head from 'next/head';

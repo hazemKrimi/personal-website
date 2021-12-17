@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { getPortfolioProjects } from '../../utils/portfolio';
 import { useRouter } from 'next/router';
-import { Wrapper } from '../styles/portfolio';
+import { Wrapper } from '../../styles/portfolio';
 import Card from '../../components/Card';
 import IconButton from '../../components/IconButton';
 import Head from 'next/head';
