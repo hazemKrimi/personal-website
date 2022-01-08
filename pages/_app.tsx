@@ -5,10 +5,10 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import Nav from '../components/Nav';
-import DarkMode from '../components/DarkMode';
+import Theme from '../styles/theme';
 import Container from '../components/Container';
 import GlobalStyles from '../components/GlobalStyles';
-import Theme from '../components/Theme';
+import SharedStyles from '../styles/shared';
 import Footer from '../components/Footer';
 
 import NProgress from 'nprogress';
@@ -42,16 +42,16 @@ const App = ({ Component, pageProps }: AppProps) => {
 					rel='stylesheet'
 				/>
 			</Head>
-			<DarkMode>
-				<Theme>
+			<Theme>
+				<SharedStyles>
 					<GlobalStyles />
 					<Container>
 						<Nav />
 						<Component {...pageProps} />
 						<Footer />
 					</Container>
-				</Theme>
-			</DarkMode>
+				</SharedStyles>
+			</Theme>
 		</>
 	);
 };

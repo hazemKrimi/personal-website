@@ -3,6 +3,6 @@ export type Props = {
 	type?: 'button' | 'submit';
 	link?: string;
 	target?: HTMLAnchorElement['target'];
-	dark?: boolean;
+	mode?: string;
 	disabled?: boolean;
 };

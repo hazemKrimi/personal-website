@@ -48,8 +48,8 @@ class Doc extends Document {
 					<script
 						dangerouslySetInnerHTML={{
 							__html: `
-								function getInitialTheme() {
-									const persistedColorPreference = window.localStorage.getItem('theme');
+								function getInitialThemeMode() {
+									const persistedColorPreference = window.localStorage.getItem('mode');
 									const hasPersistedPreference = typeof persistedColorPreference === 'string';
 
 									if (hasPersistedPreference) {
@@ -67,29 +67,29 @@ class Doc extends Document {
 								}
 
 								(() => {
-									const theme = getInitialTheme();
+									const mode = getInitialThemeMode();
 									const root = document.documentElement;
 									const lightFavicon = document.querySelector('link#light-favicon');
 									const darkFavicon = document.querySelector('link#dark-favicon');
 
-									root.style.setProperty('--theme', theme);
+									root.style.setProperty('--mode', mode);
 									root.style.setProperty(
 										'--background',
-										theme === 'light' ? '#F9F9F9' : '#262626'
+										mode === 'light' ? '#F9F9F9' : '#262626'
 									);
 									root.style.setProperty(
 										'--secondary-background',
-										theme === 'light' ? 'white' : '#2F2F2F'
+										mode === 'light' ? 'white' : '#2F2F2F'
 									);
 									root.style.setProperty(
 										'--text',
-										theme === 'light' ? 'black' : 'white'
+										mode === 'light' ? 'black' : 'white'
 									);
 									root.style.setProperty(
 										'--text-inverted',
-										theme === 'light' ? 'white' : 'black'
+										mode === 'light' ? 'white' : 'black'
 									);
-									document.head.append(theme === 'light' ? darkFavicon : lightFavicon);
+									document.head.append(mode === 'light' ? darkFavicon : lightFavicon);
 								})();
 							`
 						}}

@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { DarkModeContext } from '../../components/DarkMode';
+import { ThemeContext } from '../../styles/theme';
 import { Props } from './types';
 import { Btn } from './styles';
 import Link from 'next/link';
@@ -12,18 +12,9 @@ const Button: FC<Props & { className?: string }> = ({
 	children,
 	className
 }) => {
-	const { dark } = useContext(DarkModeContext);
-
 	return (
 		<Link href={href} passHref>
-			<Btn
-				as='a'
-				target={target}
-				variant={variant}
-				dark={dark}
-				onClick={onClick}
-				className={className}
-			>
+			<Btn as='a' target={target} variant={variant} onClick={onClick} className={className}>
 				{children}
 			</Btn>
 		</Link>

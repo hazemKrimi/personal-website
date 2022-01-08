@@ -4,6 +4,5 @@ export type Props = {
 };
 
 export type StyledProps = {
-	dark: boolean;
 	open: boolean;
 };

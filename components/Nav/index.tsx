@@ -1,5 +1,5 @@
 import { FC, useContext, useState } from 'react';
-import { DarkModeContext } from '../DarkMode';
+import { ThemeContext } from '../../styles/theme';
 import { Bar } from './styles';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ import MobileNav from '../MobileNav';
 
 const Nav: FC = () => {
 	const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
-	const { dark, toggle } = useContext(DarkModeContext);
+	const { mode, toggle } = useContext(ThemeContext);
 
 	return (
 		<Bar>
@@ -17,7 +17,7 @@ const Nav: FC = () => {
 				<a className='logo'>
 					<Image
 						className='logo-image'
-						src={dark ? '/light-logo.svg' : '/dark-logo.svg'}
+						src={mode === 'dark' ? '/light-logo.svg' : '/dark-logo.svg'}
 						alt='Logo Image'
 						width={48}
 						height={48}
@@ -26,7 +26,10 @@ const Nav: FC = () => {
 				</a>
 			</Link>
 			<div className='buttons'>
-				<IconButton icon={dark ? '/icons/sun.svg' : '/icons/moon.svg'} onClick={toggle} />
+				<IconButton
+					icon={mode === 'dark' ? '/icons/sun.svg' : '/icons/moon.svg'}
+					onClick={toggle}
+				/>
 				<Button href='/about'>About</Button>
 				<Button href='/portfolio'>Portfolio</Button>
 				<Button href='/blog'>Blog</Button>
@@ -39,7 +42,7 @@ const Nav: FC = () => {
 					Resume
 				</Button>
 				<IconButton
-					icon={dark ? '/icons/light-menu.svg' : '/icons/dark-menu.svg'}
+					icon={mode === 'dark' ? '/icons/light-menu.svg' : '/icons/dark-menu.svg'}
 					onClick={() => setMobileNavOpen(true)}
 				/>
 			</div>

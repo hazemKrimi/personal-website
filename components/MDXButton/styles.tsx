@@ -7,10 +7,11 @@ export const Btn = styled.button<Props>`
 		['action', 'outline'].includes(variant as string) ? 'block' : 'inline'};
 	width: ${({ variant }) => (['action', 'outline'].includes(variant as string) ? '100%' : 'auto')};
 	/* TODO: fix theme blue color problem */
-	background: ${({ variant, theme }) => (variant === 'action' ? '#1573CA' : 'none')};
-	color: ${({ variant, dark }) => (variant === 'action' ? 'white' : dark ? 'white' : 'black')};
-	border: ${({ variant, dark }) =>
-		variant === 'outline' ? `2px solid ${dark ? 'white' : 'black'}` : 'none'};
+	background: ${({ variant }) => (variant === 'action' ? '#1573CA' : 'none')};
+	color: ${({ variant, mode }) =>
+		variant === 'action' ? 'white' : mode === 'dark' ? 'white' : 'black'};
+	border: ${({ variant, mode }) =>
+		variant === 'outline' ? `2px solid ${mode === 'dark' ? 'white' : 'black'}` : 'none'};
 	font-weight: bold;
 	font-size: ${({ variant }) =>
 		['action', 'outline'].includes(variant as string) ? '1.05rem' : 'inherit'};

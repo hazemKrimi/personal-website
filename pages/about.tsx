@@ -1,5 +1,5 @@
 import React, { FC, useContext, useState } from 'react';
-import { DarkModeContext } from '../components/DarkMode';
+import { ThemeContext } from '../styles/theme';
 import { useForm, ValidationError } from '@formspree/react';
 import Head from 'next/head';
 import { Wrapper } from '../styles/about';
@@ -8,7 +8,7 @@ import Input from '../components/Input';
 import MDXButton from '../components/MDXButton';
 
 const About: FC = () => {
-	const { dark } = useContext(DarkModeContext);
+	const { mode } = useContext(ThemeContext);
 	const [form, setForm] = useState<{ name: string; email: string; message: string }>({
 		name: '',
 		email: '',
@@ -53,7 +53,7 @@ const About: FC = () => {
 				/>
 				<title>About | Hazem Krimi</title>
 			</Head>
-			<Wrapper dark={dark}>
+			<Wrapper>
 				<div className='content'>
 					<div>
 						<h1>About Me</h1>

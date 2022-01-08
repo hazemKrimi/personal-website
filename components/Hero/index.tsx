@@ -1,10 +1,10 @@
 import { FC, useContext } from 'react';
-import { DarkModeContext } from '../../components/DarkMode';
+import { ThemeContext } from '../../styles/theme';
 import { Wrapper } from './styles';
 import Image from 'next/image';
 
 const Hero: FC = () => {
-	const { dark } = useContext(DarkModeContext);
+	const { mode } = useContext(ThemeContext);
 
 	return (
 		<Wrapper>
@@ -16,7 +16,7 @@ const Hero: FC = () => {
 			</div>
 			<div className='illustration'>
 				<Image
-					src={dark ? '/dark-illustration.svg' : '/light-illustration.svg'}
+					src={mode === 'dark' ? '/dark-illustration.svg' : '/light-illustration.svg'}
 					width='100%'
 					height='100%'
 					layout='responsive'

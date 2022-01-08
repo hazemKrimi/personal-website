@@ -1,5 +1,4 @@
-import { FC, useContext } from 'react';
-import { DarkModeContext } from '../../components/DarkMode';
+import { FC } from 'react';
 import { StyledCard } from './styles';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,11 +14,9 @@ interface Props {
 }
 
 const Card: FC<Props> = ({ title, description, image, tags, href, target, onClick }) => {
-	const { dark } = useContext(DarkModeContext);
-
 	return (
 		<Link href={href} passHref>
-			<StyledCard as='a' target={target} dark={dark} onClick={onClick} image={!!image}>
+			<StyledCard as='a' target={target} onClick={onClick} image={!!image}>
 				<div>
 					<h3>{title}</h3>
 					<p>{description}</p>

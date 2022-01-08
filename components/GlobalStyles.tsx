@@ -1,11 +1,6 @@
-import { FC, useContext } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { DarkModeContext } from '../components/DarkMode';
-interface Props {
-	dark: boolean;
-}
 
-const Global = createGlobalStyle<Props>`
+const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -70,11 +65,5 @@ const Global = createGlobalStyle<Props>`
 		background-color: var(--text) !important;
 	}
 `;
-
-const GlobalStyles: FC = () => {
-	const { dark } = useContext(DarkModeContext);
-
-	return <Global dark={dark} />;
-};
 
 export default GlobalStyles;

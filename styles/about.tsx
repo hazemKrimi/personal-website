@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div<{ dark: boolean }>`
+export const Wrapper = styled.div`
 	padding: 1rem 0rem;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);

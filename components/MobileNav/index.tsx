@@ -1,12 +1,12 @@
 import { FC, useContext, useRef, useEffect } from 'react';
-import { DarkModeContext } from '../DarkMode';
+import { ThemeContext } from '../../styles/theme';
 import { Props } from './types';
 import { Bar } from './styles';
 import IconButton from '../IconButton';
 import Button from '../Button';
 
 const MobileNav: FC<Props> = ({ open, close }) => {
-	const { dark, toggle } = useContext(DarkModeContext);
+	const { mode, toggle } = useContext(ThemeContext);
 	const ref = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -29,16 +29,16 @@ const MobileNav: FC<Props> = ({ open, close }) => {
 	});
 
 	return (
-		<Bar dark={dark} open={open} ref={ref}>
+		<Bar open={open} ref={ref}>
 			<div className='close'>
 				<IconButton
-					icon={dark ? '/icons/dark-close.svg' : '/icons/light-close.svg'}
+					icon={mode === 'dark' ? '/icons/dark-close.svg' : '/icons/light-close.svg'}
 					onClick={close}
 				/>
 			</div>
 			<div className='mobile-button-wrapper'>
 				<Button href='#' onClick={() => toggle()}>
-					{dark ? 'Light Mode' : 'Dark Mode'}
+					{mode === 'dark' ? 'Light Mode' : 'Dark Mode'}
 				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>

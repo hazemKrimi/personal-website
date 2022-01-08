@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledCard = styled.div<{ dark: boolean; image: boolean }>`
+export const StyledCard = styled.div<{ image: boolean }>`
 	cursor: pointer;
 	width: 100%;
 	display: grid;

@@ -1,5 +1,4 @@
-import React, { FC, useContext } from 'react';
-import { DarkModeContext } from '../components/DarkMode';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 interface Props {
@@ -12,14 +11,14 @@ interface Props {
 	onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
-const SmallField = styled.input<{ dark: boolean }>`
+const SmallField = styled.input`
 	border: none;
 	padding: 1rem;
 	background: var(--secondary-background);
 	color: var(--text);
 `;
 
-const BigField = styled.textarea<{ dark: boolean }>`
+const BigField = styled.textarea`
 	resize: none;
 	border: none;
 	padding: 1rem;
@@ -37,11 +36,8 @@ const Input: FC<Props & { className?: string }> = ({
 	className,
 	onChange
 }) => {
-	const { dark } = useContext(DarkModeContext);
-
 	return variant === 'small' ? (
 		<SmallField
-			dark={dark}
 			type={type}
 			name={name}
 			value={value}
@@ -52,7 +48,6 @@ const Input: FC<Props & { className?: string }> = ({
 		/>
 	) : (
 		<BigField
-			dark={dark}
 			name={name}
 			value={value}
 			required={required}

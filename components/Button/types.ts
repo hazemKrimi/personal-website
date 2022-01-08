@@ -3,5 +3,4 @@ export type Props = {
 	href: string;
 	target?: HTMLAnchorElement['target'];
 	onClick?: () => void;
-	dark?: boolean;
 };

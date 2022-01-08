@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { DarkModeContext } from '../../components/DarkMode';
+import { ThemeContext } from '../../styles/theme';
 import { Props } from './types';
 import { Btn } from './styles';
 import Link from 'next/link';
@@ -13,7 +13,7 @@ const MDXButton: FC<Props & { className?: string }> = ({
 	disabled,
 	className
 }) => {
-	const { dark } = useContext(DarkModeContext);
+	const { mode } = useContext(ThemeContext);
 
 	return link ? (
 		<Link href={link} passHref>
@@ -22,7 +22,7 @@ const MDXButton: FC<Props & { className?: string }> = ({
 				target={target}
 				variant={variant}
 				type={type}
-				dark={dark}
+				mode={mode}
 				disabled={disabled}
 				className={className}
 			>
@@ -30,7 +30,7 @@ const MDXButton: FC<Props & { className?: string }> = ({
 			</Btn>
 		</Link>
 	) : (
-		<Btn variant={variant} type={type} dark={dark} disabled={disabled} className={className}>
+		<Btn variant={variant} type={type} mode={mode} disabled={disabled} className={className}>
 			{children}
 		</Btn>
 	);
