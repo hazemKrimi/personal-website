@@ -38,10 +38,13 @@ class Doc extends Document {
 						dangerouslySetInnerHTML={{
 							__html: `
 								window.dataLayer = window.dataLayer || [];
-								function gtag(){dataLayer.push(arguments);}
+								
+								function gtag() {
+									dataLayer.push(arguments);
+								}
+								
 								gtag('js', new Date());
-							
-								gtag('config', 'G-FMD81GLKS3');
+								gtag('config', ${process.env.GOOGLE_ANALYTICS_KEY});
 							`
 						}}
 					/>
