@@ -1,12 +1,11 @@
 import { FC, useEffect } from 'react';
 import { getBlogPostsSlugs, getBlogPostdata } from '../../utils/blog';
 import { useRouter } from 'next/router';
-import { MdxRemote } from 'next-mdx-remote/types';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXEmbedProvider } from 'mdx-embed';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import renderToString from 'next-mdx-remote/render-to-string';
-import hydrate from 'next-mdx-remote/hydrate';
+import { serialize } from 'next-mdx-remote/serialize';
 import { Wrapper } from '../../styles/blog/slug';
 import matter from 'gray-matter';
 import components from '../../components';
@@ -17,13 +16,12 @@ import readingTime from 'reading-time';
 import Image from 'next/image';
 
 interface Props {
-	source: MdxRemote.Source;
+	source: MDXRemoteSerializeResult;
 	frontMatter: any;
 	text: string;
 }
 
 const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
-	const content = hydrate(source, { components });
 	const router = useRouter();
 	const stats = readingTime(text);
 
@@ -92,7 +90,9 @@ const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 				</div>
 				<MDXProvider components={{ code: CodeBlock }}>
 					<MDXEmbedProvider>
-						<div className='content'>{content}</div>
+						<div className='content'>
+							<MDXRemote {...source} components={components} />
+						</div>
 					</MDXEmbedProvider>
 				</MDXProvider>
 			</Wrapper>
@@ -112,8 +112,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
 	const blogPostContent = await getBlogPostdata(params.slug);
 	const { data, content } = matter(blogPostContent);
-	const mdxSource = await renderToString(content, {
-		components,
+	const mdxSource = await serialize(content, {
 		scope: data
 	});
 

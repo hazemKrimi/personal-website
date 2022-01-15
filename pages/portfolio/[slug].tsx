@@ -1,12 +1,11 @@
 import { FC, useEffect, useRef } from 'react';
 import { getPortfolioPorjectsSlugs, getPortfolioProjectdata } from '../../utils/portfolio';
 import { useRouter } from 'next/router';
-import { MdxRemote } from 'next-mdx-remote/types';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXEmbedProvider } from 'mdx-embed';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import renderToString from 'next-mdx-remote/render-to-string';
-import hydrate from 'next-mdx-remote/hydrate';
+import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 import components from '../../components';
 import { Wrapper } from '../../styles/portfolio/slug';
@@ -16,12 +15,11 @@ import CodeBlock from '../../components/CodeBlock';
 import Image from 'next/image';
 
 interface Props {
-	source: MdxRemote.Source;
+	source: MDXRemoteSerializeResult;
 	frontMatter: any;
 }
 
 const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
-	const content = hydrate(source, { components });
 	const router = useRouter();
 	const metaRef = useRef<HTMLDivElement>(null);
 
@@ -83,7 +81,9 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 				</div>
 				<MDXProvider components={{ code: CodeBlock }}>
 					<MDXEmbedProvider>
-						<div className='content'>{content}</div>
+						<div className='content'>
+							<MDXRemote {...source} components={components} />
+						</div>
 					</MDXEmbedProvider>
 				</MDXProvider>
 			</Wrapper>
@@ -103,8 +103,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
 	const blogPostContent = await getPortfolioProjectdata(params.slug);
 	const { data, content } = matter(blogPostContent);
-	const mdxSource = await renderToString(content, {
-		components,
+	const mdxSource = await serialize(content, {
 		scope: data
 	});
 
