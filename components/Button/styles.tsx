@@ -9,7 +9,6 @@ export const Btn = styled.button<Omit<Props, 'href'>>`
 	color: var(--text);
 	border: ${({ variant }) => (variant === 'outline' ? '2px solid var(--text)' : 'none')};
 	font-weight: bold;
-	font-size: ${({ variant }) => (variant === 'outline' ? '1.05rem' : 'inherit')};
 	text-transform: ${({ variant }) => (variant === 'outline' ? 'uppercase' : 'inherit')};
 	padding: ${({ variant }) => (variant === 'outline' ? '.5rem 1rem' : '0rem')};
 	text-align: left;
