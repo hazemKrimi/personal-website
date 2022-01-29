@@ -37,18 +37,30 @@ const MobileNav: FC<Props> = ({ open, close }) => {
 				/>
 			</div>
 			<div className='mobile-button-wrapper'>
-				<Button href='#' onClick={() => toggle()}>
+				<Button
+					href='#'
+					onClick={() => {
+						toggle();
+						close();
+					}}
+				>
 					{mode === 'dark' ? 'Light Mode' : 'Dark Mode'}
 				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>
-				<Button href='/about'>About</Button>
+				<Button href='/about' onClick={() => close()}>
+					About
+				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>
-				<Button href='/portfolio'>Portfolio</Button>
+				<Button href='/portfolio' onClick={() => close()}>
+					Portfolio
+				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>
-				<Button href='/blog'>Blog</Button>
+				<Button href='/blog' onClick={() => close()}>
+					Blog
+				</Button>
 			</div>
 		</Bar>
 	);

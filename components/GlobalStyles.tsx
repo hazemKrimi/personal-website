@@ -36,7 +36,10 @@ const GlobalStyles = createGlobalStyle`
 		position: relative;
 		min-height: 100%;
 		background: var(--background) !important;
-    color: var(--text) !important;
+	}
+
+	* {
+    color: var(--text);
 	}
 	
 	ul, ol {

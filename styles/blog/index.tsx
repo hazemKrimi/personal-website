@@ -7,9 +7,12 @@ export const Wrapper = styled.div`
 	.back {
 		cursor: pointer;
 		text-align: left;
-		color: #3f9aee;
 		display: inline-flex;
 		align-items: center;
+
+		span {
+			color: ${({ theme }) => theme.colors.blue} !important;
+		}
 	}
 
 	h1 {

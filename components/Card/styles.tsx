@@ -13,7 +13,10 @@ export const StyledCard = styled.div<{ image: boolean }>`
 	&:hover {
 		& > div {
 			background: ${({ theme }) => theme.colors.blue};
-			color: ${({ theme }) => theme.colors.dark.text};
+
+			* {
+				color: ${({ theme }) => theme.colors.dark.text} !important;
+			}
 		}
 
 		img {

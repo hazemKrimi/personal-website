@@ -11,15 +11,6 @@ export const Wrapper = styled.div`
 		row-gap: 1rem;
 	}
 
-	h1,
-	h2,
-	p,
-	span,
-	ul,
-	ol {
-		color: var(--text);
-	}
-
 	.meta {
 		.back {
 			cursor: pointer;

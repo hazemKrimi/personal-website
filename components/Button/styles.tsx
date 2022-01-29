@@ -7,13 +7,14 @@ export const Btn = styled.button<Omit<Props, 'href'>>`
 	cursor: pointer;
 	background: none;
 	color: var(--text);
-	border: ${({ variant }) => (variant === 'outline' ? '2px solid var(--text)' : 'none')};
+	border: ${({ variant }) =>
+		variant === 'outline' ? '2px solid var(--text)' : '2px solid transparent'};
 	font-weight: bold;
 	text-transform: ${({ variant }) => (variant === 'outline' ? 'uppercase' : 'inherit')};
 	padding: ${({ variant }) => (variant === 'outline' ? '.5rem 1rem' : '0rem')};
 	text-align: left;
 	text-decoration: none;
-	transition: color 250ms ease-in-out;
+	transition: color 250ms ease-in-out, border 250ms ease-in-out;
 	z-index: 1;
 
 	@media (max-width: 768px) {
@@ -36,6 +37,7 @@ export const Btn = styled.button<Omit<Props, 'href'>>`
 
 	&:hover {
 		color: ${({ variant }) => (variant === 'outline' ? 'var(--background)' : 'inherit')};
+		border: 2px solid transparent;
 	}
 
 	&:hover::before {
