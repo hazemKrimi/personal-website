@@ -35,6 +35,8 @@ const GlobalStyles = createGlobalStyle`
 	html {
 		position: relative;
 		min-height: 100%;
+		background: var(--background) !important;
+    color: var(--text) !important;
 	}
 	
 	ul, ol {
@@ -43,8 +45,6 @@ const GlobalStyles = createGlobalStyle`
 
 	body {
 		margin: 0 0 100px;
-		background: var(--background);
-    color: var(--text); 
 		transition: color 250ms ease-in-out, background 250ms ease-in-out;
 		scroll-behavior: smooth;
 

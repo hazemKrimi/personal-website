@@ -11,13 +11,25 @@ export const Wrapper = styled.div`
 		row-gap: 1rem;
 	}
 
+	h1,
+	h2,
+	p,
+	span,
+	ul,
+	ol {
+		color: var(--text);
+	}
+
 	.meta {
 		.back {
 			cursor: pointer;
 			text-align: left;
-			color: #3f9aee;
 			display: inline-flex;
 			align-items: center;
+
+			span {
+				color: ${({ theme }) => theme.colors.blue} !important;
+			}
 		}
 
 		.image {

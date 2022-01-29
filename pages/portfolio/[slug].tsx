@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC, useEffect } from 'react';
 import { getPortfolioPorjectsSlugs, getPortfolioProjectdata } from '../../utils/portfolio';
 import { useRouter } from 'next/router';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
@@ -21,7 +21,6 @@ interface Props {
 
 const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 	const router = useRouter();
-	const metaRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -58,7 +57,7 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 				<title>{frontMatter.title} | Hazem Krimi</title>
 			</Head>
 			<Wrapper>
-				<div className='meta' ref={metaRef}>
+				<div className='meta'>
 					<div className='back' onClick={() => router.back()}>
 						<IconButton icon='/icons/arrow-left.svg' />
 						<span>Back</span>
