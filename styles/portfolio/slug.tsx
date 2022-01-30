@@ -75,7 +75,17 @@ export const Wrapper = styled.div`
 
 		ul,
 		ol {
-			margin-left: 1.5rem;
+			margin-inline-start: 0.5rem;
+			list-style-position: inside;
+		}
+
+		.showcase-buttons {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+			justify-content: space-between;
+			align-items: center;
 		}
 	}
 `;

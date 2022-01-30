@@ -12,6 +12,7 @@ import { Wrapper } from '../../styles/portfolio/slug';
 import Head from 'next/head';
 import IconButton from '../../components/IconButton';
 import CodeBlock from '../../components/CodeBlock';
+import MDXButton from '../../components/MDXButton';
 import Image from 'next/image';
 
 interface Props {
@@ -82,6 +83,16 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 					<MDXEmbedProvider>
 						<div className='content'>
 							<MDXRemote {...source} components={components} />
+							<h1>Showcase</h1>
+							<div className='showcase-buttons'>
+								<MDXButton variant='action' link={frontMatter.demo} target='_blank'>
+									Demo
+								</MDXButton>
+
+								<MDXButton variant='outline' link={frontMatter.code} target='_blank'>
+									Source Code
+								</MDXButton>
+							</div>
 						</div>
 					</MDXEmbedProvider>
 				</MDXProvider>
