@@ -15,8 +15,6 @@ import Footer from '../components/Footer';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-import { GOOGLE_ANALYTICS_KEY } from '../utils/gtag';
-
 NProgress.configure({ showSpinner: false });
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -38,28 +36,6 @@ const App = ({ Component, pageProps }: AppProps) => {
 
 	return (
 		<>
-			<Script
-				strategy='afterInteractive'
-				src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_KEY}`}
-			/>
-			<Script
-				id='analytics-init'
-				strategy='afterInteractive'
-				dangerouslySetInnerHTML={{
-					__html: `
-						window.dataLayer = window.dataLayer || [];
-						
-						function gtag() {
-							dataLayer.push(arguments);
-						}
-						
-						gtag('js', new Date());
-						gtag('config', ${GOOGLE_ANALYTICS_KEY}, {
-              page_path: window.location.pathname,
-            });
-					`
-				}}
-			/>
 			<Script
 				id='styles-init'
 				strategy='afterInteractive'
