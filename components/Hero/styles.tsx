@@ -3,16 +3,16 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
 	min-height: 45vh;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr 32.188rem;
 	align-items: center;
 	height: auto;
 	text-align: left;
 
-	@media (max-width: 425px) {
-		min-height: 65vh;
-		grid-template-columns: auto;
+	@media (max-width: 1024px) {
+		min-height: 35vh;
+		grid-template-columns: 1fr;
 
-		.illustration {
+		.photo {
 			display: none;
 		}
 	}
@@ -26,15 +26,6 @@ export const Wrapper = styled.div`
 
 		@media (min-width: 2560px) {
 			font-size: 3.5rem;
-		}
-	}
-
-	.small {
-		font-size: 1rem;
-		font-weight: normal;
-
-		@media (min-width: 1440px) {
-			font-size: 1.5rem;
 		}
 	}
 

@@ -88,7 +88,6 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 								<MDXButton variant='action' link={frontMatter.demo} target='_blank'>
 									Demo
 								</MDXButton>
-
 								<MDXButton variant='outline' link={frontMatter.code} target='_blank'>
 									Source Code
 								</MDXButton>

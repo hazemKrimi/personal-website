@@ -37,13 +37,6 @@ const Footer: FC = () => {
 					href='https://codepen.io/hazemkrimi'
 					target='_blank'
 				/>
-				<IconButton
-					icon={mode === 'dark' ? '/icons/light-dribbble.svg' : '/icons/dark-dribbble.svg'}
-					width={16}
-					height={16}
-					href='https://dribbble.com/HazemKrimi'
-					target='_blank'
-				/>
 			</div>
 			<p>Hazem Krimi &copy; {new Date().getFullYear()}</p>
 		</StyledFooter>

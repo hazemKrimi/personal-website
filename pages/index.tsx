@@ -52,38 +52,45 @@ const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
 			<Wrapper>
 				<Hero />
 				<div className='content'>
-					<h1>Portfolio</h1>
-					<Button href='/portfolio' className='blue'>
-						See More
-					</Button>
-					<div className='portfolio'>
-						<div className='projects-wrapper'>
-							{portfolioProjects.length !== 0 ? (
-								portfolioProjects
-									.slice(0, 3)
-									.map(({ slug, ...rest }) => (
+					<h1>About me</h1>
+					<div className='about'>
+						<p>
+							I am a software developer. I have experience as a full stack developer but I lean more
+							to the front end and I have built a lot of web apps and some mobile apps. Also, I am
+							always learning and experimenting with new technologies (currently learning about the
+							ethereum blockchain) and other topics other than software engineering.
+						</p>
+					</div>
+					{portfolioProjects.length !== 0 && (
+						<>
+							<h1>Portfolio</h1>
+							<Button href='/portfolio' className='blue'>
+								See More
+							</Button>
+							<div className='portfolio'>
+								<div className='projects-wrapper'>
+									{portfolioProjects.slice(0, 3).map(({ slug, ...rest }) => (
 										<Card {...rest} key={slug} href={`/portfolio/${slug}`} />
-									))
-							) : (
-								<h4>Nothing for now</h4>
-							)}
-						</div>
-					</div>
-					<h1>Blog</h1>
-					<Button href='/blog' className='blue'>
-						See More
-					</Button>
-					<div className='blog'>
-						<div className='articles-wrapper'>
-							{blogPosts.length !== 0 ? (
-								blogPosts
-									.slice(0, 3)
-									.map(({ slug, ...rest }) => <Card {...rest} key={slug} href={`/blog/${slug}`} />)
-							) : (
-								<h4>Nothing for now</h4>
-							)}
-						</div>
-					</div>
+									))}
+								</div>
+							</div>
+						</>
+					)}
+					{blogPosts.length !== 0 && (
+						<>
+							<h1>Blog</h1>
+							<Button href='/blog' className='blue'>
+								See More
+							</Button>
+							<div className='blog'>
+								<div className='articles-wrapper'>
+									{blogPosts.slice(0, 3).map(({ slug, ...rest }) => (
+										<Card {...rest} key={slug} href={`/blog/${slug}`} />
+									))}
+								</div>
+							</div>
+						</>
+					)}
 				</div>
 			</Wrapper>
 		</>

@@ -48,11 +48,6 @@ const MobileNav: FC<Props> = ({ open, close }) => {
 				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>
-				<Button href='/about' onClick={() => close()}>
-					About
-				</Button>
-			</div>
-			<div className='mobile-button-wrapper'>
 				<Button href='/portfolio' onClick={() => close()}>
 					Portfolio
 				</Button>
@@ -60,6 +55,11 @@ const MobileNav: FC<Props> = ({ open, close }) => {
 			<div className='mobile-button-wrapper'>
 				<Button href='/blog' onClick={() => close()}>
 					Blog
+				</Button>
+			</div>
+			<div className='mobile-button-wrapper'>
+				<Button href='/contact' onClick={() => close()}>
+					Contact
 				</Button>
 			</div>
 		</Bar>

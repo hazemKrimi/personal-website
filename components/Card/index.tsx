@@ -17,7 +17,7 @@ const Card: FC<Props> = ({ title, description, image, tags, href, target, onClic
 	return (
 		<Link href={href} passHref>
 			<StyledCard as='a' target={target} onClick={onClick} image={!!image}>
-				<div>
+				<div className='card-content'>
 					<h3>{title}</h3>
 					<p>{description}</p>
 					{tags && (
@@ -28,10 +28,10 @@ const Card: FC<Props> = ({ title, description, image, tags, href, target, onClic
 						</div>
 					)}
 				</div>
-				{image ? (
-					<Image src={image} width='100%' height='100%' layout='responsive' />
-				) : (
-					<Image src='/no-image.png' width='100%' height='100%' layout='responsive' />
+				{image && (
+					<div className='card-image'>
+						<Image src={image} layout='fill' objectFit='cover' />
+					</div>
 				)}
 			</StyledCard>
 		</Link>

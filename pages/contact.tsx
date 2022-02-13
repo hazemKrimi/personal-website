@@ -1,14 +1,11 @@
-import React, { FC, useContext, useState } from 'react';
-import { ThemeContext } from '../styles/theme';
+import React, { FC, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import Head from 'next/head';
 import { Wrapper } from '../styles/about';
-import Image from 'next/image';
 import Input from '../components/Input';
 import MDXButton from '../components/MDXButton';
 
 const About: FC = () => {
-	const { mode } = useContext(ThemeContext);
 	const [form, setForm] = useState<{ name: string; email: string; message: string }>({
 		name: '',
 		email: '',
@@ -51,22 +48,10 @@ const About: FC = () => {
 					name='keywords'
 					content='Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
 				/>
-				<title>About | Hazem Krimi</title>
+				<title>Contact | Hazem Krimi</title>
 			</Head>
 			<Wrapper>
 				<div className='content'>
-					<div>
-						<h1>About Me</h1>
-						<div className='about'>
-							<p>
-								I am a software developer and a student. I have experience as a full stack developer
-								but I lean more to the front end and I have built a lot of web apps and some mobile
-								apps. Also, I am always learning and experimenting with new technologies (currently
-								learning about the ethereum blockchain) and other topics other than software
-								engineering.
-							</p>
-						</div>
-					</div>
 					<div>
 						<h1>Contact Me {submitted && <span className='success'>Message sent ✔️</span>}</h1>
 						<form className='contact' onSubmit={handleSubmit}>
@@ -115,9 +100,6 @@ const About: FC = () => {
 							</MDXButton>
 						</form>
 					</div>
-				</div>
-				<div className='photo'>
-					<Image src='/picture.jpg' width='100%' height='100%' layout='responsive' />
 				</div>
 			</Wrapper>
 		</>

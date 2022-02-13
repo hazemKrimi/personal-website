@@ -30,9 +30,9 @@ const Nav: FC = () => {
 					icon={mode === 'dark' ? '/icons/sun.svg' : '/icons/moon.svg'}
 					onClick={toggle}
 				/>
-				<Button href='/about'>About</Button>
 				<Button href='/portfolio'>Portfolio</Button>
 				<Button href='/blog'>Blog</Button>
+				<Button href='/contact'>Contact</Button>
 				<Button href='/resume.pdf' target='_blank' variant='outline'>
 					Resume
 				</Button>

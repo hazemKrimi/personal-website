@@ -2,23 +2,12 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
 	padding: 1rem 0rem;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	column-gap: 2rem;
 
 	@media (max-width: 768px) {
 		padding: 0rem;
 		grid-template-columns: auto;
 		column-gap: 0rem;
 		row-gap: 1rem;
-	}
-
-	.photo {
-		order: initial;
-
-		@media (max-width: 768px) {
-			order: -1;
-		}
 	}
 
 	h1 {
@@ -30,7 +19,6 @@ export const Wrapper = styled.div`
 		flex-direction: column;
 	}
 
-	.about,
 	.contact {
 		margin: 1rem 0rem;
 

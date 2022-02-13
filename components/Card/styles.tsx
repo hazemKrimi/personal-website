@@ -4,11 +4,19 @@ export const StyledCard = styled.div<{ image: boolean }>`
 	cursor: pointer;
 	width: 100%;
 	display: grid;
-	grid-template-columns: auto 150px;
+	grid-template-columns: ${({ image }) => (image ? 'auto 9.375rem' : 'auto')};
 	align-items: stretch;
 	transition: color 0ms ease-in-out;
 	text-decoration: none;
 	color: var(--text);
+
+	@media (max-width: 320px) {
+		grid-template-columns: ${({ image }) => (image ? 'auto 7.813rem' : 'auto')};
+	}
+
+	@media (min-width: 1440px) {
+		grid-template-columns: ${({ image }) => (image ? 'auto 15.625rem' : 'auto')};
+	}
 
 	&:hover {
 		& > div {
@@ -24,7 +32,7 @@ export const StyledCard = styled.div<{ image: boolean }>`
 		}
 	}
 
-	& > div {
+	.card-content {
 		padding: 1rem 0rem;
 		background: var(--secondary-background);
 		display: grid;
@@ -33,6 +41,11 @@ export const StyledCard = styled.div<{ image: boolean }>`
 		@media (max-width: 768px) {
 			padding: 0.75rem 0rem;
 		}
+	}
+
+	.card-image {
+		position: relative;
+		width: 100%;
 	}
 
 	h3,

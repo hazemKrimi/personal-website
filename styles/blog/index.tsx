@@ -29,8 +29,8 @@ export const Wrapper = styled.div`
 
 	.articles-wrapper {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		grid-auto-rows: minmax(100px, auto);
+		grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+		grid-auto-rows: minmax(6.25rem, auto);
 		align-items: stretch;
 		justify-items: center;
 		gap: 1rem;
