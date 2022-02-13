@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import { useRouter } from 'next/router';
 
 import Nav from '../components/Nav';
@@ -13,6 +14,8 @@ import Footer from '../components/Footer';
 
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+
+import { initStyles } from '../utils/styles';
 
 NProgress.configure({ showSpinner: false });
 
@@ -35,6 +38,13 @@ const App = ({ Component, pageProps }: AppProps) => {
 
 	return (
 		<>
+			<Script
+				id='styles-init'
+				strategy='afterInteractive'
+				dangerouslySetInnerHTML={{
+					__html: initStyles()
+				}}
+			/>
 			<Head>
 				<link rel='shortcut icon' href='light-favicon.png' id='light-favicon'></link>
 				<link rel='shortcut icon' href='dark-favicon.png' id='dark-favicon'></link>
