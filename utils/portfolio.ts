@@ -5,9 +5,11 @@ import matter from 'gray-matter';
 const portfolioProjects = path.join(process.cwd(), '_portfolio');
 
 export const getPortfolioProjects = () => {
-	const fileNames = fs.readdirSync(portfolioProjects);
+	try {
+		const fileNames = fs.readdirSync(portfolioProjects);
 
-	if (fileNames) {
+		if (!fileNames) return [];
+
 		const allPortfolioProjectsData = fileNames.map(filename => {
 			const slug = filename.replace('.mdx', '');
 
@@ -36,15 +38,17 @@ export const getPortfolioProjects = () => {
 				return -1;
 			}
 		});
+	} catch {
+		return [];
 	}
-
-	return [];
 };
 
 export const getPortfolioPorjectsSlugs = () => {
-	const fileNames = fs.readdirSync(portfolioProjects);
+	try {
+		const fileNames = fs.readdirSync(portfolioProjects);
 
-	if (fileNames) {
+		if (!fileNames) return [];
+
 		return fileNames.map(filename => {
 			return {
 				params: {
@@ -52,16 +56,20 @@ export const getPortfolioPorjectsSlugs = () => {
 				}
 			};
 		});
+	} catch {
+		return [];
 	}
-
-	return [];
 };
 
 export const getPortfolioProjectdata = async (slug: string) => {
-	const fullPath = path.join(portfolioProjects, `${slug}.mdx`);
-	const postContent = fs.readFileSync(fullPath, 'utf8');
+	try {
+		const fullPath = path.join(portfolioProjects, `${slug}.mdx`);
+		const postContent = fs.readFileSync(fullPath, 'utf8');
 
-	if (!postContent) return undefined;
+		if (!postContent) return undefined;
 
-	return postContent;
+		return postContent;
+	} catch {
+		return undefined;
+	}
 };

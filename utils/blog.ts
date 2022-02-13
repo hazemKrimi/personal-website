@@ -5,9 +5,11 @@ import matter from 'gray-matter';
 const blogPostsDirectory = path.join(process.cwd(), '_blog');
 
 export const getBlogPosts = () => {
-	const fileNames = fs.readdirSync(blogPostsDirectory);
+	try {
+		const fileNames = fs.readdirSync(blogPostsDirectory);
 
-	if (fileNames) {
+		if (!fileNames) return [];
+
 		const allBlogPostsData = fileNames.map(filename => {
 			const slug = filename.replace('.mdx', '');
 
@@ -36,15 +38,17 @@ export const getBlogPosts = () => {
 				return -1;
 			}
 		});
+	} catch {
+		return [];
 	}
-
-	return [];
 };
 
 export const getBlogPostsSlugs = () => {
-	const fileNames = fs.readdirSync(blogPostsDirectory);
+	try {
+		const fileNames = fs.readdirSync(blogPostsDirectory);
 
-	if (fileNames) {
+		if (!fileNames) return [];
+
 		return fileNames.map(filename => {
 			return {
 				params: {
@@ -52,16 +56,20 @@ export const getBlogPostsSlugs = () => {
 				}
 			};
 		});
+	} catch {
+		return [];
 	}
-
-	return [];
 };
 
 export const getBlogPostdata = async (slug: string) => {
-	const fullPath = path.join(blogPostsDirectory, `${slug}.mdx`);
-	const postContent = fs.readFileSync(fullPath, 'utf8');
+	try {
+		const fullPath = path.join(blogPostsDirectory, `${slug}.mdx`);
+		const postContent = fs.readFileSync(fullPath, 'utf8');
 
-	if (!postContent) return undefined;
+		if (!postContent) return undefined;
 
-	return postContent;
+		return postContent;
+	} catch {
+		return undefined;
+	}
 };
