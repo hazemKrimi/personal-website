@@ -35,7 +35,7 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 				<meta
 					name='description'
 					content={
-						frontMatter.description
+						frontMatter?.description
 							? frontMatter.description
 							: 'Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
 					}
@@ -45,17 +45,21 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 				<meta
 					property='og:description'
 					content={
-						frontMatter.description
+						frontMatter?.description
 							? frontMatter.description
 							: 'Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
 					}
 				/>
-				<meta property='og:title' content={`${frontMatter.title} | Hazem Krimi`} />
+				<meta property='og:title' content={`${frontMatter?.title} | Hazem Krimi`} />
 				<meta
 					name='keywords'
-					content='Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
+					content={
+						frontMatter?.tags
+							? frontMatter.tags.join(' ')
+							: 'Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
+					}
 				/>
-				<title>{frontMatter.title} | Hazem Krimi</title>
+				<title>{frontMatter?.title} | Hazem Krimi</title>
 			</Head>
 			<Wrapper>
 				<div className='meta'>
@@ -63,18 +67,18 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 						<IconButton icon='/icons/arrow-left.svg' />
 						<span>Back</span>
 					</div>
-					<h1>{frontMatter.title}</h1>
-					<p>{frontMatter.description}</p>
-					{frontMatter.tags ? (
+					<h1>{frontMatter?.title}</h1>
+					<p>{frontMatter?.description}</p>
+					{frontMatter?.tags ? (
 						<div className='tags-wrapper'>
 							{frontMatter.tags.map((tag: string, index: number) => (
 								<span key={index}>#{tag}&nbsp;</span>
 							))}
 						</div>
 					) : null}
-					{frontMatter.image && !frontMatter.hideImage ? (
+					{frontMatter?.image && !frontMatter?.hideImage ? (
 						<div className='image'>
-							<Image src={frontMatter.image} width='100%' height='100%' layout='responsive' />
+							<Image src={frontMatter?.image} width='100%' height='100%' layout='responsive' />
 						</div>
 					) : null}
 					<hr />
@@ -85,10 +89,10 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 							<MDXRemote {...source} components={components} />
 							<h1>Showcase</h1>
 							<div className='showcase-buttons'>
-								<MDXButton variant='action' link={frontMatter.demo} target='_blank'>
+								<MDXButton variant='action' link={frontMatter?.demo} target='_blank'>
 									Demo
 								</MDXButton>
-								<MDXButton variant='outline' link={frontMatter.code} target='_blank'>
+								<MDXButton variant='outline' link={frontMatter?.code} target='_blank'>
 									Source Code
 								</MDXButton>
 							</div>
@@ -110,8 +114,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	};
 };
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-	const blogPostContent = await getPortfolioProjectdata(params.slug);
-	const { data, content } = matter(blogPostContent);
+	const portfolioProjectContent = await getPortfolioProjectdata(params.slug);
+
+	if (!portfolioProjectContent)
+		return {
+			props: {
+				source: undefined,
+				frontMatter: undefined
+			}
+		};
+
+	const { data, content } = matter(portfolioProjectContent);
 	const mdxSource = await serialize(content, {
 		scope: data
 	});

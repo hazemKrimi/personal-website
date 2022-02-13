@@ -37,7 +37,7 @@ const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 				<meta
 					name='description'
 					content={
-						frontMatter.description
+						frontMatter?.description
 							? frontMatter.description
 							: 'Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
 					}
@@ -47,21 +47,21 @@ const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 				<meta
 					property='og:description'
 					content={
-						frontMatter.description
+						frontMatter?.description
 							? frontMatter.description
 							: 'Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
 					}
 				/>
-				<meta property='og:title' content={`${frontMatter.title} | Hazem Krimi`} />
+				<meta property='og:title' content={`${frontMatter?.title} | Hazem Krimi`} />
 				<meta
 					name='keywords'
 					content={
-						frontMatter.tags
+						frontMatter?.tags
 							? frontMatter.tags.join(' ')
 							: 'Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
 					}
 				/>
-				<title>{frontMatter.title} | Hazem Krimi</title>
+				<title>{frontMatter?.title} | Hazem Krimi</title>
 			</Head>
 			<Wrapper>
 				<div className='meta'>
@@ -69,19 +69,19 @@ const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 						<IconButton icon='/icons/arrow-left.svg' />
 						<span>Back</span>
 					</div>
-					<h1>{frontMatter.title}</h1>
-					<p>{frontMatter.description}</p>
+					<h1>{frontMatter?.title}</h1>
+					<p>{frontMatter?.description}</p>
 					<p>
-						By <b>{frontMatter.author}</b> on <b>{frontMatter.date}</b> ({stats.text})
+						By <b>{frontMatter?.author}</b> on <b>{frontMatter?.date}</b> ({stats.text})
 					</p>
-					{frontMatter.tags ? (
+					{frontMatter?.tags ? (
 						<div className='tags-wrapper'>
 							{frontMatter.tags.map((tag: string, index: number) => (
 								<span key={index}>#{tag}&nbsp;</span>
 							))}
 						</div>
 					) : null}
-					{frontMatter.image ? (
+					{frontMatter?.image ? (
 						<div className='image'>
 							<Image src={frontMatter.image} width='100%' height='100%' layout='responsive' />
 						</div>
@@ -111,6 +111,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
 	const blogPostContent = await getBlogPostdata(params.slug);
+
+	if (!blogPostContent)
+		return {
+			props: {
+				source: undefined,
+				frontMatter: undefined
+			}
+		};
+
 	const { data, content } = matter(blogPostContent);
 	const mdxSource = await serialize(content, {
 		scope: data

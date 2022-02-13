@@ -61,5 +61,7 @@ export const getPortfolioProjectdata = async (slug: string) => {
 	const fullPath = path.join(portfolioProjects, `${slug}.mdx`);
 	const postContent = fs.readFileSync(fullPath, 'utf8');
 
+	if (!postContent) return undefined;
+
 	return postContent;
 };

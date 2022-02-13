@@ -61,5 +61,7 @@ export const getBlogPostdata = async (slug: string) => {
 	const fullPath = path.join(blogPostsDirectory, `${slug}.mdx`);
 	const postContent = fs.readFileSync(fullPath, 'utf8');
 
+	if (!postContent) return undefined;
+
 	return postContent;
 };
