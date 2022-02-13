@@ -17,3 +17,16 @@ export const event = ({ action, category, label, value }: any) => {
 		value: value
 	});
 };
+
+export const initAnalytics = () => `
+	window.dataLayer = window.dataLayer || [];
+						
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	
+	gtag('js', new Date());
+	gtag('config', ${GOOGLE_ANALYTICS_KEY}, {
+		page_path: window.location.pathname,
+	});
+`;

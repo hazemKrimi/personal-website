@@ -3,7 +3,8 @@ import Script from 'next/script';
 
 import { ServerStyleSheet } from 'styled-components';
 
-import { GOOGLE_ANALYTICS_KEY } from '../utils/gtag';
+import { GOOGLE_ANALYTICS_KEY, initAnalytics } from '../utils/gtag';
+import { initStyles } from '../utils/styles';
 
 class Doc extends Document {
 	static async getInitialProps(ctx: DocumentContext) {
@@ -43,18 +44,13 @@ class Doc extends Document {
 						id='google-analytics'
 						strategy='afterInteractive'
 						dangerouslySetInnerHTML={{
-							__html: `
-						window.dataLayer = window.dataLayer || [];
-						
-						function gtag() {
-							dataLayer.push(arguments);
-						}
-						
-						gtag('js', new Date());
-						gtag('config', ${GOOGLE_ANALYTICS_KEY}, {
-              page_path: window.location.pathname,
-            });
-					`
+							__html: initAnalytics()
+						}}
+					/>
+					<script
+						id='styles-init'
+						dangerouslySetInnerHTML={{
+							__html: initStyles()
 						}}
 					/>
 				</Head>
