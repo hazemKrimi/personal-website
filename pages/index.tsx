@@ -52,7 +52,7 @@ const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
 			<Wrapper>
 				<Hero />
 				<div className='content'>
-					<h1>About me</h1>
+					<h1>About</h1>
 					<div className='about'>
 						<p>
 							I am a software developer. I have experience as a full stack developer but I lean more
