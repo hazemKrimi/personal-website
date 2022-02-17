@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import Head from 'next/head';
-import { Wrapper } from '../styles/about';
+import { Wrapper } from '../styles/contact';
 import Input from '../components/Input';
 import MDXButton from '../components/MDXButton';
 
