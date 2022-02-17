@@ -15,6 +15,7 @@ import Footer from '../components/Footer';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
+import { pageview } from '../utils/gtag';
 import { initStyles } from '../utils/styles';
 
 NProgress.configure({ showSpinner: false });
@@ -27,14 +28,21 @@ const App = ({ Component, pageProps }: AppProps) => {
 			NProgress.start();
 		});
 
-		router.events.on('routeChangeComplete', () => {
+		router.events.on('routeChangeComplete', url => {
 			NProgress.done();
+			pageview(url);
 		});
 
 		router.events.on('routeChangeError', () => {
 			NProgress.done();
 		});
-	}, []);
+
+		return () => {
+			router.events.off('routeChangeComplete', url => {
+				pageview(url);
+			});
+		};
+	}, [router.events]);
 
 	return (
 		<>
