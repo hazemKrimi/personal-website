@@ -1,4 +1,4 @@
-import { FC, useReducer, useEffect, createContext } from 'react';
+import { useReducer, useEffect, createContext } from 'react';
 
 export const ThemeContext = createContext<{ mode: string; toggle: () => void }>({
 	mode: 'light',
@@ -18,7 +18,7 @@ const reducer = (state: string, action: { type: string }) => {
 	}
 };
 
-const Theme: FC = ({ children }) => {
+const Theme = ({ children }: { children: React.ReactNode }) => {
 	const [mode, dispatch] = useReducer(reducer, 'light');
 	const toggle = () => {
 		const root = window.document.documentElement;

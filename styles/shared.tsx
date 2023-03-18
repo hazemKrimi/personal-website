@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 
-const Shared: FC = ({ children }) => {
+const Shared = ({ children }: { children: React.ReactNode }) => {
 	const theme: DefaultTheme = {
 		colors: {
 			dark: {

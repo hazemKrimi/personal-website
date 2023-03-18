@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface Props {
+	alt: string;
 	icon: string;
 	width?: number;
 	height?: number;
@@ -21,6 +22,7 @@ const Btn = styled(Link)`
 `;
 
 const IconButton: FC<Props & { className?: string }> = ({
+	alt,
 	icon,
 	href,
 	target,
@@ -31,11 +33,11 @@ const IconButton: FC<Props & { className?: string }> = ({
 }) => {
 	return !href ? (
 		<Btn href='#' onClick={onClick} className={className}>
-			<Image alt='' src={icon} width={width} height={height} />
+			<Image alt={alt} src={icon} width={width} height={height} />
 		</Btn>
 	) : (
 		<Btn href={href} target={target} onClick={onClick} className={className}>
-			<Image alt='' src={icon} width={width} height={height} />
+			<Image alt={alt} src={icon} width={width} height={height} />
 		</Btn>
 	);
 };

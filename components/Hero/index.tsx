@@ -11,7 +11,7 @@ const Hero: FC = () => (
 			<h2 className='blue'>Life Long Learner</h2>
 		</div>
 		<div className='photo'>
-			<Image src='/photo.jpg' width={515} height={535} objectFit='cover' />
+			<Image alt='Hazem Krimi' src='/photo.jpg' width={515} height={535} />
 		</div>
 	</Wrapper>
 );

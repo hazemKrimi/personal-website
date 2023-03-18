@@ -45,7 +45,7 @@ const Index: FC<Props> = ({ blogPosts }) => {
 			</Head>
 			<Wrapper>
 				<div className='back' onClick={() => router.back()}>
-					<IconButton icon='/icons/arrow-left.svg' />
+					<IconButton alt='Back' icon='/icons/arrow-left.svg' />
 					<span>Back</span>
 				</div>
 				<h1>Blog</h1>

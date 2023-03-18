@@ -35,6 +35,13 @@ class Doc extends Document {
 		return (
 			<Html>
 				<Head>
+					<link rel='shortcut icon' href='/light-favicon.png' id='light-favicon'></link>
+					<link rel='shortcut icon' href='/dark-favicon.png' id='dark-favicon'></link>
+					<link rel='preconnect' href='https://fonts.gstatic.com' />
+					<link
+						href='https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap'
+						rel='stylesheet'
+					/>
 					<script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_KEY}`} />
 					<script
 						id='analytics-init'

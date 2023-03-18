@@ -25,6 +25,7 @@ const Nav: FC = () => {
 			</Link>
 			<div className='buttons'>
 				<IconButton
+					alt='Theme toggler'
 					icon={mode === 'dark' ? '/icons/sun.svg' : '/icons/moon.svg'}
 					onClick={toggle}
 				/>
@@ -40,6 +41,7 @@ const Nav: FC = () => {
 					Resume
 				</Button>
 				<IconButton
+					alt='Theme toggler'
 					icon={mode === 'dark' ? '/icons/light-menu.svg' : '/icons/dark-menu.svg'}
 					onClick={() => setMobileNavOpen(true)}
 				/>

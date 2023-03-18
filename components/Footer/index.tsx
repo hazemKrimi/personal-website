@@ -10,6 +10,7 @@ const Footer: FC = () => {
 		<StyledFooter>
 			<div className='contact'>
 				<IconButton
+					alt='GitHub'
 					icon={mode === 'dark' ? '/icons/light-github.svg' : '/icons/dark-github.svg'}
 					width={16}
 					height={16}
@@ -17,6 +18,7 @@ const Footer: FC = () => {
 					target='_blank'
 				/>
 				<IconButton
+					alt='Twitter'
 					icon={mode === 'dark' ? '/icons/light-twitter.svg' : '/icons/dark-twitter.svg'}
 					width={16}
 					height={16}
@@ -24,17 +26,11 @@ const Footer: FC = () => {
 					target='_blank'
 				/>
 				<IconButton
+					alt='LinkedIn'
 					icon={mode === 'dark' ? '/icons/light-linkedin.svg' : '/icons/dark-linkedin.svg'}
 					width={16}
 					height={16}
 					href='https://linkedin.com/in/hazemkrimi'
-					target='_blank'
-				/>
-				<IconButton
-					icon={mode === 'dark' ? '/icons/light-codepen.svg' : '/icons/dark-codepen.svg'}
-					width={16}
-					height={16}
-					href='https://codepen.io/hazemkrimi'
 					target='_blank'
 				/>
 			</div>

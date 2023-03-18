@@ -32,7 +32,7 @@ const NotFound: FC = () => {
 			<Wrapper>
 				<h1>404: This page could not be found</h1>
 				<div className='back' onClick={() => router.push('/')}>
-					<IconButton icon='/icons/arrow-left.svg' />
+					<IconButton alt='Back' icon='/icons/arrow-left.svg' />
 					<span>Go Home</span>
 				</div>
 			</Wrapper>

@@ -62,12 +62,12 @@ const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 							: 'Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
 					}
 				/>
-				<title>{frontMatter?.title} | Hazem Krimi</title>
+				<title>{`${frontMatter?.title} | Hazem Krimi`}</title>
 			</Head>
 			<Wrapper>
 				<div className='meta'>
 					<div className='back' onClick={() => router.back()}>
-						<IconButton icon='/icons/arrow-left.svg' />
+						<IconButton alt='Back' icon='/icons/arrow-left.svg' />
 						<span>Back</span>
 					</div>
 					<h1>{frontMatter?.title}</h1>

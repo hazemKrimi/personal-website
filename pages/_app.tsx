@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 
@@ -53,15 +52,6 @@ const App = ({ Component, pageProps }: AppProps) => {
 					__html: initStyles()
 				}}
 			/>
-			<Head>
-				<link rel='shortcut icon' href='light-favicon.png' id='light-favicon'></link>
-				<link rel='shortcut icon' href='dark-favicon.png' id='dark-favicon'></link>
-				<link rel='preconnect' href='https://fonts.gstatic.com' />
-				<link
-					href='https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap'
-					rel='stylesheet'
-				/>
-			</Head>
 			<Theme>
 				<SharedStyles>
 					<GlobalStyles />
