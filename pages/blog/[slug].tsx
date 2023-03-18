@@ -8,7 +8,6 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
 import { Wrapper } from '../../styles/blog/slug';
 import matter from 'gray-matter';
-import components from '../../components';
 import Head from 'next/head';
 import IconButton from '../../components/IconButton';
 import CodeBlock from '../../components/CodeBlock';
@@ -24,6 +23,8 @@ interface Props {
 const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 	const router = useRouter();
 	const stats = readingTime(text);
+	const htmlOverrides = { code: CodeBlock };
+	const mdxComponents = {};
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -83,15 +84,15 @@ const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 					) : null}
 					{frontMatter?.image ? (
 						<div className='image'>
-							<Image src={frontMatter.image} width='100%' height='100%' layout='responsive' />
+							<Image alt={frontMatter?.title} src={frontMatter.image} fill />
 						</div>
 					) : null}
 					<hr />
 				</div>
-				<MDXProvider components={{ code: CodeBlock }}>
+				<MDXProvider components={{ ...htmlOverrides, ...mdxComponents }}>
 					<MDXEmbedProvider>
 						<div className='content'>
-							<MDXRemote {...source} components={components} />
+							<MDXRemote {...source} />
 						</div>
 					</MDXEmbedProvider>
 				</MDXProvider>

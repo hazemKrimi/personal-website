@@ -39,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
 	}
 
 	* {
-    color: var(--text);
+    	color: var(--text);
 	}
 	
 	ul, ol {
@@ -66,6 +66,10 @@ const GlobalStyles = createGlobalStyle`
 	
 	body::-webkit-scrollbar-thumb {
 		background-color: var(--text) !important;
+	}
+
+	a {
+		text-decoration: none;
 	}
 `;
 

@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import { Props } from './types';
 
-export const Btn = styled.button<Props>`
+export const Btn = styled(Link)<Props>`
 	cursor: pointer;
 	display: ${({ variant }) =>
 		['action', 'outline'].includes(variant as string) ? 'block' : 'inline'};

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 import { Props } from './types';
 
-export const Btn = styled.button<Omit<Props, 'href'>>`
+export const StyledButton = styled(Link)<Props>`
 	position: relative;
 	display: inline;
 	cursor: pointer;

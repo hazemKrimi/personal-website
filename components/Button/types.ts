@@ -3,4 +3,6 @@ export type Props = {
 	href: string;
 	target?: HTMLAnchorElement['target'];
 	onClick?: () => void;
+	children: React.ReactNode;
+	className?: string;
 };

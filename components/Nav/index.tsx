@@ -13,17 +13,15 @@ const Nav: FC = () => {
 
 	return (
 		<Bar>
-			<Link href='/' passHref>
-				<a className='logo'>
-					<Image
-						className='logo-image'
-						src={mode === 'dark' ? '/light-logo.svg' : '/dark-logo.svg'}
-						alt='Logo Image'
-						width={48}
-						height={48}
-					/>
-					<h1>Hazem Krimi</h1>
-				</a>
+			<Link className='logo' href='/'>
+				<Image
+					className='logo-image'
+					src={mode === 'dark' ? '/light-logo.svg' : '/dark-logo.svg'}
+					alt='Logo Image'
+					width={48}
+					height={48}
+				/>
+				<h1>Hazem Krimi</h1>
 			</Link>
 			<div className='buttons'>
 				<IconButton

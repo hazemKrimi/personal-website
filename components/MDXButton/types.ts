@@ -5,4 +5,6 @@ export type Props = {
 	target?: HTMLAnchorElement['target'];
 	mode?: string;
 	disabled?: boolean;
+	className?: string;
+	children: React.ReactNode;
 };

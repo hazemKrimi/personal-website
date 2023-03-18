@@ -12,7 +12,7 @@ interface Props {
 	onClick?: () => void;
 }
 
-const Btn = styled.button`
+const Btn = styled(Link)`
 	cursor: pointer;
 	background: none;
 	border: none;
@@ -30,15 +30,13 @@ const IconButton: FC<Props & { className?: string }> = ({
 	height = 24
 }) => {
 	return !href ? (
-		<Btn onClick={onClick} className={className}>
-			<Image src={icon} width={width} height={height} />
+		<Btn href='#' onClick={onClick} className={className}>
+			<Image alt='' src={icon} width={width} height={height} />
 		</Btn>
 	) : (
-		<Link href={href} passHref>
-			<Btn as='a' target={target} onClick={onClick} className={className}>
-				<Image src={icon} width={width} height={height} />
-			</Btn>
-		</Link>
+		<Btn href={href} target={target} onClick={onClick} className={className}>
+			<Image alt='' src={icon} width={width} height={height} />
+		</Btn>
 	);
 };
 

@@ -1,24 +1,17 @@
-import { FC, useContext } from 'react';
-import { ThemeContext } from '../../styles/theme';
 import { Props } from './types';
-import { Btn } from './styles';
-import Link from 'next/link';
+import { StyledButton } from './styles';
 
-const Button: FC<Props & { className?: string }> = ({
+const Button = ({
 	variant = 'text',
 	href,
 	target,
 	onClick,
 	children,
 	className
-}) => {
-	return (
-		<Link href={href} passHref>
-			<Btn as='a' target={target} variant={variant} onClick={onClick} className={className}>
-				{children}
-			</Btn>
-		</Link>
-	);
-};
+}: Props) => (
+	<StyledButton href={href} target={target} className={className} onClick={onClick} variant={variant}>
+		{children}
+	</StyledButton>
+);
 
 export default Button;

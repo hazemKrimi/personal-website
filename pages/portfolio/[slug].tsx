@@ -3,11 +3,9 @@ import { getPortfolioPorjectsSlugs, getPortfolioProjectdata } from '../../utils/
 import { useRouter } from 'next/router';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXProvider } from '@mdx-js/react';
-import { MDXEmbedProvider } from 'mdx-embed';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
-import components from '../../components';
 import { Wrapper } from '../../styles/portfolio/slug';
 import Head from 'next/head';
 import IconButton from '../../components/IconButton';
@@ -22,6 +20,8 @@ interface Props {
 
 const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 	const router = useRouter();
+	const htmlOverrides = { code: CodeBlock };
+	const mdxComponents = { Button: MDXButton };
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -78,26 +78,24 @@ const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
 					) : null}
 					{frontMatter?.image && !frontMatter?.hideImage ? (
 						<div className='image'>
-							<Image src={frontMatter?.image} width='100%' height='100%' layout='responsive' />
+							<Image alt={frontMatter?.title} src={frontMatter?.image} fill />
 						</div>
 					) : null}
 					<hr />
 				</div>
-				<MDXProvider components={{ code: CodeBlock }}>
-					<MDXEmbedProvider>
-						<div className='content'>
-							<MDXRemote {...source} components={components} />
-							<h1>Showcase</h1>
-							<div className='showcase-buttons'>
-								<MDXButton variant='action' link={frontMatter?.demo} target='_blank'>
-									Demo
-								</MDXButton>
-								<MDXButton variant='outline' link={frontMatter?.code} target='_blank'>
-									Source Code
-								</MDXButton>
-							</div>
+				<MDXProvider components={{ ...htmlOverrides, ...mdxComponents }}>
+					<div className='content'>
+						<MDXRemote {...source} />
+						<h1>Showcase</h1>
+						<div className='showcase-buttons'>
+							<MDXButton variant='action' link={frontMatter?.demo} target='_blank'>
+								Demo
+							</MDXButton>
+							<MDXButton variant='outline' link={frontMatter?.code} target='_blank'>
+								Source Code
+							</MDXButton>
 						</div>
-					</MDXEmbedProvider>
+					</div>
 				</MDXProvider>
 			</Wrapper>
 		</>
