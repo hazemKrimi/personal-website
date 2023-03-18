@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 
-export const StyledCard = styled(Link)<{ image: boolean }>`
+export const StyledCard = styled(Link)<{ image?: boolean }>`
 	cursor: pointer;
 	width: 100%;
 	display: grid;

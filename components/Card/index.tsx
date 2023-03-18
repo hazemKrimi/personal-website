@@ -14,7 +14,7 @@ interface Props {
 
 const Card: FC<Props> = ({ title, description, image, tags, href, target, onClick }) => {
 	return (
-		<StyledCard href={href} onClick={onClick} image={Boolean(image)} target={target}>
+		<StyledCard href={href} onClick={onClick} image={image ? Boolean(image) : undefined} target={target}>
 			<div className='card-content'>
 				<h3>{title}</h3>
 				<p>{description}</p>

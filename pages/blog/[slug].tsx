@@ -3,7 +3,6 @@ import { getBlogPostsSlugs, getBlogPostdata } from '../../utils/blog';
 import { useRouter } from 'next/router';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXProvider } from '@mdx-js/react';
-import { MDXEmbedProvider } from 'mdx-embed';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
 import { Wrapper } from '../../styles/blog/slug';
@@ -84,17 +83,15 @@ const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
 					) : null}
 					{frontMatter?.image ? (
 						<div className='image'>
-							<Image alt={frontMatter?.title} src={frontMatter.image} fill />
+							<Image alt={frontMatter?.title} src={frontMatter?.image} fill />
 						</div>
 					) : null}
 					<hr />
 				</div>
 				<MDXProvider components={{ ...htmlOverrides, ...mdxComponents }}>
-					<MDXEmbedProvider>
-						<div className='content'>
-							<MDXRemote {...source} />
-						</div>
-					</MDXEmbedProvider>
+					<div className='content'>
+						<MDXRemote {...source} />
+					</div>
 				</MDXProvider>
 			</Wrapper>
 		</>
