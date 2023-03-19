@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { getPortfolioProjects } from '../utils/portfolio';
 import { getBlogPosts } from '../utils/blog';
 import { GetStaticProps } from 'next';
@@ -26,7 +25,7 @@ interface Props {
 	}[];
 }
 
-const Index: FC<Props> = ({ blogPosts, portfolioProjects }) => {
+const Index = ({ blogPosts, portfolioProjects }: Props) => {
 	return (
 		<>
 			<Head>

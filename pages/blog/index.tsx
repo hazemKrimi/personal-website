@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 import { getBlogPosts } from '../../utils/blog';
 import { Wrapper } from '../../styles/blog';
@@ -18,7 +17,7 @@ interface Props {
 	}[];
 }
 
-const Index: FC<Props> = ({ blogPosts }) => {
+const Index = ({ blogPosts }: Props) => {
 	const router = useRouter();
 
 	return (

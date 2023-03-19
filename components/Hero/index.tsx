@@ -1,8 +1,7 @@
-import { FC } from 'react';
 import { Wrapper } from './styles';
 import Image from 'next/image';
 
-const Hero: FC = () => (
+const Hero = () => (
 	<Wrapper>
 		<div className='intro'>
 			<h2>Hi, I am Hazem</h2>

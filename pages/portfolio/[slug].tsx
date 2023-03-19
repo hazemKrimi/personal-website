@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import { getPortfolioPorjectsSlugs, getPortfolioProjectdata } from '../../utils/portfolio';
 import { useRouter } from 'next/router';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
@@ -18,7 +18,7 @@ interface Props {
 	frontMatter: any;
 }
 
-const PortfolioProject: FC<Props> = ({ source, frontMatter }) => {
+const PortfolioProject = ({ source, frontMatter }: Props) => {
 	const router = useRouter();
 	const htmlOverrides = { code: CodeBlock };
 	const mdxComponents = { Button: MDXButton };

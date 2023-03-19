@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { ThemeContext } from '../../styles/theme';
 import { Bar } from './styles';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import Button from '../Button';
 import IconButton from '../IconButton';
 import MobileNav from '../MobileNav';
 
-const Nav: FC = () => {
+const Nav = () => {
 	const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
 	const { mode, toggle } = useContext(ThemeContext);
 
@@ -41,7 +41,7 @@ const Nav: FC = () => {
 					Resume
 				</Button>
 				<IconButton
-					alt='Theme toggler'
+					alt='Hamburger menu'
 					icon={mode === 'dark' ? '/icons/light-menu.svg' : '/icons/dark-menu.svg'}
 					onClick={() => setMobileNavOpen(true)}
 				/>

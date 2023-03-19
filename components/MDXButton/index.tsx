@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../styles/theme';
 import { Props } from './types';
-import { Btn } from './styles';
+import { StyledLink, StyledButton } from './styles';
 
 const MDXButton = ({
 	variant = 'text',
@@ -15,7 +15,7 @@ const MDXButton = ({
 	const { mode } = useContext(ThemeContext);
 
 	return link ? (
-		<Btn
+		<StyledLink
 			href={link}
 			target={target}
 			variant={variant}
@@ -25,11 +25,11 @@ const MDXButton = ({
 			className={className}
 		>
 			{children}
-		</Btn>
+		</StyledLink>
 	) : (
-		<Btn href="#" variant={variant} type={type} mode={mode} disabled={disabled} className={className}>
+		<StyledButton variant={variant} type={type} mode={mode} disabled={disabled} className={className}>
 			{children}
-		</Btn>
+		</StyledButton>
 	);
 };
 

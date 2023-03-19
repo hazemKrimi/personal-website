@@ -1,18 +1,8 @@
-import { FC } from 'react';
-import { StyledCard } from './styles';
 import Image from 'next/image';
+import { StyledCard } from './styles';
+import { Props } from './types';
 
-interface Props {
-	title: string;
-	description: string;
-	image?: string;
-	tags?: string[];
-	href: string;
-	target?: HTMLAnchorElement['target'];
-	onClick?: () => void;
-}
-
-const Card: FC<Props> = ({ title, description, image, tags, href, target, onClick }) => {
+const Card = ({ title, description, image, tags, href, target, onClick }: Props) => {
 	return (
 		<StyledCard href={href} onClick={onClick} image={image ? Boolean(image) : undefined} target={target}>
 			<div className='card-content'>

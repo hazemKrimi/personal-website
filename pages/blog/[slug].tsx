@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import { getBlogPostsSlugs, getBlogPostdata } from '../../utils/blog';
 import { useRouter } from 'next/router';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
@@ -19,7 +19,7 @@ interface Props {
 	text: string;
 }
 
-const BlogPost: FC<Props> = ({ source, frontMatter, text }) => {
+const BlogPost = ({ source, frontMatter, text }: Props) => {
 	const router = useRouter();
 	const stats = readingTime(text);
 	const htmlOverrides = { code: CodeBlock };

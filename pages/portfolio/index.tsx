@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { getPortfolioProjects } from '../../utils/portfolio';
 import { useRouter } from 'next/router';
 import { Wrapper } from '../../styles/portfolio';
@@ -17,7 +16,7 @@ interface Props {
 	}[];
 }
 
-const Index: FC<Props> = ({ portfolioProjects }) => {
+const Index = ({ portfolioProjects }: Props) => {
 	const router = useRouter();
 
 	return (

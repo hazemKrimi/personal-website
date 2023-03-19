@@ -1,9 +1,9 @@
-import { FC, useContext } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from '../../styles/theme';
 import { StyledFooter } from './styles';
-import IconButton from '../../components/IconButton';
+import IconButton from '../IconButton';
 
-const Footer: FC = () => {
+const Footer = () => {
 	const { mode } = useContext(ThemeContext);
 
 	return (

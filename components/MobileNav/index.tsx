@@ -1,11 +1,11 @@
-import { FC, useContext, useRef, useEffect } from 'react';
+import { useContext, useRef, useEffect } from 'react';
 import { ThemeContext } from '../../styles/theme';
 import { Props } from './types';
 import { Bar } from './styles';
 import IconButton from '../IconButton';
 import Button from '../Button';
 
-const MobileNav: FC<Props> = ({ open, close }) => {
+const MobileNav = ({ open, close }: Props) => {
 	const { mode, toggle } = useContext(ThemeContext);
 	const ref = useRef<HTMLDivElement>(null);
 
@@ -45,7 +45,7 @@ const MobileNav: FC<Props> = ({ open, close }) => {
 						close();
 					}}
 				>
-					{mode === 'dark' ? 'Light Mode' : 'Dark Mode'}
+					{mode === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
 				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>

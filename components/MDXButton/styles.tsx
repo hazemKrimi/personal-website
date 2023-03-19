@@ -1,13 +1,12 @@
 import Link from 'next/link';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Props } from './types';
 
-export const Btn = styled(Link)<Props>`
+export const sharedStyles = css<Props>`
 	cursor: pointer;
 	display: ${({ variant }) =>
 		['action', 'outline'].includes(variant as string) ? 'block' : 'inline'};
 	width: ${({ variant }) => (['action', 'outline'].includes(variant as string) ? '100%' : 'auto')};
-	/* TODO: fix theme blue color problem */
 	background: ${({ variant }) => (variant === 'action' ? '#1573CA' : 'none')};
 	color: ${({ variant, mode }) =>
 		variant === 'action' ? 'white' : mode === 'dark' ? 'white' : 'black'};
@@ -25,9 +24,7 @@ export const Btn = styled(Link)<Props>`
 	text-decoration: none;
 	transition: color 250ms ease-in-out;
 
-	${({ disabled }) =>
-		disabled &&
-		`
+	${({ disabled }) => disabled && `
 		background: gray;
 		cursor: default;
 	`}
@@ -36,4 +33,12 @@ export const Btn = styled(Link)<Props>`
 		padding: ${({ variant }) =>
 			['action', 'outline'].includes(variant as string) ? '.5rem .75rem' : '0rem'};
 	}
+`;
+
+export const StyledLink = styled(Link)<Props>`
+	${sharedStyles}
+`;
+
+export const StyledButton = styled.button<Omit<Props, 'href'>>`
+	${sharedStyles}
 `;

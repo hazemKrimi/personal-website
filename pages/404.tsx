@@ -1,10 +1,9 @@
-import { FC } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import IconButton from '../components/IconButton';
 import { Wrapper } from '../styles/404';
 
-const NotFound: FC = () => {
+const NotFound = () => {
 	const router = useRouter();
 
 	return (

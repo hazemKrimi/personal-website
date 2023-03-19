@@ -1,11 +1,11 @@
-import React, { FC, useState } from 'react';
+import { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import Head from 'next/head';
 import { Wrapper } from '../styles/contact';
 import Input from '../components/Input';
 import MDXButton from '../components/MDXButton';
 
-const About: FC = () => {
+const About = () => {
 	const [form, setForm] = useState<{ name: string; email: string; message: string }>({
 		name: '',
 		email: '',
