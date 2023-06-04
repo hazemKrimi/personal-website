@@ -39,7 +39,10 @@ const BlogPost = ({ source, frontMatter, text }: Props) => {
 					content={
 						frontMatter?.description
 							? frontMatter.description
-							: 'Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+							: `Hazem Krimi is an experienced Full Stack developer with a focus on building user-friendly
+					web and cross-platform mobile applications using cutting-edge
+					technologies. Passionate about ongoing learning and staying up-to-date
+					with the latest trends in software engineering.`
 					}
 				/>
 				<link rel='canonical' href='https://hazemkrimi.tech' />
@@ -49,7 +52,10 @@ const BlogPost = ({ source, frontMatter, text }: Props) => {
 					content={
 						frontMatter?.description
 							? frontMatter.description
-							: 'Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+							: `Hazem Krimi is an experienced Full Stack developer with a focus on building user-friendly
+					web and cross-platform mobile applications using cutting-edge
+					technologies. Passionate about ongoing learning and staying up-to-date
+					with the latest trends in software engineering.`
 					}
 				/>
 				<meta property='og:title' content={`${frontMatter?.title} | Hazem Krimi`} />
@@ -58,7 +64,7 @@ const BlogPost = ({ source, frontMatter, text }: Props) => {
 					content={
 						frontMatter?.tags
 							? frontMatter.tags.join(' ')
-							: 'Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
+							: `Hazem, Krimi, Hazem Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, TypeScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News, Software Developer, Software Engineer, Full Stack TypeScript Developer, Next.js`
 					}
 				/>
 				<title>{`${frontMatter?.title} | Hazem Krimi`}</title>

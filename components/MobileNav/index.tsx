@@ -49,8 +49,8 @@ const MobileNav = ({ open, close }: Props) => {
 				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>
-				<Button href='/portfolio' onClick={() => close()}>
-					Portfolio
+				<Button href='/projects' onClick={() => close()}>
+					Projects
 				</Button>
 			</div>
 			<div className='mobile-button-wrapper'>

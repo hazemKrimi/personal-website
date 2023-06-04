@@ -2,18 +2,18 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const portfolioProjects = path.join(process.cwd(), '_portfolio');
+const projects = path.join(process.cwd(), '_portfolio');
 
-export const getPortfolioProjects = () => {
+export const getProjects = () => {
 	try {
-		const fileNames = fs.readdirSync(portfolioProjects);
+		const fileNames = fs.readdirSync(projects);
 
 		if (!fileNames) return [];
 
 		const allPortfolioProjectsData = fileNames.map(filename => {
 			const slug = filename.replace('.mdx', '');
 
-			const fullPath = path.join(portfolioProjects, filename);
+			const fullPath = path.join(projects, filename);
 			const fileContents = fs.readFileSync(fullPath, 'utf8');
 			const { data } = matter(fileContents);
 
@@ -43,9 +43,9 @@ export const getPortfolioProjects = () => {
 	}
 };
 
-export const getPortfolioPorjectsSlugs = () => {
+export const getPorjectsSlugs = () => {
 	try {
-		const fileNames = fs.readdirSync(portfolioProjects);
+		const fileNames = fs.readdirSync(projects);
 
 		if (!fileNames) return [];
 
@@ -61,9 +61,9 @@ export const getPortfolioPorjectsSlugs = () => {
 	}
 };
 
-export const getPortfolioProjectdata = async (slug: string) => {
+export const getProjectdata = async (slug: string) => {
 	try {
-		const fullPath = path.join(portfolioProjects, `${slug}.mdx`);
+		const fullPath = path.join(projects, `${slug}.mdx`);
 		const postContent = fs.readFileSync(fullPath, 'utf8');
 
 		if (!postContent) return undefined;

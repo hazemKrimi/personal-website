@@ -28,12 +28,12 @@ export const Wrapper = styled.div`
 	}
 
 	.about,
-	.portfolio,
+	.projects,
 	.blog {
 		margin: 1rem 0rem;
 	}
 
-	.portfolio {
+	.projects {
 		margin-bottom: 3rem;
 	}
 

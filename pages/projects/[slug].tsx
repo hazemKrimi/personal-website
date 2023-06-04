@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { getPortfolioPorjectsSlugs, getPortfolioProjectdata } from '../../utils/portfolio';
+import { getPorjectsSlugs, getProjectdata } from '../../utils/projects';
 import { useRouter } from 'next/router';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { MDXProvider } from '@mdx-js/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
-import { Wrapper } from '../../styles/portfolio/slug';
+import { Wrapper } from '../../styles/projects/slug';
 import Head from 'next/head';
 import IconButton from '../../components/IconButton';
 import CodeBlock from '../../components/CodeBlock';
@@ -18,7 +18,7 @@ interface Props {
 	frontMatter: any;
 }
 
-const PortfolioProject = ({ source, frontMatter }: Props) => {
+const Project = ({ source, frontMatter }: Props) => {
 	const router = useRouter();
 	const htmlOverrides = { code: CodeBlock };
 	const mdxComponents = { Button: MDXButton };
@@ -37,7 +37,10 @@ const PortfolioProject = ({ source, frontMatter }: Props) => {
 					content={
 						frontMatter?.description
 							? frontMatter.description
-							: 'Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+							: `Hazem Krimi is an experienced Full Stack developer with a focus on building user-friendly
+					web and cross-platform mobile applications using cutting-edge
+					technologies. Passionate about ongoing learning and staying up-to-date
+					with the latest trends in software engineering.`
 					}
 				/>
 				<link rel='canonical' href='https://hazemkrimi.tech' />
@@ -47,7 +50,10 @@ const PortfolioProject = ({ source, frontMatter }: Props) => {
 					content={
 						frontMatter?.description
 							? frontMatter.description
-							: 'Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+							: `Hazem Krimi is an experienced Full Stack developer with a focus on building user-friendly
+					web and cross-platform mobile applications using cutting-edge
+					technologies. Passionate about ongoing learning and staying up-to-date
+					with the latest trends in software engineering.`
 					}
 				/>
 				<meta property='og:title' content={`${frontMatter?.title} | Hazem Krimi`} />
@@ -56,7 +62,7 @@ const PortfolioProject = ({ source, frontMatter }: Props) => {
 					content={
 						frontMatter?.tags
 							? frontMatter.tags.join(' ')
-							: 'Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
+							: `Hazem, Krimi, Hazem Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, TypeScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News, Software Developer, Software Engineer, Full Stack TypeScript Developer, Next.js`
 					}
 				/>
 				<title>{`${frontMatter?.title} | Hazem Krimi`}</title>
@@ -102,19 +108,19 @@ const PortfolioProject = ({ source, frontMatter }: Props) => {
 	);
 };
 
-export default PortfolioProject;
+export default Project;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const paths = getPortfolioPorjectsSlugs();
+	const paths = getPorjectsSlugs();
 	return {
 		paths,
 		fallback: false
 	};
 };
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-	const portfolioProjectContent = await getPortfolioProjectdata(params.slug);
+	const projectContent = await getProjectdata(params.slug);
 
-	if (!portfolioProjectContent)
+	if (!projectContent)
 		return {
 			props: {
 				source: undefined,
@@ -122,7 +128,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
 			}
 		};
 
-	const { data, content } = matter(portfolioProjectContent);
+	const { data, content } = matter(projectContent);
 	const mdxSource = await serialize(content, {
 		scope: data
 	});

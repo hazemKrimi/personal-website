@@ -5,8 +5,8 @@ const Hero = () => (
 	<Wrapper>
 		<div className='intro'>
 			<h2>Hi, I am Hazem</h2>
-			<h2>I Like Building Things</h2>
-			<h2 className='blue'>Software Developer</h2>
+			<h2>I Like Building Software</h2>
+			<h2 className='blue'>Full Stack TypeScript Developer</h2>
 			<h2 className='blue'>Life Long Learner</h2>
 		</div>
 		<div className='photo'>

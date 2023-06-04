@@ -35,18 +35,24 @@ const About = () => {
 				<meta name='author' content='Hazem Krimi' />
 				<meta
 					name='description'
-					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+					content='Hazem Krimi is an experienced Full Stack developer with a focus on building user-friendly
+					web and cross-platform mobile applications using cutting-edge
+					technologies. Passionate about ongoing learning and staying up-to-date
+					with the latest trends in software engineering.'
 				/>
-				<link rel='canonical' href='https://hazemkrimi.tech/about' />
+				<link rel='canonical' href='https://hazemkrimi.tech' />
 				<meta property='og:image' content='/logo.png' />
 				<meta
 					property='og:description'
-					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+					content='Hazem Krimi is an experienced Full Stack developer with a focus on building user-friendly
+					web and cross-platform mobile applications using cutting-edge
+					technologies. Passionate about ongoing learning and staying up-to-date
+					with the latest trends in software engineering.'
 				/>
 				<meta property='og:title' content='Hazem Krimi' />
 				<meta
 					name='keywords'
-					content='Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
+					content='Hazem, Krimi, Hazem Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, TypeScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News, Software Developer, Software Engineer, Full Stack TypeScript Developer, Next.js'
 				/>
 				<title>Contact | Hazem Krimi</title>
 			</Head>

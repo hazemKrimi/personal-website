@@ -1,9 +1,22 @@
+import { getProjects } from '../../utils/projects';
 import { useRouter } from 'next/router';
+import { Wrapper } from '../../styles/projects';
+import Card from '../../components/Card';
+import IconButton from '../../components/IconButton';
 import Head from 'next/head';
-import IconButton from '../components/IconButton';
-import { Wrapper } from '../styles/404';
 
-const NotFound = () => {
+interface Props {
+	projects: {
+		title: string;
+		description: string;
+		image?: string;
+		slug: string;
+		date: string;
+		tags?: string[];
+	}[];
+}
+
+const Index = ({ projects }: Props) => {
 	const router = useRouter();
 
 	return (
@@ -32,17 +45,35 @@ const NotFound = () => {
 					name='keywords'
 					content='Hazem, Krimi, Hazem Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, TypeScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News, Software Developer, Software Engineer, Full Stack TypeScript Developer, Next.js'
 				/>
-				<title>404 Not Found | Hazem Krimi</title>
+				<title>Projects | Hazem Krimi</title>
 			</Head>
 			<Wrapper>
-				<h1>404: This page could not be found</h1>
-				<div className='back' onClick={() => router.push('/')}>
+				<div className='back' onClick={() => router.back()}>
 					<IconButton alt='Back' icon='/icons/arrow-left.svg' />
-					<span>Go Home</span>
+					<span>Back</span>
+				</div>
+				<h1>Projects</h1>
+				<div className='projects-wrapper'>
+					{projects.length !== 0 ? (
+						projects.map(({ slug, ...rest }) => (
+							<Card {...rest} key={slug} href={`/projects/${slug}`} />
+						))
+					) : (
+						<h4>Nothing for now</h4>
+					)}
 				</div>
 			</Wrapper>
 		</>
 	);
 };
 
-export default NotFound;
+export default Index;
+
+export const getStaticProps = async () => {
+	const projects = getProjects();
+	return {
+		props: {
+			projects
+		}
+	};
+};

@@ -1,4 +1,4 @@
-import { getPortfolioProjects } from '../utils/portfolio';
+import { getProjects } from '../utils/projects';
 import { getBlogPosts } from '../utils/blog';
 import { GetStaticProps } from 'next';
 import { Wrapper } from '../styles/home';
@@ -16,7 +16,7 @@ interface Props {
 		date: string;
 		tags?: string[];
 	}[];
-	portfolioProjects: {
+	projects: {
 		title: string;
 		description: string;
 		slug: string;
@@ -25,7 +25,7 @@ interface Props {
 	}[];
 }
 
-const Index = ({ blogPosts, portfolioProjects }: Props) => {
+const Index = ({ blogPosts, projects }: Props) => {
 	return (
 		<>
 			<Head>
@@ -33,18 +33,24 @@ const Index = ({ blogPosts, portfolioProjects }: Props) => {
 				<meta name='author' content='Hazem Krimi' />
 				<meta
 					name='description'
-					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+					content='Hazem Krimi is an experienced Full Stack developer with a focus on building user-friendly
+					web and cross-platform mobile applications using cutting-edge
+					technologies. Passionate about ongoing learning and staying up-to-date
+					with the latest trends in software engineering.'
 				/>
 				<link rel='canonical' href='https://hazemkrimi.tech' />
 				<meta property='og:image' content='/logo.png' />
 				<meta
 					property='og:description'
-					content='Hazem Krimi is a Full Stack JavaScript Developer and a Software Engineering Enthusiast'
+					content='Hazem Krimi is an experienced Full Stack developer with a focus on building user-friendly
+					web and cross-platform mobile applications using cutting-edge
+					technologies. Passionate about ongoing learning and staying up-to-date
+					with the latest trends in software engineering.'
 				/>
 				<meta property='og:title' content='Hazem Krimi' />
 				<meta
 					name='keywords'
-					content='Hazem, Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News'
+					content='Hazem, Krimi, Hazem Krimi, Developer, Software, Engineer, Web, Mobile, Frontend, Backend, Fullstack, JavaScript, TypeScript, React.js, React Native, Node.js, Portfolio, Blog, Tutorials, Tech News, Software Developer, Software Engineer, Full Stack TypeScript Developer, Next.js'
 				/>
 				<title>Hazem Krimi</title>
 			</Head>
@@ -54,22 +60,19 @@ const Index = ({ blogPosts, portfolioProjects }: Props) => {
 					<h1>About</h1>
 					<div className='about'>
 						<p>
-							I am a software developer. I have experience as a full stack developer but I lean more
-							to the front end and I have built a lot of web apps and some mobile apps. Also, I am
-							always learning and experimenting with new technologies (currently learning about the
-							ethereum blockchain) and other topics other than software engineering.
+						Experienced Full Stack developer with a focus on building user-friendly web and cross-platform mobile applications using cutting-edge technologies. Passionate about ongoing learning and staying up-to-date with the latest trends in software engineering.
 						</p>
 					</div>
-					{portfolioProjects.length !== 0 && (
+					{projects.length !== 0 && (
 						<>
-							<h1>Portfolio</h1>
-							<Button href='/portfolio' className='blue'>
+							<h1>Projects</h1>
+							<Button href='/projects' className='blue'>
 								See More
 							</Button>
-							<div className='portfolio'>
+							<div className='projects'>
 								<div className='projects-wrapper'>
-									{portfolioProjects.slice(0, 3).map(({ slug, ...rest }) => (
-										<Card {...rest} key={slug} href={`/portfolio/${slug}`} />
+									{projects.slice(0, 3).map(({ slug, ...rest }) => (
+										<Card {...rest} key={slug} href={`/projects/${slug}`} />
 									))}
 								</div>
 							</div>
@@ -100,11 +103,11 @@ export default Index;
 
 export const getStaticProps: GetStaticProps = async () => {
 	const blogPosts = getBlogPosts();
-	const portfolioProjects = getPortfolioProjects();
+	const projects = getProjects();
 	return {
 		props: {
 			blogPosts,
-			portfolioProjects
+			projects
 		}
 	};
 };
