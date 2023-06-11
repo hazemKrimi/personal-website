@@ -5,31 +5,31 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-		font-family: 'Source Code Pro', monospace;
-		font-size: 16px;
-		line-height: 1.5;
-		outline: none;
-		user-select: text;
-		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-		
-		@media(max-width: 768px) {
-			overflow-x: scroll;
-		}
+	font-family: 'Source Code Pro', monospace;
+	font-size: 16px;
+	line-height: 1.5;
+	outline: none;
+	user-select: text;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	
+	@media(max-width: 768px) {
+		overflow-x: scroll;
+	}
 
-		&::-webkit-scrollbar {
-			width: 0;
-			height: 0; 
-			background: transparent; 
-		}
+	&::-webkit-scrollbar {
+		width: 0;
+		height: 0; 
+		background: transparent; 
+	}
 
-		&::-webkit-scrollbar-thumb {
-			background: transparent;
-		}
+	&::-webkit-scrollbar-thumb {
+		background: transparent;
+	}
 
-		&::selection {
-			background: var(--text);
-			color: var(--background);
-		}
+	&::selection {
+		background: var(--text);
+		color: var(--background);
+	}
   }
 
 	html {
@@ -66,10 +66,6 @@ const GlobalStyles = createGlobalStyle`
 	
 	body::-webkit-scrollbar-thumb {
 		background-color: var(--text) !important;
-	}
-
-	a {
-		text-decoration: none;
 	}
 `;
 

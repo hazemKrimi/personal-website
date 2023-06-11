@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const projects = path.join(process.cwd(), '_portfolio');
+const projects = path.join(process.cwd(), '_projects');
 
 export const getProjects = () => {
 	try {
@@ -10,7 +10,7 @@ export const getProjects = () => {
 
 		if (!fileNames) return [];
 
-		const allPortfolioProjectsData = fileNames.map(filename => {
+		const allProjectsData = fileNames.map(filename => {
 			const slug = filename.replace('.mdx', '');
 
 			const fullPath = path.join(projects, filename);
@@ -31,7 +31,7 @@ export const getProjects = () => {
 			};
 		});
 
-		return allPortfolioProjectsData.sort((a, b) => {
+		return allProjectsData.sort((a, b) => {
 			if (new Date(a.date) < new Date(b.date)) {
 				return 1;
 			} else {
