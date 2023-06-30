@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write ./**/*.{js,jsx,ts,tsx}"
   },
   "dependencies": {
     "@formspree/react": "^2.4.1",
@@ -28,6 +29,7 @@
     "@types/styled-components": "^5.1.26",
     "babel-plugin-styled-components": "^2.0.7",
     "babel-runtime": "^6.26.0",
+    "prettier": "^2.8.8",
     "typescript": "^5.0.2"
   },
   "engines": {

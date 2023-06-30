@@ -1,8 +1,8 @@
 export type Props = {
-	open: boolean;
-	close: () => void;
+  open: boolean;
+  close: () => void;
 };
 
 export type StyledProps = {
-	open: boolean;
+  open: boolean;
 };

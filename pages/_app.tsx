@@ -20,50 +20,50 @@ import { initStyles } from '../utils/styles';
 NProgress.configure({ showSpinner: false });
 
 const App = ({ Component, pageProps }: AppProps) => {
-	const router = useRouter();
+  const router = useRouter();
 
-	useEffect(() => {
-		router.events.on('routeChangeStart', () => {
-			NProgress.start();
-		});
+  useEffect(() => {
+    router.events.on('routeChangeStart', () => {
+      NProgress.start();
+    });
 
-		router.events.on('routeChangeComplete', url => {
-			NProgress.done();
-			pageview(url);
-		});
+    router.events.on('routeChangeComplete', (url) => {
+      NProgress.done();
+      pageview(url);
+    });
 
-		router.events.on('routeChangeError', () => {
-			NProgress.done();
-		});
+    router.events.on('routeChangeError', () => {
+      NProgress.done();
+    });
 
-		return () => {
-			router.events.off('routeChangeComplete', url => {
-				pageview(url);
-			});
-		};
-	}, [router.events]);
+    return () => {
+      router.events.off('routeChangeComplete', (url) => {
+        pageview(url);
+      });
+    };
+  }, [router.events]);
 
-	return (
-		<>
-			<Script
-				id='styles-init'
-				strategy='afterInteractive'
-				dangerouslySetInnerHTML={{
-					__html: initStyles()
-				}}
-			/>
-			<Theme>
-				<SharedStyles>
-					<GlobalStyles />
-					<Container>
-						<Nav />
-						<Component {...pageProps} />
-						<Footer />
-					</Container>
-				</SharedStyles>
-			</Theme>
-		</>
-	);
+  return (
+    <>
+      <Script
+        id='styles-init'
+        strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: initStyles(),
+        }}
+      />
+      <Theme>
+        <SharedStyles>
+          <GlobalStyles />
+          <Container>
+            <Nav />
+            <Component {...pageProps} />
+            <Footer />
+          </Container>
+        </SharedStyles>
+      </Theme>
+    </>
+  );
 };
 
 export default App;

@@ -1,5 +1,5 @@
 [*.{ts,js,json,tsx,md,mdx,html}]
 charset = utf-8
-indent_style = tab
+indent_style = space
 indent_size = 2
 quote_type= single
