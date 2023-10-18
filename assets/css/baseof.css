@@ -1,5 +1,16 @@
-@import url("../fonts/OpenSans.ttf");
-@import url("../fonts/OpenSans-Italic.ttf");
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-Italic.ttf') format('ttf');
+    font-weight: normal;
+    font-style: italic;
+}
 
 :root {
     /* Colors */

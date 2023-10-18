@@ -1,5 +1,5 @@
 {{ $styles := resources.Get "css/baseof.css" | toCSS | minify | fingerprint }}
-{{ $scripts := resources.Get "js/baseof.js" | minify | fingerprint }}
+{{ $scripts := resources.Get "js/baseof.js" | js.Build | minify | fingerprint }}
 
 <html>
   <head>
