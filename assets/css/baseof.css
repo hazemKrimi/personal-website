@@ -1,0 +1,31 @@
+@import url("../fonts/OpenSans.ttf");
+@import url("../fonts/OpenSans-Italic.ttf");
+
+:root {
+    /* Colors */
+    --black: #131314;
+    --white: #FFFFFF;
+    --crimson: #BD1839;
+    --light-gray: #E7E7E7;
+
+    /* Background colors */
+    --dark-background: #1D1B1B;
+    --light-background: #FBFBFB;
+
+    /* Radiuses */
+    --card-radius: 30px;
+    --form-radius: 9px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+}
