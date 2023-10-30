@@ -22,7 +22,18 @@ function updateTheme(theme) {
     '--background',
     theme === 'light' ? 'var(--light-background)' : 'var(--dark-background)'
   );
+  root.style.setProperty(
+    '--header-background',
+    theme === 'light'
+      ? 'var(--header-light-background)'
+      : 'var(--header-dark-background)'
+  );
+  root.style.setProperty(
+    '--header-shadow',
+    theme === 'light' ? 'var(--shadow)' : 'none'
+  );
   root.style.setProperty('--text', theme === 'light' ? 'black' : 'white');
+  root.style.setProperty('--color', theme === 'light' ? 'black' : 'white');
 }
 
 const root = document.documentElement;
@@ -32,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateTheme(theme);
 });
 
-document.querySelector('#switch-theme').addEventListener('click', () => {
+document.querySelector('#theme-toggle').addEventListener('click', () => {
   theme = theme === 'light' ? 'dark' : 'light';
   window.localStorage.setItem('theme', theme);
   updateTheme(theme);

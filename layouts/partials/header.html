@@ -1,0 +1,28 @@
+{{ $styles := resources.Get "css/partials/header.css" | toCSS | minify |
+fingerprint }} {{ $headerFaceImage := resources.Get "images/header-face.png" }}
+
+<header>
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+  <div id="header-face">
+    <img src="{{ $headerFaceImage.Permalink }}" alt="Hazem Krimi" />
+    <h3>Hazem Krimi</h3>
+  </div>
+  <div id="menus">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/projects">Projects</a>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <div id="links">
+    <a href="/"> {{ readFile "assets/icons/linkedin.svg" | safeHTML }} </a>
+    <a href="/"> {{ readFile "assets/icons/twitter.svg" | safeHTML }} </a>
+    <a href="/"> {{ readFile "assets/icons/github.svg" | safeHTML }} </a>
+    <a href="/"> {{ readFile "assets/icons/rss.svg" | safeHTML }} </a>
+    <a href="/"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
+    <div class="vertical-separator"></div>
+    <a href="#" id="theme-toggle">
+      {{ readFile "assets/icons/sun.svg" | safeHTML }}
+    </a>
+  </div>
+</header>

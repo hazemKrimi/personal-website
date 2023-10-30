@@ -1,0 +1,50 @@
+:root {
+  --header-light-background: var(--white);
+  --header-dark-background: #676666;
+}
+
+header {
+  width: 85%;
+  margin: 3.125rem auto;
+  padding: 0.938rem 2.188rem;
+
+  border-radius: 0.75rem;
+  box-shadow: var(--header-shadow);
+
+  background-color: var(--header-background);
+  color: var(--text);
+
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header #header-face {
+  display: flex;
+  align-items: center;
+  column-gap: 0.625rem;
+}
+
+header #header-face h3 {
+  font-weight: 600;
+}
+
+header #menus {
+  display: flex;
+  align-items: center;
+  column-gap: 1.563rem;
+}
+
+header #menus a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+header #links {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
