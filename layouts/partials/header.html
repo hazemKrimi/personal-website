@@ -1,8 +1,15 @@
-{{ $styles := resources.Get "css/partials/header.css" | toCSS | minify |
-fingerprint }} {{ $headerFaceImage := resources.Get "images/header-face.png" }}
+{{ define "styles" }}
+  {{ $styles := resources.Get "css/partials/header.css" | toCSS | minify | fingerprint }}
+
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ end }}
+
+{{ $headerFaceImage := resources.Get "images/header-face.png" }}
+{{ $sun := resources.Get "icons/sun.svg" }}
+{{ $moon := resources.Get "icons/moon.svg" }}
+{{ $cv := resources.Get "cv.pdf" }}
 
 <header>
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" />
   <div id="header-face">
     <img src="{{ $headerFaceImage.Permalink }}" alt="Hazem Krimi" />
     <h3>Hazem Krimi</h3>
@@ -15,14 +22,16 @@ fingerprint }} {{ $headerFaceImage := resources.Get "images/header-face.png" }}
     <a href="/contact">Contact</a>
   </div>
   <div id="links">
-    <a href="/"> {{ readFile "assets/icons/linkedin.svg" | safeHTML }} </a>
-    <a href="/"> {{ readFile "assets/icons/twitter.svg" | safeHTML }} </a>
-    <a href="/"> {{ readFile "assets/icons/github.svg" | safeHTML }} </a>
-    <a href="/"> {{ readFile "assets/icons/rss.svg" | safeHTML }} </a>
-    <a href="/"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
+    <a href="https://www.linkedin.com/in/hazemkrimi" target="_blank"> {{ readFile "assets/icons/linkedin.svg" | safeHTML }} </a>
+    <a href="https://twitter.com/HazemKrimi" target="_blank"> {{ readFile "assets/icons/twitter.svg" | safeHTML }} </a>
+    <a href="https://github.com/hazemKrimi" target="_blank"> {{ readFile "assets/icons/github.svg" | safeHTML }} </a>
+    <a href="/" target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }} </a>
+    <a href="{{ $cv.Permalink }}" target="_blank"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
     <div class="vertical-separator"></div>
-    <a href="#" id="theme-toggle">
-      {{ readFile "assets/icons/sun.svg" | safeHTML }}
-    </a>
+    <span
+      id="theme-toggle"
+      data-moon="{{ $moon.Permalink }}"
+      data-sun="{{ $sun.Permalink }}"
+    ></span>
   </div>
 </header>

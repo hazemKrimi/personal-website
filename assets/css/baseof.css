@@ -84,6 +84,7 @@ a {
 }
 
 .vertical-separator {
-  border-left: 1px solid rgba(0, 0, 0, .25);
+  border-left: 1px solid var(--text);
   height: 24px;
+  opacity: .25;
 }

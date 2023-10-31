@@ -34,6 +34,13 @@ function updateTheme(theme) {
   );
   root.style.setProperty('--text', theme === 'light' ? 'black' : 'white');
   root.style.setProperty('--color', theme === 'light' ? 'black' : 'white');
+
+  fetch(`../icons/${theme === 'light' ? 'sun' : 'moon'}.svg`)
+    .then((response) => response.text())
+    .then((svg) => {
+      document.querySelector('#theme-toggle').innerHTML = svg;
+    })
+    .catch(() => {})
 }
 
 const root = document.documentElement;

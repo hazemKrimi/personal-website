@@ -5,7 +5,7 @@
 
 header {
   width: 85%;
-  margin: 3.125rem auto;
+  margin: 2.5rem auto;
   padding: 0.938rem 2.188rem;
 
   border-radius: 0.75rem;
@@ -47,4 +47,21 @@ header #links {
   display: flex;
   align-items: center;
   column-gap: 1.5rem;
+}
+
+header #links .linkedin,
+header #links .github,
+header #links .cv-paper-flip {
+  stroke: var(--text);
+}
+
+header #links .twitter,
+header #links .rss,
+header #links .cv,
+header #links .moon {
+  fill: var(--text);
+}
+
+header #links #theme-toggle {
+  cursor: pointer;
 }
