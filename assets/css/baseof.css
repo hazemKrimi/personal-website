@@ -53,6 +53,11 @@ body {
   isolation: isolate;
 }
 
+main {
+  width: 85%;
+  margin: auto;
+}
+
 img,
 picture,
 video,
@@ -86,5 +91,10 @@ a {
 .vertical-separator {
   border-left: 1px solid var(--text);
   height: 24px;
+  opacity: .25;
+}
+
+hr {
+  color: var(--text);
   opacity: .25;
 }

@@ -5,9 +5,17 @@
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 {{ end }}
 
+{{ define "scripts" }}
+  {{ $scripts := resources.Get "js/partials/header.js" | js.Build | minify }}
+
+  <script defer src="{{ $scripts.RelPermalink }}"></script>
+{{ end }}
+
 {{ $headerFaceImage := resources.Get "images/header-face.png" }}
 {{ $sun := resources.Get "icons/sun.svg" }}
 {{ $moon := resources.Get "icons/moon.svg" }}
+{{ $burger := resources.Get "icons/burger.svg" }}
+{{ $close := resources.Get "icons/close.svg" }}
 {{ $cv := resources.Get "cv.pdf" }}
 
 <header>
@@ -30,10 +38,37 @@
     <a href="{{ $cv.Permalink }}" target="_blank"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
     <div class="vertical-separator"></div>
     <span
-      id="theme-toggle"
-      data-moon="{{ $moon.Permalink }}"
-      data-sun="{{ $sun.Permalink }}"
+      class="theme-toggler"
+      data-moon="{{ $moon.RelPermalink }}"
+      data-sun="{{ $sun.RelPermalink }}"
     ></span>
   </div>
-  <span id="burger">{{ readFile "assets/icons/burger.svg" | safeHTML }}</span>
+  <span
+    id="burger"
+    data-burger="{{ $burger.RelPermalink }}"
+    data-close="{{ $close.RelPermalink }}"
+  ></span>
 </header>
+
+<nav>
+  <div id="menus">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/projects">Projects</a>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <hr>
+  <div id="links">
+    <span
+      class="theme-toggler"
+      data-moon="{{ $moon.RelPermalink }}"
+      data-sun="{{ $sun.RelPermalink }}"
+    ></span>
+    <a href="{{ $cv.Permalink }}" target="_blank"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
+    <a href="/" target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }} </a>
+    <a href="https://github.com/hazemKrimi" target="_blank"> {{ readFile "assets/icons/github.svg" | safeHTML }} </a>
+    <a href="https://twitter.com/HazemKrimi" target="_blank"> {{ readFile "assets/icons/twitter.svg" | safeHTML }} </a>
+    <a href="https://www.linkedin.com/in/hazemkrimi" target="_blank"> {{ readFile "assets/icons/linkedin.svg" | safeHTML }} </a>
+  </div>
+</nav>

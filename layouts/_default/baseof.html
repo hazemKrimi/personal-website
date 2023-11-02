@@ -15,7 +15,8 @@
       {{ end }}
     </title>
 
-    <script defer src="{{ $scripts.Permalink }}"></script>
+    <script defer src="{{ $scripts.RelPermalink }}"></script>
+    {{ block "scripts" . }}{{ end }}
   </head>
   <body>
     {{ partial "header.html" . }}

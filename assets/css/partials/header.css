@@ -1,24 +1,33 @@
 :root {
   --header-light-background: var(--white);
   --header-dark-background: #676666;
+  --nav-light-background: var(--white);
+  --nav-dark-background: #121212;
+}
+
+header, nav {
+  width: 85%;
+  border-radius: 0.75rem;
+  text-transform: uppercase;
 }
 
 header {
-  width: 85%;
   margin: 2.5rem auto;
   padding: 0.938rem 2.188rem;
-
-  border-radius: 0.75rem;
-  box-shadow: var(--header-shadow);
 
   background-color: var(--header-background);
   color: var(--text);
 
-  text-transform: uppercase;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+nav {
+  background-color: var(--nav-background);
+  display: none;
+  position: fixed;
+  flex-direction: column;
 }
 
 header #header-face {
@@ -31,16 +40,29 @@ header #header-face h3 {
   font-weight: 600;
 }
 
+header #menus a, nav #menus a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
 header #menus {
   display: flex;
   align-items: center;
   column-gap: 1.563rem;
 }
 
-header #menus a {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
+nav #menus {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  row-gap: 3.125rem;
+}
+
+nav hr {
+  margin-top: 3.125rem;
+  margin-bottom: 1.25rem;
 }
 
 header #links {
@@ -49,17 +71,27 @@ header #links {
   column-gap: 1.5rem;
 }
 
-header #links .linkedin,
-header #links .github,
-header #links .cv-paper-flip,
-header #burger svg path {
+nav #links {
+  display: flex;
+  justify-content: end;
+  column-gap: 1.5rem;
+}
+
+nav #links .theme-toggler {
+  margin-right: auto;
+}
+
+#links .linkedin,
+#links .github,
+#links .cv-paper-flip,
+#burger svg path {
   stroke: var(--text);
 }
 
-header #links .twitter,
-header #links .rss,
-header #links .cv,
-header #links .moon {
+#links .twitter,
+#links .rss,
+#links .cv,
+#links .moon {
   fill: var(--text);
 }
 
@@ -67,12 +99,12 @@ header #burger {
   display: none;
 }
 
-header #links #theme-toggle, header #burger {
+.theme-toggler, #burger {
   cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
-  header {
+  header, nav {
     padding: 0.938rem 1.25rem;
   }
 

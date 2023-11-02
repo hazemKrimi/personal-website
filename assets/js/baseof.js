@@ -1,4 +1,4 @@
-function getInitialTheme() {
+function initTheme() {
   const persistedColorPreference = window.localStorage.getItem('theme');
   const hasPersistedPreference = typeof persistedColorPreference === 'string';
 
@@ -16,7 +16,7 @@ function getInitialTheme() {
   return 'light';
 }
 
-function updateTheme(theme) {
+function loadTheme() {
   root.style.setProperty('--theme', theme);
   root.style.setProperty(
     '--background',
@@ -29,6 +29,12 @@ function updateTheme(theme) {
       : 'var(--header-dark-background)'
   );
   root.style.setProperty(
+    '--nav-background',
+    theme === 'light'
+      ? 'var(--nav-light-background)'
+      : 'var(--nav-dark-background)'
+  );
+  root.style.setProperty(
     '--header-shadow',
     theme === 'light' ? 'var(--shadow)' : 'none'
   );
@@ -38,20 +44,24 @@ function updateTheme(theme) {
   fetch(`../icons/${theme === 'light' ? 'sun' : 'moon'}.svg`)
     .then((response) => response.text())
     .then((svg) => {
-      document.querySelector('#theme-toggle').innerHTML = svg;
+      themeTogglers.forEach(themeToggler => {
+        themeToggler.innerHTML = svg;
+      });
     })
-    .catch(() => {})
+    .catch(() => {});
+}
+
+function updateTheme() {
+  theme = theme === 'light' ? 'dark' : 'light';
+  window.localStorage.setItem('theme', theme);
+  loadTheme();
 }
 
 const root = document.documentElement;
-let theme = getInitialTheme();
+const themeTogglers = document.querySelectorAll('.theme-toggler');
 
-document.addEventListener('DOMContentLoaded', () => {
-  updateTheme(theme);
-});
+let theme = initTheme();
 
-document.querySelector('#theme-toggle').addEventListener('click', () => {
-  theme = theme === 'light' ? 'dark' : 'light';
-  window.localStorage.setItem('theme', theme);
-  updateTheme(theme);
-});
+document.addEventListener('DOMContentLoaded', loadTheme);
+
+themeTogglers.forEach(themerToggler => themerToggler.addEventListener('click', updateTheme));
