@@ -1,20 +1,25 @@
-{{ $styles := resources.Get "css/baseof.css" | toCSS | minify | fingerprint }}
-{{ $scripts := resources.Get "js/baseof.js" | js.Build | minify | fingerprint }}
+{{ $styles := resources.Get "css/baseof.css" | toCSS | minify }}
+{{ $scripts := resources.Get "js/baseof.js" | js.Build | minify }}
 
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="{{ $styles.Permalink }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
     {{ block "styles" . }}{{ end }}
+
     <title>
       {{ block "title" . }}
         {{ .Site.Title }}
       {{ end }}
     </title>
+
     <script defer src="{{ $scripts.Permalink }}"></script>
   </head>
   <body>
     {{ partial "header.html" . }}
+    
     <main>
       {{ block "main" . }}{{ end }}
     </main>

@@ -1,7 +1,8 @@
-{{ define "styles" }}
-  {{ $styles := resources.Get "css/partials/header.css" | toCSS | minify | fingerprint }}
 
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ define "styles" }}
+  {{ $styles := resources.Get "css/partials/header.css" | toCSS | minify }}
+  
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 {{ end }}
 
 {{ $headerFaceImage := resources.Get "images/header-face.png" }}
@@ -34,4 +35,5 @@
       data-sun="{{ $sun.Permalink }}"
     ></span>
   </div>
+  <span id="burger">{{ readFile "assets/icons/burger.svg" | safeHTML }}</span>
 </header>

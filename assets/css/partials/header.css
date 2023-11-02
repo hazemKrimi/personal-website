@@ -51,7 +51,8 @@ header #links {
 
 header #links .linkedin,
 header #links .github,
-header #links .cv-paper-flip {
+header #links .cv-paper-flip,
+header #burger svg path {
   stroke: var(--text);
 }
 
@@ -62,6 +63,24 @@ header #links .moon {
   fill: var(--text);
 }
 
-header #links #theme-toggle {
+header #burger {
+  display: none;
+}
+
+header #links #theme-toggle, header #burger {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 0.938rem 1.25rem;
+  }
+
+  header #menus, header #links {
+    display: none;
+  }
+
+  header #burger {
+    display: initial;
+  }
 }
