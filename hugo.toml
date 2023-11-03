@@ -1,6 +1,11 @@
 baseURL = 'http://hazemkrimi.tech/'
 languageCode = 'en-us'
 title = 'Hazem Krimi'
+[module]
+[[module.mounts]]
+    includeFiles = '*/**'
+    source = 'assets'
+    target = 'assets'
 [menu]
     [[menu.main]]
         name = 'Home'
