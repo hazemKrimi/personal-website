@@ -20,7 +20,7 @@
 
 <header>
   <div id="header-face">
-    <img src="{{ $headerFaceImage.Permalink }}" alt="Hazem Krimi" />
+    <img src="{{ $headerFaceImage.RelPermalink }}" alt="Hazem Krimi" />
     <h3>Hazem Krimi</h3>
   </div>
   <div id="menus">
@@ -35,7 +35,7 @@
     <a href="https://twitter.com/HazemKrimi" target="_blank"> {{ readFile "assets/icons/twitter.svg" | safeHTML }} </a>
     <a href="https://github.com/hazemKrimi" target="_blank"> {{ readFile "assets/icons/github.svg" | safeHTML }} </a>
     <a href="/" target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }} </a>
-    <a href="{{ $cv.Permalink }}" target="_blank"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
+    <a href="{{ $cv.RelPermalink }}" target="_blank"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
     <div class="vertical-separator"></div>
     <span
       class="theme-toggler"
@@ -65,7 +65,7 @@
       data-moon="{{ $moon.RelPermalink }}"
       data-sun="{{ $sun.RelPermalink }}"
     ></span>
-    <a href="{{ $cv.Permalink }}" target="_blank"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
+    <a href="{{ $cv.RelPermalink }}" target="_blank"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
     <a href="/" target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }} </a>
     <a href="https://github.com/hazemKrimi" target="_blank"> {{ readFile "assets/icons/github.svg" | safeHTML }} </a>
     <a href="https://twitter.com/HazemKrimi" target="_blank"> {{ readFile "assets/icons/twitter.svg" | safeHTML }} </a>
