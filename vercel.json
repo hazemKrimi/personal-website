@@ -1,5 +1,0 @@
-{
-    "buildCommand": "hugo",
-    "devCommand": "hugo server",
-    "outputDirectory": "public"
-}
