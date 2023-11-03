@@ -41,7 +41,7 @@ function loadTheme() {
   root.style.setProperty('--text', theme === 'light' ? 'black' : 'white');
   root.style.setProperty('--color', theme === 'light' ? 'black' : 'white');
 
-  fetch(`../icons/${theme === 'light' ? 'sun' : 'moon'}.svg`)
+  fetch(`./../icons/${theme === 'light' ? 'sun' : 'moon'}.svg`)
     .then((response) => response.text())
     .then((svg) => {
       themeTogglers.forEach(themeToggler => {
