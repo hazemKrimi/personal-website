@@ -1,5 +1,5 @@
 function loadBurger() {
-  fetch(`./../icons/${burgerOpen ? 'close' : 'burger'}.svg`)
+  fetch(`/icons/${burgerOpen ? 'close' : 'burger'}.svg`)
     .then((response) => response.text())
     .then((svg) => {
       burgerPlaceholder.innerHTML = svg;
