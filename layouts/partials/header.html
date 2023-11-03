@@ -24,11 +24,9 @@
     <h3>Hazem Krimi</h3>
   </div>
   <div id="menus">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/projects">Projects</a>
-    <a href="/blog">Blog</a>
-    <a href="/contact">Contact</a>
+    {{ range site.Menus.main.Sort.ByWeight }}
+      <a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ .Name }}</a>
+    {{ end }}
   </div>
   <div id="links">
     <a href="https://www.linkedin.com/in/hazemkrimi" target="_blank"> {{ readFile "assets/icons/linkedin.svg" | safeHTML }} </a>
