@@ -9,6 +9,7 @@ header, nav {
   width: 85%;
   border-radius: 0.75rem;
   text-transform: uppercase;
+  color: var(--text);
 }
 
 header {
@@ -16,7 +17,6 @@ header {
   padding: 0.938rem 2.188rem;
 
   background-color: var(--header-background);
-  color: var(--text);
 
   display: flex;
   align-items: center;
@@ -84,22 +84,22 @@ nav #links .theme-toggler {
 #links .linkedin,
 #links .github,
 #links .cv-paper-flip,
-#burger svg path {
+#nav-toggler svg path {
   stroke: var(--text);
 }
 
 #links .twitter,
 #links .rss,
 #links .cv,
-#links .moon {
+#links .moon > path {
   fill: var(--text);
 }
 
-header #burger {
+header #nav-toggler {
   display: none;
 }
 
-.theme-toggler, #burger {
+.theme-toggler, #nav-toggler {
   cursor: pointer;
 }
 
@@ -112,7 +112,7 @@ header #burger {
     display: none;
   }
 
-  header #burger {
+  header #nav-toggler {
     display: initial;
   }
 }

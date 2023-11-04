@@ -37,15 +37,17 @@
     <div class="vertical-separator"></div>
     <span
       class="theme-toggler"
-      data-moon="{{ $moon.Permalink }}"
-      data-sun="{{ $sun.Permalink }}"
-    ></span>
+    >
+      {{ readFile "assets/icons/moon.svg" | safeHTML }}
+      {{ readFile "assets/icons/sun.svg" | safeHTML }}
+    </span>
   </div>
   <span
-    id="burger"
-    data-burger="{{ $burger.Permalink }}"
-    data-close="{{ $close.Permalink }}"
-  ></span>
+    id="nav-toggler"
+  >
+    {{ readFile "assets/icons/burger.svg" | safeHTML }}
+    {{ readFile "assets/icons/close.svg" | safeHTML }}
+  </span>
 </header>
 
 <nav>
@@ -60,9 +62,10 @@
   <div id="links">
     <span
       class="theme-toggler"
-      data-moon="{{ $moon.Permalink }}"
-      data-sun="{{ $sun.Permalink }}"
-    ></span>
+    >
+      {{ readFile "assets/icons/moon.svg" | safeHTML }}
+      {{ readFile "assets/icons/sun.svg" | safeHTML }}
+    </span>
     <a href="{{ $cv.Permalink }}" target="_blank"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
     <a href="/" target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }} </a>
     <a href="https://github.com/hazemKrimi" target="_blank"> {{ readFile "assets/icons/github.svg" | safeHTML }} </a>

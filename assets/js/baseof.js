@@ -41,14 +41,18 @@ function loadTheme() {
   root.style.setProperty('--text', theme === 'light' ? 'black' : 'white');
   root.style.setProperty('--color', theme === 'light' ? 'black' : 'white');
 
-  fetch(`/icons/${theme === 'light' ? 'sun' : 'moon'}.svg`)
-    .then((response) => response.text())
-    .then((svg) => {
-      themeTogglers.forEach(themeToggler => {
-        themeToggler.innerHTML = svg;
-      });
-    })
-    .catch(() => {});
+  document.querySelector(
+    theme === 'light' ? 'header .moon' : 'header .sun'
+  ).style.display = 'none';
+  document.querySelector(
+    theme === 'light' ? 'nav .moon' : 'nav .sun'
+  ).style.display = 'none';
+  document.querySelector(
+    theme === 'light' ? 'header .sun' : 'header .moon'
+  ).style.display = 'block';
+  document.querySelector(
+    theme === 'light' ? 'nav .sun' : 'nav .moon'
+  ).style.display = 'block';
 }
 
 function updateTheme() {
@@ -64,4 +68,6 @@ let theme = initTheme();
 
 document.addEventListener('DOMContentLoaded', loadTheme);
 
-themeTogglers.forEach(themerToggler => themerToggler.addEventListener('click', updateTheme));
+themeTogglers.forEach((themerToggler) =>
+  themerToggler.addEventListener('click', updateTheme)
+);
