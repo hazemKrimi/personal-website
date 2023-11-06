@@ -1,4 +1,3 @@
-
 {{ define "styles" }}
   {{ $styles := resources.Get "css/partials/header.css" | toCSS | minify }}
   
@@ -12,10 +11,6 @@
 {{ end }}
 
 {{ $headerFaceImage := resources.Get "images/header-face.png" }}
-{{ $sun := resources.Get "icons/sun.svg" }}
-{{ $moon := resources.Get "icons/moon.svg" }}
-{{ $burger := resources.Get "icons/burger.svg" }}
-{{ $close := resources.Get "icons/close.svg" }}
 {{ $cv := resources.Get "cv.pdf" }}
 
 <header>

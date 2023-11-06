@@ -55,6 +55,7 @@ body {
 
 main {
   width: 85%;
+  min-height: 70vh;
   margin: auto;
 }
 

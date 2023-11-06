@@ -35,6 +35,12 @@ function loadTheme() {
       : 'var(--nav-dark-background)'
   );
   root.style.setProperty(
+    '--footer-background',
+    theme === 'light'
+      ? 'var(--footer-light-background)'
+      : 'var(--footer-dark-background)'
+  );
+  root.style.setProperty(
     '--header-shadow',
     theme === 'light' ? 'var(--shadow)' : 'none'
   );

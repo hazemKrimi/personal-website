@@ -1,0 +1,22 @@
+:root {
+    --footer-light-background: #ECECEC;
+    --footer-dark-background: #131212;
+}
+
+footer {
+    width: 100%;
+    min-height: 25rem;
+    padding: 3rem 5rem;
+    margin-top: 2.5rem;
+
+    display: flex;
+    align-items: start;
+    column-gap: 6rem;
+
+    background-color: var(--footer-background);
+    color: var(--text);
+}
+
+footer div {
+    width: 20rem;
+}
