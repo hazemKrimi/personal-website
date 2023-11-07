@@ -53,6 +53,21 @@ body {
   isolation: isolate;
 }
 
+#links .linkedin,
+#links .github,
+#links .cv-paper-flip,
+#links .mail,
+#nav-toggler svg path {
+  stroke: var(--text);
+}
+
+#links .twitter,
+#links .rss,
+#links .cv,
+#links .moon > path {
+  fill: var(--text);
+}
+
 main {
   width: 85%;
   min-height: 70vh;

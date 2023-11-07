@@ -1,18 +1,39 @@
 {{ $styles := resources.Get "css/partials/footer.css" | toCSS | minify }}
 
-<link rel="stylesheet" href="{{ $styles.Permalink }}">
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+
+{{ $faceImage := resources.Get "images/small-face.png" }}
+{{ $cv :=resources.Get "cv.pdf" }}
 
 <footer>
-    <div>
-        <h3>Recent Blogs</h3>
-    </div>
-    <div>
-        <h3>Recent Projects</h3>
-    </div>
-    <div>
-        <h3>About</h3>
-    </div>
-    <div>
-        <h3>Contact</h3>
-    </div>
+  <div id="footer-face">
+    <img src="{{ $faceImage.Permalink }}" alt="Hazem Krimi" />
+    <h3>Hazem Krimi</h3>
+  </div>
+  <div id="links">
+    <a href="https://www.linkedin.com/in/hazemkrimi" target="_blank">
+      {{ readFile "assets/icons/linkedin.svg" | safeHTML }}
+    </a>
+    <a href="https://twitter.com/HazemKrimi" target="_blank">
+      {{ readFile "assets/icons/twitter.svg" | safeHTML }}
+    </a>
+    <a href="https://github.com/hazemKrimi" target="_blank">
+      {{ readFile "assets/icons/github.svg" | safeHTML }}
+    </a>
+    <a href="/" target="_blank">
+      {{ readFile "assets/icons/rss.svg" | safeHTML }}
+    </a>
+    <a href="mailto:me@hazemkrimi.tech" target="_blank">
+      {{ readFile "assets/icons/mail.svg" | safeHTML }}
+    </a>
+    <a href="{{ $cv.Permalink }}" target="_blank">
+      {{ readFile "assets/icons/cv.svg" | safeHTML }}
+    </a>
+  </div>
+  <p id="copyright"></p>
+  <script>
+    const copyright = (document.querySelector(
+      '#copyright'
+    ).innerHTML = `&copy ${new Date().getFullYear()} Hazem Krimi`);
+  </script>
 </footer>

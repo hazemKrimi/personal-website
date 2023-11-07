@@ -1,10 +1,13 @@
 function loadBurger() {
-  navToggler.querySelector(
-    burgerOpen ? '#burger' : '#close'
-  ).style.display = 'none';
-  navToggler.querySelector(
-    burgerOpen ? '#close' : '#burger'
-  ).style.display = 'block';
+  const headerInitialLeftPosition = header.getBoundingClientRect().x;
+
+  navToggler.querySelector(burgerOpen ? '#burger' : '#close').style.display =
+    'none';
+  navToggler.querySelector(burgerOpen ? '#close' : '#burger').style.display =
+    'block';
+  header.style.position = burgerOpen ? 'fixed' : 'initial';
+  header.style.top = burgerOpen ? '0px' : 'initial';
+  header.style.left = burgerOpen ? `${headerInitialLeftPosition}px` : 'initial';
   mobileNavigation.style.display = burgerOpen ? 'flex' : 'none';
   mobileNavigation.style.top = burgerOpen
     ? `calc(${header.getBoundingClientRect().y}px + ${
@@ -12,8 +15,11 @@ function loadBurger() {
       }px + 0.625rem)`
     : 'initial';
   mobileNavigation.style.left = burgerOpen
-    ? `${header.getBoundingClientRect().x}px`
+    ? `${headerInitialLeftPosition}px`
     : 'initial';
+  document.querySelector('main').style.marginTop = burgerOpen
+    ? `calc(${header.getBoundingClientRect().height}px + 5rem)`
+    : '0px';
 }
 
 function updateBurger() {

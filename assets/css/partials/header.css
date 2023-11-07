@@ -81,20 +81,6 @@ nav #links .theme-toggler {
   margin-right: auto;
 }
 
-#links .linkedin,
-#links .github,
-#links .cv-paper-flip,
-#nav-toggler svg path {
-  stroke: var(--text);
-}
-
-#links .twitter,
-#links .rss,
-#links .cv,
-#links .moon > path {
-  fill: var(--text);
-}
-
 header #nav-toggler {
   display: none;
 }
