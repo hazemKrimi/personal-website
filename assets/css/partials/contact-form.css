@@ -25,6 +25,10 @@ textarea {
   background-color: var(--input-background);
 }
 
+textarea {
+  resize: none;
+}
+
 form {
   display: flex;
   flex-direction: column;
