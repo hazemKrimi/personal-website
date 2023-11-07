@@ -18,6 +18,9 @@ function initTheme() {
 
 function loadTheme() {
   root.style.setProperty('--theme', theme);
+  document
+    .querySelector('meta[name="theme-color"]')
+    .setAttribute('content', theme === 'light' ? '#FBFBFB' : '#1D1B1B');
   root.style.setProperty(
     '--background',
     theme === 'light' ? 'var(--light-background)' : 'var(--dark-background)'

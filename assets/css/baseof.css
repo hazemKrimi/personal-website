@@ -15,13 +15,13 @@
 :root {
   /* Colors */
   --black: #131314;
-  --white: #ffffff;
-  --crimson: #bd1839;
-  --light-gray: #e7e7e7;
+  --white: white;
+  --crimson: #BD1839;
+  --light-gray: #E7E7E7;
 
   /* Background colors */
-  --dark-background: #1d1b1b;
-  --light-background: #fbfbfb;
+  --dark-background: #1D1B1B;
+  --light-background: #FBFBFB;
 
   /* Radiuses */
   --card-radius: 1.875rem;
