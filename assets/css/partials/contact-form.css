@@ -1,0 +1,39 @@
+:root {
+  --input-light-background: #f3f3f3;
+  --input-dark-background: #2d2d2d;
+  --button-light-background: #131212;
+  --button-dark-background: #353535;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  border-radius: 0.5625rem;
+  color: var(--text);
+}
+
+button {
+  padding: 1rem 2.8rem;
+  background-color: var(--button-background);
+  color: var(--white);
+}
+
+input,
+textarea {
+  padding: 1.2rem 1.9rem;
+  background-color: var(--input-background);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  row-gap: 1.7rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+}

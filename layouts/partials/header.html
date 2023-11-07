@@ -42,11 +42,9 @@
 
 <nav>
   <div id="menus">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/projects">Projects</a>
-    <a href="/blog">Blog</a>
-    <a href="/contact">Contact</a>
+    {{ range site.Menus.main.Sort.ByWeight }}
+      <a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ .Name }}</a>
+    {{ end }}
   </div>
   <hr>
   <div id="links">

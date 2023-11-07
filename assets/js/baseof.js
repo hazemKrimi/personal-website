@@ -38,6 +38,18 @@ function loadTheme() {
       : 'var(--nav-dark-background)'
   );
   root.style.setProperty(
+    '--input-background',
+    theme === 'light'
+      ? 'var(--input-light-background)'
+      : 'var(--input-dark-background)'
+  );
+  root.style.setProperty(
+    '--button-background',
+    theme === 'light'
+      ? 'var(--button-light-background)'
+      : 'var(--button-dark-background)'
+  );
+  root.style.setProperty(
     '--footer-background',
     theme === 'light'
       ? 'var(--footer-light-background)'

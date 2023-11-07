@@ -1,0 +1,10 @@
+{{ $styles := resources.Get "css/partials/contact-form.css" | toCSS | minify }}
+
+<link rel="stylesheet" href="{{ $styles.Permalink }}">
+
+<form action="{{ .Site.Params.formSpreeURL }}" method="post">
+  <input name="name" placeholder="Your name" type="text" />
+  <input name="email" placeholder="Your email" type="email" />
+  <textarea cols="30" name="message" placeholder="Enter your message here" rows="10"></textarea>
+  <button type="submit">Submit</button>
+</form>

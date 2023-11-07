@@ -1,6 +1,7 @@
-baseURL = 'http://hazemkrimi.tech/'
 languageCode = 'en-us'
 title = 'Hazem Krimi'
+[params]
+    formSpreeURL = 'https://formspree.io/f/xoqpgyge'
 [module]
 [menu]
     [[menu.main]]
