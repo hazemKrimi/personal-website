@@ -12,13 +12,13 @@ function loadBurger() {
   mobileNavigation.style.top = burgerOpen
     ? `calc(${header.getBoundingClientRect().y}px + ${
         header.getBoundingClientRect().height
-      }px + 0.625rem)`
+      }px)`
     : 'initial';
   mobileNavigation.style.left = burgerOpen
     ? `${headerInitialLeftPosition}px`
     : 'initial';
   document.querySelector('main').style.marginTop = burgerOpen
-    ? `calc(${header.getBoundingClientRect().height}px + 5rem)`
+    ? `calc(${header.getBoundingClientRect().height}px + 3rem)`
     : '0px';
 }
 
@@ -33,7 +33,7 @@ function resetBurger() {
 }
 
 function resetBurgerWhenWindowResized() {
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 1024) {
     resetBurger();
   }
 }
