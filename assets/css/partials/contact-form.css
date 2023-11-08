@@ -41,7 +41,9 @@ form div {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 1.7rem;
 }
 
 form button, form #submission-status {
@@ -50,9 +52,7 @@ form button, form #submission-status {
   color: var(--white);
 }
 
-
 form #submission-status {
-  margin-left: auto;
   width: auto;
   display: none;
 }
