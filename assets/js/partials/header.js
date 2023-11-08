@@ -57,7 +57,7 @@ let burgerOpen = false;
 
 window.addEventListener('resize', resetBurgerWhenWindowResized);
 
-document.addEventListener('DOMContentLoaded', loadBurger);
+document.addEventListener('DOMContentLoaded', resetBurger);
 
 document.addEventListener('click', resetBurgerWhenClickedOutside);
 
