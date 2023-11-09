@@ -57,7 +57,9 @@ body {
 #links .github,
 #links .cv-paper-flip,
 #links .mail,
-#nav-toggler svg path {
+#nav-toggler svg path,
+.arrow,
+.eye {
   stroke: var(--text);
 }
 

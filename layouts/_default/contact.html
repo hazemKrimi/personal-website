@@ -1,5 +1,5 @@
 {{ define "styles" }}
-    {{ $styles := resources.Get "css/page/contact.css" | toCSS | minify }}
+    {{ $styles := resources.Get "css/contact.css" | toCSS | minify }}
 
     <link rel="stylesheet" href="{{ $styles.Permalink }}" />
 {{ end }}

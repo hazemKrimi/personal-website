@@ -1,0 +1,60 @@
+:root {
+  --project-card-light-background: #f2f2f2;
+  --project-card-dark-background: #131212;
+}
+
+article {
+  background-color: var(--project-card-background);
+  color: var(--text);
+  border-radius: 1.875rem;
+  padding: 3.5rem 2.5rem;
+}
+
+article h3 {
+  font-size: 2rem;
+  margin-bottom: 1.75rem;
+  text-transform: capitalize;
+}
+
+article p {
+  margin-bottom: 4rem;
+}
+
+article #links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+article .read-more,
+article .demo {
+  display: inline-flex;
+  align-items: center;
+}
+
+article .read-more svg,
+article .demo svg {
+  margin-left: 0.5rem;
+}
+
+article .demo {
+  background-color: #353535;
+  color: var(--white);
+  border-radius: 0.4375rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+article .demo .eye {
+  stroke: var(--white);
+}
+
+@media only screen and (max-width: 1024px) {
+  article h3 {
+    font-size: 1.5rem;
+  }
+
+  article p {
+    margin-bottom: 1.75rem;
+  }
+}

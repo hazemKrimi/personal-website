@@ -1,0 +1,15 @@
+{{ define "styles" }}
+    {{ $styles := resources.Get "css/list.css" | toCSS | minify }}
+
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ end }}
+
+{{ define "main" }}
+    {{ .Content }}
+
+    <section>
+        {{ range .Pages }}
+            {{ partial "project-card.html" . }}
+        {{ end }}
+    </section>
+{{ end }}

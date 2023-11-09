@@ -1,0 +1,20 @@
+{{ $styles := resources.Get "css/partials/project-card.css" | toCSS | minify }}
+
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+
+<article>
+  <div>
+    <h3>{{ .Title }}</h3>
+    <p>{{ .Params.description }}</p>
+    <div id="links">
+      <a class="read-more" href="{{ .Permalink }}">
+        Read more {{ readFile "assets/icons/arrow.svg" | safeHTML }}
+      </a>
+      {{ with .Params.demo }}
+      <a class="demo" href="{{ . }}" target="_blank">
+        Demo {{ readFile "assets/icons/eye.svg" | safeHTML }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</article>

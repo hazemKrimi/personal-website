@@ -1,7 +1,7 @@
 :root {
-  --header-light-background: var(--white);
+  --header-light-background: #ECECEC;
   --header-dark-background: #676666;
-  --nav-light-background: var(--white);
+  --nav-light-background: #ECECEC;
   --nav-dark-background: #121212;
 }
 

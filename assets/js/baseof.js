@@ -50,6 +50,12 @@ function loadTheme() {
       : 'var(--button-dark-background)'
   );
   root.style.setProperty(
+    '--project-card-background',
+    theme === 'light'
+      ? 'var(--project-card-light-background)'
+      : 'var(--project-card-dark-background)'
+  );
+  root.style.setProperty(
     '--footer-background',
     theme === 'light'
       ? 'var(--footer-light-background)'
