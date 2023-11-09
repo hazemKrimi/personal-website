@@ -50,6 +50,10 @@ article .demo .eye {
 }
 
 @media only screen and (max-width: 1024px) {
+  article {
+    padding: 2.5rem 1.5rem;
+  }
+
   article h3 {
     font-size: 1.5rem;
   }
