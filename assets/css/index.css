@@ -7,8 +7,16 @@ main p {
   margin-bottom: 3rem;
 }
 
+section {
+  margin-bottom: 5rem;
+}
+
 @media only screen and (max-width: 1024px) {
   main h2 {
     font-size: 1.75rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
   }
 }

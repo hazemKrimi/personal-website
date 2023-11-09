@@ -3,10 +3,10 @@
 
     <link rel="stylesheet" href="{{ $styles.Permalink }}" />
 {{ end }}
-
 {{ define "main" }}
-    <h2>Projects</h2>
-    <section id="projects">
+    <section>
+        <h2>Projects</h2>
+        <p>These are all the projects I worked on personally and professionally.</p>
         {{ range (where .Site.Pages "Section" "projects") }}
             {{ range .Pages }}
                 {{ partial "project-card.html" . }}
@@ -14,8 +14,10 @@
         {{ end }}
     </section>
 
-    <h2>Contact</h2>
-    <p>Here you can contact me personally for any questions or opportunities.</p>
-    
-    {{ partial "contact-form.html" . }}
+    <section>
+        <h2>Contact</h2>
+        <p>Here you can contact me personally for any questions or opportunities.</p>
+
+        {{ partial "contact-form.html" . }}
+    </section>
 {{ end }}
