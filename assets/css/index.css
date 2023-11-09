@@ -16,6 +16,10 @@ section {
     font-size: 1.75rem;
   }
 
+  main p {
+    margin-bottom: 1rem;
+  }
+
   section {
     margin-bottom: 2rem;
   }
