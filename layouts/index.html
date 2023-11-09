@@ -5,7 +5,17 @@
 {{ end }}
 
 {{ define "main" }}
-    {{ .Content }}
+    <h2>Projects</h2>
+    <section id="projects">
+        {{ range (where .Site.Pages "Section" "projects") }}
+            {{ range .Pages }}
+                {{ partial "project-card.html" . }}
+            {{ end }}
+        {{ end }}
+    </section>
 
+    <h2>Contact</h2>
+    <p>Here you can contact me personally for any questions or opportunities.</p>
+    
     {{ partial "contact-form.html" . }}
 {{ end }}
