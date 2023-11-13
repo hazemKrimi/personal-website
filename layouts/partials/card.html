@@ -1,4 +1,4 @@
-{{ $styles := resources.Get "css/partials/project-card.css" | toCSS | minify }}
+{{ $styles := resources.Get "css/partials/card.css" | toCSS | minify }}
 
 <link rel="stylesheet" href="{{ $styles.Permalink }}" />
 

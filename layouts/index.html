@@ -9,7 +9,17 @@
         <p>These are all the projects I worked on personally and professionally.</p>
         {{ range (where .Site.Pages "Section" "projects") }}
             {{ range .Pages }}
-                {{ partial "project-card.html" . }}
+                {{ partial "card.html" . }}
+            {{ end }}
+        {{ end }}
+    </section>
+    
+    <section>
+        <h2>Blog</h2>
+        <p>These are articles about things I learned about software engineering.</p>
+        {{ range (where .Site.Pages "Section" "blog") }}
+            {{ range .Pages }}
+                {{ partial "card.html" . }}
             {{ end }}
         {{ end }}
     </section>
