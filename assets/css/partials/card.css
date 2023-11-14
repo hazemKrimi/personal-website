@@ -1,10 +1,10 @@
 :root {
-  --project-card-light-background: #f2f2f2;
-  --project-card-dark-background: #131212;
+  --card-light-background: #F2F2F2;
+  --card-dark-background: #131212;
 }
 
 article {
-  background-color: var(--project-card-background);
+  background-color: var(--card-background);
   color: var(--text);
   border-radius: 1.875rem;
   padding: 3.5rem 2.5rem;

@@ -38,6 +38,18 @@ function loadTheme() {
       : 'var(--nav-dark-background)'
   );
   root.style.setProperty(
+    '--first-action-background',
+    theme === 'light'
+      ? 'var(--first-action-light-background)'
+      : 'var(--first-action-dark-background)'
+  );
+  root.style.setProperty(
+    '--second-action-background',
+    theme === 'light'
+      ? 'var(--second-action-light-background)'
+      : 'var(--second-action-dark-background)'
+  );
+  root.style.setProperty(
     '--input-background',
     theme === 'light'
       ? 'var(--input-light-background)'
@@ -50,10 +62,16 @@ function loadTheme() {
       : 'var(--button-dark-background)'
   );
   root.style.setProperty(
-    '--project-card-background',
+    '--card-background',
     theme === 'light'
-      ? 'var(--project-card-light-background)'
-      : 'var(--project-card-dark-background)'
+      ? 'var(--card-light-background)'
+      : 'var(--card-dark-background)'
+  );
+  root.style.setProperty(
+    '--about-card-background',
+    theme === 'light'
+      ? 'var(--about-card-light-background)'
+      : 'var(--about-card-dark-background)'
   );
   root.style.setProperty(
     '--footer-background',
