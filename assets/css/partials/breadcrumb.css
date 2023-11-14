@@ -12,6 +12,7 @@
 
 .breadcrumb li:not(:last-child)::after {
   content: '›';
+  margin: 0rem .5rem;
 }
 
 .breadcrumb a {
