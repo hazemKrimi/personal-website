@@ -23,7 +23,7 @@ header {
   justify-content: space-between;
 }
 
-nav {
+nav:not(.breadcrumb) {
   background-color: var(--nav-background);
   display: none;
   position: fixed;
@@ -40,7 +40,7 @@ header #header-face h3 {
   font-weight: 600;
 }
 
-header #menus a, nav #menus a {
+header #menus a, nav:not(.breadcrumb) #menus a {
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
@@ -52,7 +52,7 @@ header #menus {
   column-gap: 1.563rem;
 }
 
-nav #menus {
+nav:not(.breadcrumb) #menus {
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -60,7 +60,7 @@ nav #menus {
   row-gap: 3.125rem;
 }
 
-nav hr {
+nav:not(.breadcrumb) hr {
   margin-top: 3.125rem;
   margin-bottom: 1.25rem;
 }
@@ -71,13 +71,13 @@ header #links {
   column-gap: 1.5rem;
 }
 
-nav #links {
+nav:not(.breadcrumb) #links {
   display: flex;
   justify-content: end;
   column-gap: 1.5rem;
 }
 
-nav #links .theme-toggler {
+nav:not(.breadcrumb) #links .theme-toggler {
   margin-right: auto;
 }
 
@@ -90,7 +90,7 @@ header #nav-toggler {
 }
 
 @media only screen and (max-width: 1024px) {
-  header, nav {
+  header, nav:not(.breadcrumb) {
     margin: 1.5rem auto;
     padding: 0.938rem 1.25rem;
   }

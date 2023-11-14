@@ -1,0 +1,16 @@
+{{ $styles := resources.Get "css/partials/breadcrumb.css" | toCSS | minify }}
+
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <ol>
+    {{ range .Ancestors.Reverse }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+    <li class="active">
+      <a aria-current="page" href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+  </ol>
+</nav>

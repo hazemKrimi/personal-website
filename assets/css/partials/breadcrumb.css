@@ -1,0 +1,19 @@
+.breadcrumb {
+  margin-bottom: 0.5rem;
+}
+
+.breadcrumb ol {
+  padding-left: 0;
+}
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: '›';
+}
+
+.breadcrumb a {
+  text-transform: capitalize;
+}
