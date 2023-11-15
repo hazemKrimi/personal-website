@@ -2,6 +2,7 @@ languageCode = 'en-us'
 title = 'Hazem Krimi'
 [params]
     formSpreeURL = 'https://formspree.io/f/xoqpgyge'
+    dateFormat = '02 January 2006'
 [module]
 [menu]
     [[menu.main]]

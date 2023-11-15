@@ -1,0 +1,39 @@
+main #metadata {
+    margin-bottom: 2rem;
+}
+
+main #metadata h1 {
+    margin-bottom: 1rem;
+}
+
+main #metadata div {
+    display: flex;
+    justify-content: space-between;
+}
+
+main #metadata #share {
+    cursor: pointer;
+}
+
+main #content {
+    display: flex;
+    column-gap: 2rem;
+}
+
+main h2, main h3, main h4 {
+    margin-bottom: 1rem;
+}
+
+main p, main ul, main ol {
+    margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+    main #content {
+        display: block;
+    }
+
+    main #content #TableOfContents {
+        display: none;
+    }
+}

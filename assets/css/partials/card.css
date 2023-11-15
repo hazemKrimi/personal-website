@@ -3,7 +3,7 @@
   --card-dark-background: #131212;
 }
 
-article {
+.card {
   background-color: var(--card-background);
   color: var(--text);
   border-radius: 1.875rem;
@@ -11,34 +11,39 @@ article {
   margin-bottom: 2rem;
 }
 
-article h3 {
+.card h3 {
   font-size: 2rem;
   margin-bottom: 1.75rem;
   text-transform: capitalize;
 }
 
-article p {
-  margin-bottom: 4rem;
+.card .date {
+  font-weight: bold;
 }
 
-article #links {
+.card p {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.card #links {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-article .read-more,
-article .demo {
+.card .read-more,
+.card .demo {
   display: inline-flex;
   align-items: center;
 }
 
-article .read-more svg,
-article .demo svg {
-  margin-left: 0.5rem;
+.card .read-more svg,
+.card .demo svg {
+  margin-left: 0.25rem;
 }
 
-article .demo {
+.card .demo {
   background-color: #353535;
   color: var(--white);
   border-radius: 0.4375rem;
@@ -46,20 +51,21 @@ article .demo {
   padding: 0.5rem 1rem;
 }
 
-article .demo .eye {
+.card .demo .eye {
   stroke: var(--white);
 }
 
 @media only screen and (max-width: 1024px) {
-  article {
+  .card {
     padding: 2.5rem 1.5rem;
   }
 
-  article h3 {
+  .card h3 {
     font-size: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
-  article p {
+  .card p {
     margin-bottom: 1.75rem;
   }
 }

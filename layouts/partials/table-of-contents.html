@@ -1,0 +1,7 @@
+{{ $styles := resources.Get "css/partials/table-of-contents.css" | toCSS | minify }}
+
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+
+<aside>
+    {{ .TableOfContents }}
+</aside>

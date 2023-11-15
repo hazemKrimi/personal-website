@@ -40,7 +40,7 @@
   </span>
 </header>
 
-<nav>
+<nav id="mobile-navigation">
   <div id="menus">
     {{ range site.Menus.main.Sort.ByWeight }}
       <a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ .Name }}</a>

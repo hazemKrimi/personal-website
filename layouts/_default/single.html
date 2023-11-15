@@ -1,0 +1,45 @@
+{{ define "styles" }}
+    {{ $styles := resources.Get "css/single.css" | toCSS | minify }}
+
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ end }}
+
+{{ define "main" }}
+    {{ partial "breadcrumb.html" . }}
+
+    <section id="metadata">
+        <h1>{{ .Title }}</h1>
+        <div>
+            <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
+            <span>{{ printf "%d minutes read" .ReadingTime }}</span>
+            <span
+                id="share"
+                data-title="{{ .Title }}"
+                data-description="{{ .Params.description }}"
+                data-url="{{ .Permalink }}"
+            >
+                Share
+            </span>
+        </div>
+    </section>
+    
+    <section id="content">
+        <div>
+            {{ .Content }}
+        </div>
+        {{ partial "table-of-contents.html" . }}
+    </section>
+
+    <h2>Contact</h2>
+    {{ partial "contact-form.html" }}
+    
+    <script>
+        document.querySelector('#share').addEventListener('click', async event => {
+            await navigator.share({
+                title: event.target.getAttribute('data-title'),
+                description: event.target.getAttribute('data-description'),
+                url: event.target.getAttribute('data-url'),
+            });
+        });
+    </script>
+{{ end }}
