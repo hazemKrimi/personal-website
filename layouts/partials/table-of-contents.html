@@ -2,6 +2,9 @@
 
 <link rel="stylesheet" href="{{ $styles.Permalink }}" />
 
-<aside>
-    {{ .TableOfContents }}
-</aside>
+{{ with .TableOfContents }}
+    <aside id="table-of-contents">
+        <h3>Table of contents</h3>
+        {{ . }}
+    </aside>
+{{ end }}

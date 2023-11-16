@@ -1,0 +1,32 @@
+{{ $styles := resources.Get "css/partials/pagination.css" | toCSS | minify }}
+
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+    <div class="pagination">
+        <a class="first {{ if eq $paginator.PageNumber $paginator.First.PageNumber }} active {{ end }}" href="{{ $paginator.First.URL }}">
+            {{ $paginator.First.PageNumber }}
+        </a>
+        {{ with $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}">
+                «
+            </a>
+        {{ end }}
+        {{ range $index, $pager := $paginator.Pagers }}
+            {{ with and (ne $index 0) (ne $index (sub (len $paginator.Pagers) 1)) }}
+                <a class="{{ if eq $pager $paginator }} active {{ end }}" href="{{ $pager.URL }}">
+                    {{ $pager.PageNumber }}
+                </a>
+            {{ end }}
+        {{ end }}
+        {{ with $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}">
+                »
+            </a>
+        {{ end }}
+        <a class="last {{ if eq $paginator.PageNumber $paginator.Last.PageNumber }} active {{ end }}" href="{{ $paginator.Last.URL }}">
+            {{ $paginator.Last.PageNumber }}
+        </a>
+    </div>
+{{ end }}

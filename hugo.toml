@@ -1,5 +1,8 @@
 languageCode = 'en-us'
 title = 'Hazem Krimi'
+paginate = 1
+[taxonomies]
+    tag = 'tags'
 [params]
     formSpreeURL = 'https://formspree.io/f/xoqpgyge'
     dateFormat = '02 January 2006'

@@ -68,6 +68,12 @@ function loadTheme() {
       : 'var(--card-dark-background)'
   );
   root.style.setProperty(
+    '--toc-background',
+    theme === 'light'
+      ? 'var(--toc-light-background)'
+      : 'var(--toc-dark-background)'
+  );
+  root.style.setProperty(
     '--about-card-background',
     theme === 'light'
       ? 'var(--about-card-light-background)'

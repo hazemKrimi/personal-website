@@ -1,39 +1,70 @@
+main #container {
+  display: grid;
+  grid-template-columns: auto 15rem;
+  column-gap: 2rem;
+}
+
 main #metadata {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 main #metadata h1 {
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 main #metadata div {
-    display: flex;
-    justify-content: space-between;
+  min-width: 100%;
+  display: flex;
+  column-gap: 2rem;
+}
+
+main #metadata div span {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+main #metadata div #share {
+  display: none;
 }
 
 main #metadata #share {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-main #content {
-    display: flex;
-    column-gap: 2rem;
+main h2,
+main h3,
+main h4 {
+  margin-bottom: 1rem;
 }
 
-main h2, main h3, main h4 {
-    margin-bottom: 1rem;
-}
-
-main p, main ul, main ol {
-    margin-bottom: 2rem;
+main p,
+main ul,
+main ol,
+main img,
+main figure {
+  margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 1024px) {
-    main #content {
-        display: block;
-    }
+  main #metadata h1 {
+    font-size: 2.5rem;
+  }
 
-    main #content #TableOfContents {
-        display: none;
-    }
+  main #container {
+    display: block;
+  }
+
+  main #container #table-of-contents {
+    display: none;
+  }
+
+  main #metadata div {
+    column-gap: 1rem;
+  }
+
+  main #metadata div #share {
+    display: inline-flex;
+  }
 }

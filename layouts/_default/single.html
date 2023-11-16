@@ -5,33 +5,40 @@
 {{ end }}
 
 {{ define "main" }}
-    {{ partial "breadcrumb.html" . }}
+    <div id="container">
+        <div>
+            {{ partial "breadcrumb.html" . }}
+        
+            <section id="metadata">
+                <h1>{{ .Title }}</h1>
+                <div>
+                    <span>{{ readFile "assets/icons/calendar.svg" | safeHTML }} {{ .Date.Format .Site.Params.dateFormat }}</span>
+                    <span>{{ readFile "assets/icons/clock.svg" | safeHTML }} {{ printf "%d minute(s) read" .ReadingTime }}</span>
+                    <span
+                        id="share"
+                        data-title="{{ .Title }}"
+                        data-description="{{ .Params.description }}"
+                        data-url="{{ .Permalink }}"
+                    >
+                        {{ readFile "assets/icons/share.svg" | safeHTML }}
+                        Share
+                    </span>
+                </div>
+            </section>
+            
+            <section id="content">
+                <div>
+                    {{ .Content }}
+                </div>
+                
+                <h2>Contact</h2>
+                {{ partial "contact-form.html" }}
+            </section>
+        </div>
 
-    <section id="metadata">
-        <h1>{{ .Title }}</h1>
-        <div>
-            <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
-            <span>{{ printf "%d minutes read" .ReadingTime }}</span>
-            <span
-                id="share"
-                data-title="{{ .Title }}"
-                data-description="{{ .Params.description }}"
-                data-url="{{ .Permalink }}"
-            >
-                Share
-            </span>
-        </div>
-    </section>
-    
-    <section id="content">
-        <div>
-            {{ .Content }}
-        </div>
         {{ partial "table-of-contents.html" . }}
-    </section>
+    </div>
 
-    <h2>Contact</h2>
-    {{ partial "contact-form.html" }}
     
     <script>
         document.querySelector('#share').addEventListener('click', async event => {

@@ -10,8 +10,10 @@
     {{ .Content }}
 
     <section>
-        {{ range .Pages }}
+        {{ range .Paginator.Pages }}
             {{ partial "card.html" . }}
         {{ end }}
     </section>
+
+    {{ partial "pagination.html" . }}
 {{ end }}
