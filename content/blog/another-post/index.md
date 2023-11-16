@@ -6,6 +6,12 @@ date: 2023-10-18
 
 ## Hi
 
+[Link](https://google.com)
+
+{{< highlight scala "lineNos=true">}}
+    case class Hello
+{{< /highlight >}}
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor nulla sed mi faucibus, non commodo nulla malesuada. Aliquam sem lectus, sodales sit amet cursus ac, auctor quis dolor. Pellentesque ac metus vulputate, scelerisque nunc id, mollis est. Duis nec nisi feugiat, sagittis enim vitae, tincidunt metus. Nulla vitae laoreet quam. Integer tortor erat, dictum vel placerat ultricies, eleifend eu risus. Nam sit amet finibus dui. Cras malesuada ligula a maximus sagittis. Proin sed tortor consectetur, vestibulum mauris at, auctor orci. Quisque blandit lectus sollicitudin hendrerit euismod.
 
 ### Greetings
