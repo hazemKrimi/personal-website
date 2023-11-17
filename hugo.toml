@@ -1,11 +1,24 @@
 languageCode = 'en-us'
 title = 'Hazem Krimi'
-paginate = 1
+paginate = 5
+enableRobotsTXT = true
+[outputs]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html']
+[sitemap]
+  changeFreq = ''
+  filename = 'sitemap.xml'
+  priority = -1
 [taxonomies]
     tag = 'tags'
 [params]
     formSpreeURL = 'https://formspree.io/f/xoqpgyge'
     dateFormat = '02 January 2006'
+    [params.author]
+        email = 'me@hazemkrimi.tech'
+        name = 'Hazem Krimi'
 [module]
 [menu]
     [[menu.main]]

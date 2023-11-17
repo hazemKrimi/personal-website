@@ -33,7 +33,7 @@
         </div>
         <p>These are all the projects I worked on personally and professionally.</p>
         {{ range (where .Site.Pages "Section" "projects") }}
-            {{ range .Pages }}
+            {{ range first 2 .Pages }}
                 {{ partial "card.html" . }}
             {{ end }}
         {{ end }}
@@ -48,7 +48,7 @@
         </div>
         <p>These are articles about things I learned about software engineering.</p>
         {{ range (where .Site.Pages "Section" "blog") }}
-            {{ range .Pages }}
+            {{ range first 2 .Pages }}
                 {{ partial "card.html" . }}
             {{ end }}
         {{ end }}

@@ -18,3 +18,7 @@
 .breadcrumb a {
   text-transform: capitalize;
 }
+
+.breadcrumb .tag {
+  text-transform: lowercase;
+}

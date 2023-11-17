@@ -7,11 +7,16 @@
 {{ $favIcon16 := resources.Get "favicon-16x16.png" }}
 {{ $favIcon := resources.Get "favicon.ico" }}
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#FBFBFB" />
+
+    {{ with .OutputFormats.Get "rss" -}}
+      {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+    {{ end }}
 
     <link rel="icon" sizes="192x192" href="{{ $androidChromeIcon.Permalink }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ $appleTouchIcon.Permalink }}">
