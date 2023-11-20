@@ -18,4 +18,4 @@ This is a project that I made as a step in the interview process for my final ye
 
 ## Screenshots
 
-{{< figure src="https://res.cloudinary.com/dun9hhyz1/image/upload/v1643548378/personal-website/portfolio/react-weather-app/screenshot_ueu2a4.png" >}}
+{{< figure src="react-weather-app-screenshot.png" >}}

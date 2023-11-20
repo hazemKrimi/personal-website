@@ -1,6 +1,6 @@
 ---
-layout: "about"
-title: "About"
+layout: 'about'
+title: 'About'
 date: 2023-10-18T20:03:43+01:00
 ---
 

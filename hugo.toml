@@ -1,12 +1,10 @@
-languageCode = 'en-us'
+languageCode = 'en'
 title = 'Hazem Krimi'
 paginate = 5
 enableRobotsTXT = true
 [outputs]
   home = ['html', 'rss']
   section = ['html', 'rss']
-  taxonomy = ['html']
-  term = ['html']
 [sitemap]
   changeFreq = ''
   filename = 'sitemap.xml'

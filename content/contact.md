@@ -1,6 +1,6 @@
 ---
-layout: "contact"
-title: "Contact"
+layout: 'contact'
+title: 'Contact'
 date: 2023-10-18T20:03:43+01:00
 ---
 
