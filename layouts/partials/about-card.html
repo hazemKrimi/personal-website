@@ -1,7 +1,3 @@
-{{ $styles := resources.Get "css/partials/about-card.css" | toCSS | minify }}
-
-<link rel="stylesheet" href="{{ $styles.Permalink }}" />
-
 {{ $cv := resources.Get "cv.pdf" }}
 {{ $faceImage := resources.Get "images/borded-face.png" }}
 

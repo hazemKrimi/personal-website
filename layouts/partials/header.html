@@ -1,16 +1,10 @@
-{{ $styles := resources.Get "css/partials/header.css" | toCSS | minify }}
-{{ $scripts := resources.Get "js/partials/header.js" | js.Build | minify }}
-
-<link rel="stylesheet" href="{{ $styles.Permalink }}">
-<script defer src="{{ $scripts.Permalink }}"></script>
-
 {{ $faceImage := resources.Get "images/small-face.png" }}
 {{ $cv := resources.Get "cv.pdf" }}
 
 <header>
   <div id="header-face">
     <img src="{{ $faceImage.Permalink }}" alt="Hazem Krimi's face" />
-    <h3>Hazem Krimi</h3>
+    <span>Hazem Krimi</span>
   </div>
   <div id="menus">
     {{ range site.Menus.main.Sort.ByWeight }}
@@ -39,26 +33,3 @@
     {{ readFile "assets/icons/close.svg" | safeHTML }}
   </span>
 </header>
-
-<nav id="mobile-navigation">
-  <div id="menus">
-    {{ range site.Menus.main.Sort.ByWeight }}
-      <a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ .Name }}</a>
-    {{ end }}
-  </div>
-  <hr>
-  <div id="links">
-    <span
-      class="theme-toggler"
-    >
-      {{ readFile "assets/icons/moon.svg" | safeHTML }}
-      {{ readFile "assets/icons/sun.svg" | safeHTML }}
-    </span>
-    <a href="{{ $cv.Permalink }}" target="_blank"> {{ readFile "assets/icons/cv.svg" | safeHTML }} </a>
-    <a href="mailto:me@hazemkrimi.tech" target="_blank"> {{ readFile "assets/icons/mail.svg" | safeHTML }} </a>
-    <a href="{{ urls.JoinPath .Site.BaseURL "index.xml" }}" target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }} </a>
-    <a href="https://github.com/hazemKrimi" target="_blank"> {{ readFile "assets/icons/github.svg" | safeHTML }} </a>
-    <a href="https://twitter.com/HazemKrimi" target="_blank"> {{ readFile "assets/icons/twitter.svg" | safeHTML }} </a>
-    <a href="https://www.linkedin.com/in/hazemkrimi" target="_blank"> {{ readFile "assets/icons/linkedin.svg" | safeHTML }} </a>
-  </div>
-</nav>

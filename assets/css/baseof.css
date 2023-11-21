@@ -13,21 +13,14 @@
 }
 
 :root {
-  /* Colors */
   --black: #131314;
   --white: white;
-  --crimson: #BD1839;
-  --light-gray: #E7E7E7;
-
-  /* Background colors */
+  --crimson: #bd1839;
+  --light-gray: #e7e7e7;
   --dark-background: #1d1b1b;
   --light-background: #fbfbfb;
-
-  /* Radiuses */
   --card-radius: 1.875rem;
   --form-radius: 0.563rem;
-
-  /* Shadows */
   --shadow: 0px 4px 8px rgba(0, 0, 0, 0.04);
 }
 
@@ -51,6 +44,12 @@ body {
   color: var(--text);
 
   isolation: isolate;
+  user-select: text;
+}
+
+::selection {
+  background: var(--text);
+  color: var(--background);
 }
 
 #links .linkedin,
@@ -104,17 +103,46 @@ h6 {
   overflow-wrap: break-word;
 }
 
+main h1,
+main h2,
+main h3 {
+  margin-bottom: 1rem;
+}
+
+main p {
+  margin-bottom: 2rem;
+}
+
+main h1 {
+  font-size: 4rem;
+}
+
+main h2 {
+  font-size: 3rem;
+}
+
+main h3 {
+  font-size: 2rem;
+}
+
 a {
   color: var(--text);
 }
 
-.vertical-separator {
-  border-left: 1px solid var(--text);
-  height: 24px;
-  opacity: 0.25;
+a, button {
+  cursor: pointer;
 }
 
-hr {
-  color: var(--text);
-  opacity: 0.25;
+@media only screen and (max-width: 1024px) {
+  main h1 {
+    font-size: 2.5rem;
+  }
+
+  main h2 {
+    font-size: 1.75rem;
+  }
+
+  main h3 {
+    font-size: 1rem;
+  }
 }

@@ -1,14 +1,10 @@
-{{ $styles := resources.Get "css/partials/footer.css" | toCSS | minify }}
-
-<link rel="stylesheet" href="{{ $styles.Permalink }}" />
-
 {{ $faceImage := resources.Get "images/small-face.png" }}
 {{ $cv :=resources.Get "cv.pdf" }}
 
 <footer>
   <div id="footer-face">
     <img src="{{ $faceImage.Permalink }}" alt="Hazem Krimi" />
-    <h4>Hazem Krimi</h4>
+    <span>Hazem Krimi</span>
   </div>
   <div id="links">
     <a href="https://www.linkedin.com/in/hazemkrimi" target="_blank">

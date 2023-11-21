@@ -1,14 +1,12 @@
 :root {
   --first-action-dark-background: #353535;
   --first-action-light-background: var(--black);
-  --second-action-dark-background: #f3f3f3;
-  --second-action-light-background: #ececec;
+  --second-action-dark-background: #F3F3F3;
+  --second-action-light-background: #ECECEC;
 }
 
 main h1 {
-  font-size: 4rem;
   text-transform: capitalize;
-  margin-bottom: 1rem;
 }
 
 main h1 span,
@@ -51,16 +49,7 @@ main #intro #action-buttons a:last-of-type {
   color: var(--black);
 }
 
-main h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-main p {
-  margin-bottom: 3rem;
-}
-
-section {
+main section {
   margin-bottom: 5rem;
 }
 
@@ -72,19 +61,7 @@ main #blog > div:first-of-type {
 }
 
 @media only screen and (max-width: 1024px) {
-  main h1 {
-    font-size: 2rem;
-  }
-
-  main h2 {
-    font-size: 1.75rem;
-  }
-
-  main p {
-    margin-bottom: 1rem;
-  }
-
-  section {
+  main section {
     margin-bottom: 2rem;
   }
 

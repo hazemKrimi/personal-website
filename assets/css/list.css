@@ -1,16 +1,8 @@
-main section {
-  margin-top: 2rem;
-}
-
-main h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
 main #tags {
   display: flex;
   align-items: center;
   column-gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 main #tags a {
@@ -23,10 +15,4 @@ main #tags a {
 
 main #tags .selected {
   background-color: var(--crimson);
-}
-
-@media only screen and (max-width: 1024px) {
-  main h2 {
-    font-size: 1.75rem;
-  }
 }

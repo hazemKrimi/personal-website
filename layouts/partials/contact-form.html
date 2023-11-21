@@ -1,9 +1,3 @@
-{{ $styles := resources.Get "css/partials/contact-form.css" | toCSS | minify }}
-{{ $scripts := resources.Get "js/partials/contact-form.js" | js.Build | minify }}
-
-<link rel="stylesheet" href="{{ $styles.Permalink }}" />
-<script defer src="{{ $scripts.Permalink }}"></script>
-
 <form
   action="{{ .Site.Params.formSpreeURL }}"
   method="POST"

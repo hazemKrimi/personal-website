@@ -1,8 +1,5 @@
-{{ $styles := resources.Get "css/partials/pagination.css" | toCSS | minify }}
-
-<link rel="stylesheet" href="{{ $styles.Permalink }}" />
-
 {{ $paginator := .Paginator }}
+
 {{ if gt $paginator.TotalPages 1 }}
     <div class="pagination">
         <a class="first {{ if eq $paginator.PageNumber $paginator.First.PageNumber }} active {{ end }}" href="{{ $paginator.First.URL }}">
