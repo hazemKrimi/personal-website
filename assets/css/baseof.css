@@ -34,6 +34,21 @@
   margin: 0;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  height: 0; 
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::selection {
+  background: var(--text);
+  color: var(--background);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -47,9 +62,12 @@ body {
   user-select: text;
 }
 
-::selection {
-  background: var(--text);
-  color: var(--background);
+body::-webkit-scrollbar {
+  width: 0.5rem !important;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--text) !important;
 }
 
 #links .linkedin,
