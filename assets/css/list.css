@@ -7,7 +7,7 @@ main #tags {
 
 main #tags a {
   border-radius: 0.5625rem;
-  background-color: #5A5A5A;
+  background-color: #5a5a5a;
   color: var(--white);
   padding: 0.5rem 1rem;
   text-decoration: none;

@@ -1,6 +1,6 @@
 main #container {
   display: grid;
-  grid-template-columns: auto 15rem;
+  grid-template-columns: auto minmax(15rem, 20rem);
   column-gap: 2rem;
 }
 

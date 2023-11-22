@@ -1,20 +1,20 @@
 :root {
-  --about-card-light-background: #ececec;
-  --about-card-dark-background: var(--black);
-  --button-light-background: var(--black);
+  --about-card-light-background: var(--partial-light-background);
+  --about-card-dark-background: var(--partial-dark-background);
+  --button-light-background: var(--partial-dark-background);
   --button-dark-background: #353535;
-  --card-light-background: #ececec;
-  --card-dark-background: var(--black);
-  --input-light-background: #ececec;
+  --card-light-background: var(--partial-light-background);
+  --card-dark-background: var(--partial-dark-background);
+  --input-light-background: var(--partial-light-background);
   --input-dark-background: #2d2d2d;
-  --footer-light-background: #ececec;
-  --footer-dark-background: var(--black);
-  --header-light-background: #ececec;
+  --footer-light-background: var(--partial-light-background);
+  --footer-dark-background: var(--partial-dark-background);
+  --header-light-background: var(--partial-light-background);
   --header-dark-background: #676666;
-  --nav-light-background: #ececec;
-  --nav-dark-background: var(--black);
-  --toc-light-background: #f2f2f2;
-  --toc-dark-background: var(--black);
+  --nav-light-background: var(--partial-light-background);
+  --nav-dark-background: var(--partial-dark-background);
+  --toc-light-background: var(--partial-light-background);
+  --toc-dark-background: var(--partial-dark-background);
 }
 
 #about-card {
@@ -328,12 +328,23 @@ header #nav-toggler {
 }
 
 #table-of-contents {
+  position: sticky;
+  top: 3rem;
   margin-top: 3rem;
-  height: 30rem;
-  max-height: 20rem;
+  height: 25rem;
+  max-height: 25rem;
   padding: 1.2rem 1.6rem;
   border-radius: 0.75rem;
   background-color: var(--toc-background);
+}
+
+#table-of-contents span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#table-of-contents nav {
+  margin-top: 0.5rem;
 }
 
 #table-of-contents nav ul {

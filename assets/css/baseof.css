@@ -19,6 +19,8 @@
   --light-gray: #e7e7e7;
   --dark-background: #1d1b1b;
   --light-background: #fbfbfb;
+  --partial-dark-background: var(--black);
+  --partial-light-background: #ececec;
   --card-radius: 1.875rem;
   --form-radius: 0.563rem;
   --shadow: 0px 4px 8px rgba(0, 0, 0, 0.04);
@@ -36,8 +38,8 @@
 
 ::-webkit-scrollbar {
   width: 0;
-  height: 0; 
-  background: transparent; 
+  height: 0;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -147,7 +149,8 @@ a {
   color: var(--text);
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
 
