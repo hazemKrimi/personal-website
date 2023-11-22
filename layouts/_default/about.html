@@ -7,10 +7,10 @@
 {{ define "main" }}
     {{ partial "breadcrumb.html" . }}
 
-    {{ $faceImage := resources.Get "images/big-face.png" }}
+    {{ $faceImage := resources.Get "images/big-face.webp" }}
     
     <section>
-        <img src="{{ $faceImage.Permalink }}" alt="Hazem Krimi's face">
+        <img src="{{ $faceImage.Permalink }}" alt="Hazem Krimi's face" loading="lazy">
         {{ .Content }}
     </section>
     

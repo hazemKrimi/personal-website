@@ -18,4 +18,4 @@ This is a project that I made as a step in the interview process for my final ye
 
 ## Screenshots
 
-![Project screenshot](react-weather-app-screenshot.png)
+![Project screenshot](react-weather-app-screenshot.webp)

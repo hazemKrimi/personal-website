@@ -39,3 +39,20 @@ enableRobotsTXT = true
         name = 'Contact'
         url = '/contact'
         weight = 5
+[[deployment.matchers]]
+    # Cache static assets for 1 year.
+    pattern = "^.+\\.(js|css|svg|ttf)$"
+    cacheControl = "max-age=31536000, no-transform, public"
+    gzip = true
+[[deployment.matchers]]
+    pattern = "^.+\\.(gif|png|jpg|webp)$"
+    cacheControl = "max-age=31536000, no-transform, public"
+    gzip = false
+[[deployment.matchers]]
+    # Set custom content type for /sitemap.xml
+    pattern = "^sitemap\\.xml$"
+    contentType = "application/xml"
+    gzip = true
+[[deployment.matchers]]
+    pattern = "^.+\\.(html|xml|json)$"
+    gzip = true
