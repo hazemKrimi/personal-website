@@ -7,7 +7,11 @@
     <p>{{ .Params.description }}</p>
     <div id="links">
       <a class="read-more" href="{{ .Permalink }}">
-        Read more {{ readFile "assets/icons/arrow.svg" | safeHTML }}
+        {{ if (.InSection ($.Site.GetPage "projects")) }}
+          Read this project {{ readFile "assets/icons/arrow.svg" | safeHTML }}
+        {{ else }}
+          Read this blog post {{ readFile "assets/icons/arrow.svg" | safeHTML }}  
+        {{ end }}
       </a>
       {{ with (and (.InSection ($.Site.GetPage "projects")) .Params.demo) }}
         <a class="demo" href="{{ . }}" target="_blank">
