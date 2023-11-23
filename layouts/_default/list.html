@@ -17,15 +17,17 @@
             <p>These are articles about things I learned about software engineering.</p>
         {{ end }}
         
-        <section id="tags">
-            {{ range .Site.Taxonomies.tags }}
-                <a class="{{ if (eq $currentTitle .Page.Title) }}selected{{ end }}"
-                   href="{{ .Page.Permalink }}"
-                >
-                    {{ .Page.Title }}
-                </a>
-            {{ end }}
-        </section>
+        {{ if gt (len .Site.Taxonomies.tags) 0 }}
+            <section id="tags">
+                {{ range .Site.Taxonomies.tags }}
+                    <a class="{{ if (eq $currentTitle .Page.Title) }}selected{{ end }}"
+                    href="{{ .Page.Permalink }}"
+                    >
+                        {{ .Page.Title }}
+                    </a>
+                {{ end }}
+            </section>
+        {{ end }}
     {{ end }}
 
     {{ if gt .Paginator.TotalPages 0 }}

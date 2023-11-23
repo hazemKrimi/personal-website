@@ -6,12 +6,28 @@ date: 2023-10-18T20:03:43+01:00
 
 ## About
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor nulla sed mi faucibus, non commodo nulla malesuada. Aliquam sem lectus, sodales sit amet cursus ac, auctor quis dolor. Pellentesque ac metus vulputate, scelerisque nunc id, mollis est. Duis nec nisi feugiat, sagittis enim vitae, tincidunt metus. Nulla vitae laoreet quam. Integer tortor erat, dictum vel placerat ultricies, eleifend eu risus. Nam sit amet finibus dui. Cras malesuada ligula a maximus sagittis. Proin sed tortor consectetur, vestibulum mauris at, auctor orci. Quisque blandit lectus sollicitudin hendrerit euismod.
+Hi again! So, you want to know more about me! We'll go through how I got into tech, my education and my career and some other things you might find interesting. Hopefully you enjoy reading about me and I am looking forward to chat!
 
-Praesent efficitur diam laoreet lacus congue, vitae finibus purus blandit. Maecenas ex turpis, vehicula ac varius a, porttitor in sem. Nulla in suscipit elit. Vestibulum id leo eget odio convallis consectetur. Nullam ac diam lobortis, efficitur erat venenatis, tristique ligula. Mauris dui nisi, facilisis et malesuada id, scelerisque in urna. Curabitur egestas lobortis interdum. Etiam convallis mi eu lectus consectetur, feugiat imperdiet sem gravida. Proin eget malesuada ipsum. Maecenas congue scelerisque magna.
+### How I got into Computer Science and Software Engineering
 
-Nunc molestie lorem velit, in efficitur risus dictum vel. Integer porta odio in odio posuere consequat. Etiam accumsan, enim ac scelerisque ultricies, lorem quam ultrices ex, ut ullamcorper mi ante quis augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut ex feugiat, bibendum felis interdum, finibus nulla. Aenean accumsan bibendum massa. Aenean nec enim ligula. In a cursus orci. Etiam accumsan nisl quis velit porta pellentesque. Morbi dignissim mattis vestibulum. Morbi posuere velit nec augue interdum, facilisis congue augue auctor. Suspendisse nec elit sit amet velit ultrices porta.
+Similar to many other software engineers stories I was fascinated by video games since childhood with the Atari, Nintendo Gameboy, N64, Game Cube and PC gaming. Some games I played when I was a kid are: Duck Hunt, Prince of Persia, IGI, Super Mario Bros (Of cource!) and many more.
 
-Duis molestie venenatis rhoncus. Phasellus pulvinar odio vel nulla accumsan pretium eget at nunc. Sed convallis, orci at laoreet consequat, odio leo tincidunt sapien, eget ultricies tortor nisl at metus. Integer pretium odio in ipsum iaculis, sit amet pretium lacus vehicula. Etiam vel ex id nisl hendrerit consequat iaculis id metus. Donec scelerisque justo augue, sed accumsan velit elementum finibus. Cras in viverra ex, in faucibus diam. Sed volutpat lacus vel suscipit aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent bibendum ligula lacinia consectetur interdum.
+### My Education
 
-Fusce ultricies ex et volutpat elementum. Curabitur finibus iaculis erat, et venenatis lectus facilisis nec. Donec sollicitudin, sapien quis bibendum auctor, arcu nunc interdum enim, scelerisque aliquet enim neque eu neque. Fusce in turpis felis. Curabitur sapien mi, lobortis at hendrerit sit amet, maximus in nisi. Sed ac purus suscipit, laoreet lacus quis, congue leo. Cras imperdiet massa rutrum est dictum, quis convallis purus sollicitudin. Nulla eu nibh vel nisl accumsan ultrices.
+I am from Tunisia, and there you get to specialize in Computer Science early on in high school and that is exactly what I did in 2014. My first programming language was Pascal which is a similar language to Delphi. I learned the fundamentals of algorithms and data structures using Pascal, Networking fundamentals and got a little bit into webdev by the last year of high school. On my spare time, tinkered a bit with some game engines like Unity and Unreal 4 with some of my friends.
+
+In the summer of 2018, I got more interested in web development especially with JavaScript. So, in university I went for a program that is focused on web development but I did learn other stuff like C, Java, Linux, a bit of Assembly and I got into the intecacies of Computer Architecture and Operating Systems.
+
+The university program was mostly packed with the fundamentals but none of the technologies of today's world. So, I did a lot of learning by myself through small practice projects and participating in hackathons. Most of the technologies I work with today I learned by myself including: React.js and React Native, Node.js, TypeScript, GraphQL, MongoDB...
+
+### My Career
+
+I started my career as a Front End developer in a software agency in Tunisia called [EMIKETIC](https://www.emiketic.com) building mostly e-commerce websites for small to medium businesses and sometimes on custom solutions for clients. There I got to learn Next.js, Strapi and especially how to work effectively in a team environment where I got to hone my communication and collaboration skills.
+
+Then I started working remotely in a company based in the UK called [Cielo Costa](https://cielocosta.com) which is all about providing custom solutions to improves internal business processes.
+
+Currently, I am working at [Finteum](https://finteum.com) which is creating a global financial market for intraday liquidity, enabling interbank lending for hours at a time.
+
+### My Hobbies
+
+Even though I didn't pursue Game Development, I am still a gamer but I don't play that much anymore. Currently, I am more into Cycling, reading Mangas, Personal Development books and Computer Science related books. I also play [Chess](https://www.chess.com/member/hazemkrimi) and card games.

@@ -9,7 +9,7 @@
     <section id="intro">
         <div>
             <h1>Hi! I am <span>Hazem</span>, a sofware engineer currently working at <a href="https://finteum.com" target="_blank">Finteum</a></h1>
-            <p>I have over two years of experience mainly working on web and cross platform mobile applications in E-Commerce, Fintech, Auditing and Compliance. My role was mainly working on the front-end.</p>
+            <p>I have over two years of experience mainly working on web and cross platform mobile applications in E-Commerce, Fintech, Auditing and Compliance.</p>
             <div id="action-buttons">
                 <a href="{{ urls.JoinPath .Site.BaseURL "blog" }}">Blog</a>
                 <a href="{{ urls.JoinPath .Site.BaseURL "contact" }}">Contact</a>
@@ -20,39 +20,43 @@
 
     <section id="about">
         <h2>About</h2>
-        <p>Tinkering is what got me to where I am now as a professional engineer.</p>
+        <p>Tinkering is what got me to where I am now as a professional software engineer.</p>
         {{ partial "about-card.html" . }}
     </section>
 
-    <section id="projects">
-        <div>
-            <h2>Projects</h2>
-            <a class="read-more" href="{{ urls.JoinPath .Site.BaseURL "projects" }}">
-                View all projects
-            </a>
-        </div>
-        <p>These are all the projects I worked on personally and professionally.</p>
-        {{ range (where .Site.Pages "Section" "projects") }}
-            {{ range first 2 .Pages }}
-                {{ partial "card.html" . }}
+    {{ if (gt (len (where .Site.RegularPages "Section" "projects")) 0) }}
+        <section id="projects">
+            <div>
+                <h2>Projects</h2>
+                <a class="read-more" href="{{ urls.JoinPath .Site.BaseURL "projects" }}">
+                    View all projects
+                </a>
+            </div>
+            <p>These are all the projects I worked on personally and professionally.</p>
+            {{ range (where .Site.Pages "Section" "projects") }}
+                {{ range first 2 .Pages }}
+                    {{ partial "card.html" . }}
+                {{ end }}
             {{ end }}
-        {{ end }}
-    </section>
+        </section>
+    {{ end }}
     
-    <section id="blog">
-        <div>
-            <h2>Blog</h2>
-            <a class="read-more" href="{{ urls.JoinPath .Site.BaseURL "blog" }}">
-                View all blog posts
-            </a>
-        </div>
-        <p>These are articles about things I learned about software engineering.</p>
-        {{ range (where .Site.Pages "Section" "blog") }}
-            {{ range first 2 .Pages }}
-                {{ partial "card.html" . }}
+    {{ if (gt (len (where .Site.RegularPages "Section" "blog")) 0) }}
+        <section id="blog">
+            <div>
+                <h2>Blog</h2>
+                <a class="read-more" href="{{ urls.JoinPath .Site.BaseURL "blog" }}">
+                    View all blog posts
+                </a>
+            </div>
+            <p>These are articles about things I learned about software engineering.</p>
+            {{ range (where .Site.Pages "Section" "blog") }}
+                {{ range first 2 .Pages }}
+                    {{ partial "card.html" . }}
+                {{ end }}
             {{ end }}
-        {{ end }}
-    </section>
+        </section>
+    {{ end }}
 
     <section id="contact">
         <h2>Contact</h2>
