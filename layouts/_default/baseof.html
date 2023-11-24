@@ -10,6 +10,8 @@
 {{ $favIcon16 := resources.Get "favicon-16x16.png" }}
 {{ $favIcon := resources.Get "favicon.ico" }}
 
+{{ $faceImage := resources.Get "images/big-face.webp" }}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,6 +33,10 @@
       property="og:description"
       content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}"
     >
+    <meta
+      property="og:image"
+      content="{{ $faceImage.Permalink }}"
+    >
     <meta property="og:url" content="{{ .Page.Permalink }}">
     {{ block "meta" . }}{{ end }}
     
@@ -51,7 +57,7 @@
 
     <title>
       {{ block "title" . }}
-        {{ .Site.Title }}
+        {{ .Page.Title }} | Hazem Krimi
       {{ end }}
     </title>
 
