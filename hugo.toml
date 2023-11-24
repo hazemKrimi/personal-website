@@ -13,6 +13,7 @@ enableRobotsTXT = true
     tag = 'tags'
 [params]
     formSpreeURL = 'https://formspree.io/f/xoqpgyge'
+    googleAnalyticsURL = 'G-FMD81GLKS3'
     dateFormat = '02 January 2006'
     defaultDescription = 'Personal website of Hazem Krimi'
     defaultKeywords = 'Hazem Krimi, Software Engineer, Software Developer, Full Stack Developer, JavaScript, TypeScript, React, Node.js, Scala, Kotlin, Corda, SQL, GraphQL, MongoDB'
