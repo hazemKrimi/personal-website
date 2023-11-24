@@ -1,0 +1,23 @@
+<article class="card">
+  <div>
+    <h3>{{ .Title }}</h3>
+    {{ if .InSection ($.Site.GetPage "blog") }}
+      <b>{{ .Date.Format .Site.Params.dateFormat }}</b>
+    {{ end }}
+    <p>{{ .Params.description }}</p>
+    <div id="links">
+      <a class="read-more" href="{{ .Permalink }}">
+        {{ if (.InSection ($.Site.GetPage "projects")) }}
+          Read this project {{ readFile "assets/icons/arrow.svg" | safeHTML }}
+        {{ else }}
+          Read this blog post {{ readFile "assets/icons/arrow.svg" | safeHTML }}  
+        {{ end }}
+      </a>
+      {{ with (and (.InSection ($.Site.GetPage "projects")) .Params.demo) }}
+        <a class="demo" href="{{ . }}" target="_blank">
+          Demo {{ readFile "assets/icons/eye.svg" | safeHTML }}
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,9 @@
+section img {
+  float: right;
+}
+
+@media only screen and (max-width: 1024px) {
+  section img {
+    display: none;
+  }
+}

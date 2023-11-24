@@ -1,0 +1,24 @@
+{{ $cv := resources.Get "cv.pdf" }}
+{{ $faceImage := resources.Get "images/borded-face.webp" }}
+
+<div id="about-card">
+  <img src="{{ $faceImage.Permalink }}" alt="Hazem Krimi's face" />
+  <div>
+    <p>
+      My programming experience is mostly non-professional but it was essential
+      for my development. Even though I am working professionally for over two
+      years now, I got into programming much longer than that. I got into web
+      development in the summer of 2018 as I started learning the basics: HTML,
+      CSS, JS and most importantly how the web works by building very small
+      projects.
+    </p>
+    <div id="links">
+      <a href="{{ $cv.Permalink }}" target="_blank">
+        Download CV
+      </a>
+      <a class="read-more" href="{{ urls.JoinPath .Site.BaseURL "about" }}">
+        Read more about me
+      </a>
+    </div>
+  </div>
+</div>

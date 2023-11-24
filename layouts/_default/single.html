@@ -1,0 +1,52 @@
+{{ define "styles" }}
+    {{ $styles := resources.Get "css/single.css" | toCSS | minify }}
+
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ end }}
+
+{{ define "main" }}
+    <div id="container">
+        <div>
+            {{ partial "breadcrumb.html" . }}
+        
+            <section id="metadata">
+                <h1>{{ .Title }}</h1>
+                <div>
+                    <span>{{ readFile "assets/icons/calendar.svg" | safeHTML }} {{ .Date.Format .Site.Params.dateFormat }}</span>
+                    <span>{{ readFile "assets/icons/clock.svg" | safeHTML }} {{ printf "%d minute(s) read" .ReadingTime }}</span>
+                    <span
+                        id="share"
+                        data-title="{{ .Title }}"
+                        data-description="{{ .Params.description }}"
+                        data-url="{{ .Permalink }}"
+                    >
+                        {{ readFile "assets/icons/share.svg" | safeHTML }}
+                        Share
+                    </span>
+                </div>
+            </section>
+            
+            <section id="content">
+                <div>
+                    {{ .Content }}
+                </div>
+                
+                <h2>Contact</h2>
+                {{ partial "contact-form.html" }}
+            </section>
+        </div>
+
+        {{ partial "table-of-contents.html" . }}
+    </div>
+
+    
+    <script>
+        document.querySelector('#share').addEventListener('click', async event => {
+            await navigator.share({
+                title: event.target.getAttribute('data-title'),
+                description: event.target.getAttribute('data-description'),
+                url: event.target.getAttribute('data-url'),
+            });
+        });
+    </script>
+{{ end }}

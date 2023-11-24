@@ -1,0 +1,44 @@
+{{ define "styles" }}
+    {{ $styles := resources.Get "css/list.css" | toCSS | minify }}
+
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ end }}
+
+{{ define "main" }}
+    {{ partial "breadcrumb.html" . }}
+    
+    {{ .Content }}
+
+    {{ if or (.InSection ($.Site.GetPage "blog")) (findRESubmatch "tags" .RelPermalink) }}
+        {{ $currentTitle := .Page.Title }}
+
+        {{ if (findRESubmatch "tags" .RelPermalink) }}
+            <h2>Blog</h2>
+            <p>These are articles about things I learned about software engineering.</p>
+        {{ end }}
+        
+        {{ if gt (len .Site.Taxonomies.tags) 0 }}
+            <section id="tags">
+                {{ range .Site.Taxonomies.tags }}
+                    <a class="{{ if (eq $currentTitle .Page.Title) }}selected{{ end }}"
+                    href="{{ .Page.Permalink }}"
+                    >
+                        {{ .Page.Title }}
+                    </a>
+                {{ end }}
+            </section>
+        {{ end }}
+    {{ end }}
+
+    {{ if gt .Paginator.TotalPages 0 }}
+        <section>
+            {{ range .Paginator.Pages }}
+                {{ partial "card.html" . }}
+            {{ end }}
+        </section>
+    {{ else }}
+        <h2>Nothing for now</h2>
+    {{ end }}
+
+    {{ partial "pagination.html" . }}
+{{ end }}

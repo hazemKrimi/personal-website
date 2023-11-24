@@ -1,0 +1,72 @@
+{{ $faceImage := resources.Get "images/small-face.webp" }}
+{{ $cv := resources.Get "cv.pdf" }}
+
+<header>
+  <div id="header-face">
+    <img src="{{ $faceImage.Permalink }}" alt="Hazem Krimi's face" />
+    <span>Hazem Krimi</span>
+  </div>
+  <div id="menus">
+    {{ range site.Menus.main.Sort.ByWeight }}
+      <a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ .Name }}</a>
+    {{ end }}
+  </div>
+  <div id="links">
+    <a
+      aria-label="Hazem Krimi's Linkedin profile"
+      href="https://www.linkedin.com/in/hazemkrimi" target="_blank">
+      {{ readFile "assets/icons/linkedin.svg" | safeHTML }}
+    </a>
+    <a
+      aria-label="Hazem Krimi's Twitter or X profile"
+      href="https://twitter.com/HazemKrimi"
+      target="_blank"
+    >
+      {{ readFile "assets/icons/twitter.svg" | safeHTML }}
+    </a>
+    <a
+      aria-label="Hazem Krimi's Github profile"
+      href="https://github.com/hazemKrimi" target="_blank"
+    >
+      {{ readFile "assets/icons/github.svg" | safeHTML }}
+    </a>
+    <a
+      aria-label="Hazem Krimi's content RSS feed"
+      href="{{ urls.JoinPath .Site.BaseURL "index.xml" }}"
+      target="_blank"
+    >
+      {{ readFile "assets/icons/rss.svg" | safeHTML }}
+    </a>
+    <a
+      aria-label="Hazem Krimi's Email"
+      href="mailto:me@hazemkrimi.tech"
+      target="_blank"
+    >
+      {{ readFile "assets/icons/mail.svg" | safeHTML }}
+    </a>
+    <a
+      aria-label="Hazem Krimi's CV"
+      href="{{ $cv.Permalink }}"
+      target="_blank"
+    >
+      {{ readFile "assets/icons/cv.svg" | safeHTML }}
+    </a>
+    <div class="vertical-separator"></div>
+    <a
+      href="#"
+      class="theme-toggler"
+      aria-label="Theme toggler"
+    >
+      {{ readFile "assets/icons/moon.svg" | safeHTML }}
+      {{ readFile "assets/icons/sun.svg" | safeHTML }}
+    </a>
+  </div>
+  <a
+    href="#"
+    id="nav-toggler"
+    aria-label="Mobile navigation toggler"
+  >
+    {{ readFile "assets/icons/burger.svg" | safeHTML }}
+    {{ readFile "assets/icons/close.svg" | safeHTML }}
+  </a>
+</header>

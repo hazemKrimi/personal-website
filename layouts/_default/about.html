@@ -1,0 +1,19 @@
+{{ define "styles" }}
+    {{ $styles := resources.Get "css/about.css" | toCSS | minify }}
+
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ end }}
+
+{{ define "main" }}
+    {{ partial "breadcrumb.html" . }}
+
+    {{ $faceImage := resources.Get "images/big-face.webp" }}
+    
+    <section>
+        <img src="{{ $faceImage.Permalink }}" alt="Hazem Krimi's face" loading="lazy">
+        {{ .Content }}
+    </section>
+    
+    <h2>Contact</h2>
+    {{ partial "contact-form.html" . }}
+{{ end }}

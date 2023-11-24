@@ -1,0 +1,24 @@
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <ol>
+    {{ range .Ancestors.Reverse }}
+      {{ if (eq .Title "Tags") }}
+        <li>
+          <a href="{{ urls.JoinPath .Site.BaseURL "blog" }}">Blog</a>
+        </li>
+      {{ else }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+    <li class="active">
+      <a
+        aria-current="page"
+        class="{{ if (eq .Parent.Title "Tags") }}tag{{ end }}"
+        href="{{ .Permalink }}"
+      >
+        {{ if (eq .Parent.Title "Tags") }}#{{ end }}{{ .Title }}
+      </a>
+    </li>
+  </ol>
+</nav>
