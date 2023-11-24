@@ -1,3 +1,4 @@
+baseURL=https://hazemkrimi.tech
 languageCode = 'en'
 title = 'Hazem Krimi'
 paginate = 5
