@@ -10,7 +10,7 @@
   --footer-light-background: var(--partial-light-background);
   --footer-dark-background: var(--partial-dark-background);
   --header-light-background: var(--partial-light-background);
-  --header-dark-background: #676666;
+  --header-dark-background: var(--partial-dark-background);
   --nav-light-background: var(--partial-light-background);
   --nav-dark-background: var(--partial-dark-background);
   --toc-light-background: var(--partial-light-background);
