@@ -20,12 +20,7 @@ main h1 a {
 
 main #intro {
   display: flex;
-  column-gap: 1rem;
-}
-
-main #intro img {
-  width: 19.6875rem;
-  height: 19.6875rem;
+  justify-content: space-between;
 }
 
 main #intro #action-buttons {

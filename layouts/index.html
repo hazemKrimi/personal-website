@@ -4,8 +4,6 @@
     <link rel="stylesheet" href="{{ $styles.Permalink }}" />
 {{ end }}
 {{ define "main" }}
-    {{ $faceImage := resources.Get "images/big-face.webp" }}
-    
     <section id="intro">
         <div>
             <h1>Hi! I am <span>Hazem</span>,<br> a software engineer currently working at <a href="https://finteum.com" target="_blank">Finteum</a></h1>
@@ -15,7 +13,6 @@
                 <a href="{{ urls.JoinPath .Site.BaseURL "contact" }}">Contact</a>
             </div>
         </div>
-        <img src="{{ $faceImage.Permalink }}" alt="Hazem Krimi's face" loading="lazy">
     </section>
 
     <section id="about">
