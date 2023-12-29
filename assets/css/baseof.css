@@ -167,3 +167,15 @@ button {
     font-size: 1.25rem;
   }
 }
+
+@media only screen and (min-width: 1440px) {
+  main {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  main {
+    width: 55%;
+  }
+}
