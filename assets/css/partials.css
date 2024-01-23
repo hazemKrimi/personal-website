@@ -234,10 +234,17 @@ header {
   flex-direction: column;
 }
 
-header #header-face {
+header #header-face,
+footer #footer-face {
   display: flex;
   align-items: center;
   column-gap: 0.625rem;
+}
+
+header #header-face img,
+footer #footer-face img {
+  width: 32px;
+  height: 32px;
 }
 
 header #header-face span,
