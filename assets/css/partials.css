@@ -214,7 +214,7 @@ header,
 #mobile-navigation {
   width: 85%;
   border-radius: 0.75rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: var(--text);
 }
 
