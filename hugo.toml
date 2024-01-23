@@ -42,9 +42,13 @@ enableRobotsTXT = true
         url = '/blog'
         weight = 4
     [[menu.main]]
+        name = 'Resume'
+        url = '/cv.pdf'
+        weight = 5
+    [[menu.main]]
         name = 'Contact'
         url = '/contact'
-        weight = 5
+        weight = 6
 [[deployment.matchers]]
     # Cache static assets for 1 year.
     pattern = "^.+\\.(js|css|svg|ttf)$"

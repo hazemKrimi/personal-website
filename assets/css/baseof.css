@@ -169,6 +169,10 @@ button {
 }
 
 @media only screen and (min-width: 1440px) {
+  body {
+    font-size: 18px;
+  }
+
   main {
     width: 1368px;
   }

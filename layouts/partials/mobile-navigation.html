@@ -1,9 +1,7 @@
-{{ $cv := resources.Get "cv.pdf" }}
-
 <nav id="mobile-navigation">
     <div id="menus">
       {{ range site.Menus.main.Sort.ByWeight }}
-        <a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ .Name }}</a>
+        <a {{ printf "href=%q" .URL | safeHTMLAttr }} {{ if eq .Weight 5 }}target="_blank"{{ end }}>{{ .Name }}</a>
       {{ end }}
     </div>
     <hr>
@@ -17,10 +15,9 @@
         {{ readFile "assets/icons/sun.svg" | safeHTML }}
       </a>
       <a
-        aria-label="Hazem Krimi's CV"
-        href="{{ $cv.Permalink }}" target="_blank"
-      >
-        {{ readFile "assets/icons/cv.svg" | safeHTML }}
+        aria-label="Hazem Krimi's content RSS feed"
+        href="{{ urls.JoinPath .Site.BaseURL "index.xml" }}"
+        target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }}
       </a>
       <a
         aria-label="Hazem Krimi's Email"
@@ -30,16 +27,11 @@
         {{ readFile "assets/icons/mail.svg" | safeHTML }}
       </a>
       <a
-        aria-label="Hazem Krimi's content RSS feed"
-        href="{{ urls.JoinPath .Site.BaseURL "index.xml" }}"
-        target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }}
-      </a>
-      <a
-        aria-label="Hazem Krimi's Github profile"
-        href="https://github.com/hazemKrimi"
+        aria-label="Hazem Krimi's Linkedin profile"
+        href="https://www.linkedin.com/in/hazemkrimi"
         target="_blank"
       >
-        {{ readFile "assets/icons/github.svg" | safeHTML }}
+        {{ readFile "assets/icons/linkedin.svg" | safeHTML }}
       </a>
       <a
         aria-label="Hazem Krimi's Twitter or X profile"
@@ -49,11 +41,11 @@
         {{ readFile "assets/icons/twitter.svg" | safeHTML }}
       </a>
       <a
-        aria-label="Hazem Krimi's Linkedin profile"
-        href="https://www.linkedin.com/in/hazemkrimi"
+        aria-label="Hazem Krimi's Github profile"
+        href="https://github.com/hazemKrimi"
         target="_blank"
       >
-        {{ readFile "assets/icons/linkedin.svg" | safeHTML }}
+        {{ readFile "assets/icons/github.svg" | safeHTML }}
       </a>
   </div>
 </nav>

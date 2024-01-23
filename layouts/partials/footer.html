@@ -1,5 +1,4 @@
 {{ $faceImage := resources.Get "images/small-face.webp" }}
-{{ $cv :=resources.Get "cv.pdf" }}
 
 <footer>
   <div id="footer-face">
@@ -8,11 +7,11 @@
   </div>
   <div id="links">
     <a
-      aria-label="Hazem Krimi's Linkedin profile"
-      href="https://www.linkedin.com/in/hazemkrimi"
+      aria-label="Hazem Krimi's Github profile"
+      href="https://github.com/hazemKrimi"
       target="_blank"
     >
-      {{ readFile "assets/icons/linkedin.svg" | safeHTML }}
+      {{ readFile "assets/icons/github.svg" | safeHTML }}
     </a>
     <a
       aria-label="Hazem Krimi's Twitter or X profile"
@@ -22,16 +21,11 @@
       {{ readFile "assets/icons/twitter.svg" | safeHTML }}
     </a>
     <a
-      aria-label="Hazem Krimi's Github profile"
-      href="https://github.com/hazemKrimi"
+      aria-label="Hazem Krimi's Linkedin profile"
+      href="https://www.linkedin.com/in/hazemkrimi"
       target="_blank"
     >
-      {{ readFile "assets/icons/github.svg" | safeHTML }}
-    </a>
-    <a
-      aria-label="Hazem Krimi's content RSS feed"
-      href="{{ urls.JoinPath .Site.BaseURL "index.xml" }}"
-      target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }}
+      {{ readFile "assets/icons/linkedin.svg" | safeHTML }}
     </a>
     <a
       aria-label="Hazem Krimi's Email"
@@ -41,10 +35,9 @@
       {{ readFile "assets/icons/mail.svg" | safeHTML }}
     </a>
     <a
-      aria-label="Hazem Krimi's CV"
-      href="{{ $cv.Permalink }}" target="_blank"
-    >
-      {{ readFile "assets/icons/cv.svg" | safeHTML }}
+      aria-label="Hazem Krimi's content RSS feed"
+      href="{{ urls.JoinPath .Site.BaseURL "index.xml" }}"
+      target="_blank"> {{ readFile "assets/icons/rss.svg" | safeHTML }}
     </a>
   </div>
   <p id="copyright"></p>
