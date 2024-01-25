@@ -86,8 +86,8 @@ function loadTheme() {
     '--header-shadow',
     theme === 'light' ? 'var(--shadow)' : 'none'
   );
-  root.style.setProperty('--text', theme === 'light' ? 'black' : 'white');
-  root.style.setProperty('--color', theme === 'light' ? 'black' : 'white');
+  root.style.setProperty('--text', theme === 'light' ? 'var(--black)' : 'var(--white)');
+  root.style.setProperty('--color', theme === 'light' ? 'var(--black)' : 'var(--white)');
 
   document.querySelector(
     theme === 'light' ? 'header .moon' : 'header .sun'

@@ -36,7 +36,7 @@ main #intro #action-buttons a {
 
 main #intro #action-buttons a:first-of-type {
   background-color: var(--first-action-background);
-  color: var(--white);
+  color: white;
 }
 
 main #intro #action-buttons a:last-of-type {

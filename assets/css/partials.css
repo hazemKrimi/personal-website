@@ -108,14 +108,14 @@
 
 .card .demo {
   background-color: #353535;
-  color: var(--white);
+  color: white;
   border-radius: 0.4375rem;
   text-decoration: none;
   padding: 0.5rem 1rem;
 }
 
 .card .demo .eye {
-  stroke: var(--white);
+  stroke: white;
 }
 
 input,
@@ -243,8 +243,8 @@ footer #footer-face {
 
 header #header-face img,
 footer #footer-face img {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
 }
 
 header #header-face span,

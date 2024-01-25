@@ -10,6 +10,9 @@
 {{ $favIcon16 := resources.Get "favicon-16x16.png" }}
 {{ $favIcon := resources.Get "favicon.ico" }}
 
+{{ $normalFont := resources.Get "fonts/OpenSans.ttf" }}
+{{ $italicFont := resources.Get "fonts/OpenSans-Italic.ttf" }}
+
 {{ $faceImage := resources.Get "images/big-face.webp" }}
 
 <!DOCTYPE html>
@@ -50,6 +53,21 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ $favIcon32.Permalink }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ $favIcon16.Permalink }}">
     <link rel="icon" type="image/x-icon" href="{{ $favIcon.Permalink }}">
+
+    <link
+      rel="preload"
+      href="{{ $normalFont.Permalink }}"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="{{ $italicFont.Permalink }}"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
 
     <link rel="stylesheet" href="{{ $baseStyles.Permalink }}">
     <link rel="stylesheet" href="{{ $partialsStyles.Permalink }}">

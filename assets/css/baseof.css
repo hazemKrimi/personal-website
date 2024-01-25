@@ -1,20 +1,6 @@
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/fonts/OpenSans.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/fonts/OpenSans-Italic.ttf') format('ttf');
-  font-weight: normal;
-  font-style: italic;
-}
-
 :root {
   --black: #131314;
-  --white: white;
+  --white: #dddddd;
   --crimson: #bd1839;
   --light-gray: #e7e7e7;
   --dark-background: #1d1b1b;
@@ -52,7 +38,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: OpenSans, sans-serif;
   font-size: 16px;
   line-height: normal;
   -webkit-font-smoothing: antialiased;
@@ -65,11 +51,11 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 0.5rem !important;
+  width: 0.5rem;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--text) !important;
+  background-color: var(--text);
 }
 
 #links .linkedin,
