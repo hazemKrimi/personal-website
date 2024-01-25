@@ -43,7 +43,7 @@ enableRobotsTXT = true
         weight = 4
     [[menu.main]]
         name = 'Resume'
-        url = '/cv.pdf'
+        url = '/hazem-krimi.pdf'
         weight = 5
     [[menu.main]]
         name = 'Contact'
