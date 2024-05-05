@@ -1,6 +1,15 @@
 ---
+build:
+  render: always
+cascade:
+- build:
+    list: local
+    publishResources: false
+    render: never
+
 title: "Projects"
-date: 2023-10-18T20:03:43+01:00
+description: 'List of project that Hazem Krimi created or worked on'
+date: 2023-10-18
 ---
 
 ## Projects

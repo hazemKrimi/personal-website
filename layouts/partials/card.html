@@ -6,11 +6,15 @@
     {{ end }}
     <p>{{ .Params.description }}</p>
     <div id="links">
-      <a class="read-more" href="{{ .Permalink }}">
+      <a
+        class="read-more"
+        href="{{ if (.InSection ($.Site.GetPage "projects")) }} {{ .Params.source }} {{ else }} {{ .Permalink }} {{ end }}"
+        target="{{ if (.InSection ($.Site.GetPage "projects")) }} _blank {{ else }} _self {{ end }}"
+      >
         {{ if (.InSection ($.Site.GetPage "projects")) }}
-          Read this project {{ readFile "assets/icons/arrow.svg" | safeHTML }}
+          Source code {{ readFile "assets/icons/arrow.svg" | safeHTML }}
         {{ else }}
-          Read this blog post {{ readFile "assets/icons/arrow.svg" | safeHTML }}  
+          Read this blog post {{ readFile "assets/icons/arrow.svg" | safeHTML }}
         {{ end }}
       </a>
       {{ with (and (.InSection ($.Site.GetPage "projects")) .Params.demo) }}

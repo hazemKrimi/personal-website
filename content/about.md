@@ -1,7 +1,8 @@
 ---
 layout: 'about'
 title: 'About'
-date: 2023-10-18T20:03:43+01:00
+description: 'Summary on the career path of Hazem Krimi'
+date: 2023-10-18
 ---
 
 ## About
