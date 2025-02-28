@@ -1,15 +1,16 @@
 baseURL = 'https://hazemkrimi.tech'
 languageCode = 'en'
 title = 'Hazem Krimi'
-paginate = 5
+[pagination]
+    pagerSize = 5
 enableRobotsTXT = true
 [outputs]
-  home = ['html', 'rss']
-  section = ['html', 'rss']
+    home = ['html', 'rss']
+    section = ['html', 'rss']
 [sitemap]
-  changeFreq = ''
-  filename = 'sitemap.xml'
-  priority = -1
+    changeFreq = ''
+    filename = 'sitemap.xml'
+    priority = -1
 [services]
   [services.googleAnalytics]
     ID = 'G-FMD81GLKS3'

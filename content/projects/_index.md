@@ -1,5 +1,5 @@
 ---
-title: "Projects"
+title: 'Projects'
 description: 'List of project that Hazem Krimi created or worked on'
 date: 2023-10-18
 ---
