@@ -11,9 +11,6 @@ enableRobotsTXT = true
     changeFreq = ''
     filename = 'sitemap.xml'
     priority = -1
-[services]
-  [services.googleAnalytics]
-    ID = 'G-FMD81GLKS3'
 [taxonomies]
     tag = 'tags'
 [params]
