@@ -17,7 +17,6 @@ enableRobotsTXT = true
 [taxonomies]
     tag = 'tags'
 [params]
-    formSpreeURL = 'https://formspree.io/f/xoqpgyge'
     dateFormat = '02 January 2006'
     defaultDescription = 'Personal website of Hazem Krimi'
     defaultKeywords = 'Hazem Krimi, Software Engineer, Software Developer, Full Stack Developer, JavaScript, TypeScript, React.js, Node.js, Scala, Kotlin, Corda, SQL, GraphQL, MongoDB'
