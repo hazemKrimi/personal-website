@@ -2,7 +2,7 @@
 
 This repo contains the source code for [my personal website](https://hazemkrimi.tech/) made using Hugo.
 
-## Requirements To Run Locally
+## Requirements
 
 You only need to install [Hugo](https://gohugo.io/installation/) to be able to run the website locally, develop, build and deploy it.
 
