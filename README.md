@@ -1,19 +1,21 @@
 # My Personal Website
 
-This repo contains the source code for [my personal website](https://hazemkrimi.tech/) madee using Hugo.
+This repo contains the source code for [my personal website](https://hazemkrimi.tech/) made using Hugo.
 
 ## Requirements To Run Locally
 
-1. Install [Hugo](https://gohugo.io/installation/).
+You only need to install [Hugo](https://gohugo.io/installation/) to be able to run the website locally, develop, build and deploy it.
 
-2. Clone the repo:
+## Development
+
+1. Clone the repo:
 
 ```
 git clone https://github.com/hazemKrimi/personal-website
 cd personal-website
 ```
 
-3. To run the webserver that reloads on saved changes run the following command:
+2. To run the webserver that reloads on saved changes you can use the following command:
 
 ```
 hugo server
@@ -46,4 +48,4 @@ sudo certbot --nginx
 
 5. If you forked this repo you can use the actions workflow that I am using but you will need to add an SSH private key as an action secret. You will find this setting under repo settings > security > secrets and variables > actions. You will add your key as `DEPLOY_SSH_KEY` in repository secrets.
 
-6. If you are not using GitHub Actions or not deploying on a VPS you probably know what you are doing but you can still refer to the [Hugo Deployment Guides](https://gohugo.io/host-and-deploy/).
+6. If you are not using GitHub Actions or not deploying on a VPS you can refer to the [Hugo Deployment Guides](https://gohugo.io/host-and-deploy/).
