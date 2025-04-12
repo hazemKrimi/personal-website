@@ -51,8 +51,5 @@ jobs:
         env: 
           SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
         run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_KEY" > ~/.ssh/id_deploy
-          chmod 600 ~/.ssh/id_deploy
           ssh-keyscan -H hazemkrimi.tech >> ~/.ssh/known_hosts
           rsync -avz --delete public deploy@hazemkrimi.tech:/var/www/hazemkrimi.tech
