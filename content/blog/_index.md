@@ -1,6 +1,6 @@
 ---
 title: "Blog"
-description: 'Blog covering Computer Science and Software Engineering topic by Hazem Krimi'
+description: 'Blog covering Computer Science and Software Engineering topics by Hazem Krimi'
 date: 2023-10-18
 ---
 
