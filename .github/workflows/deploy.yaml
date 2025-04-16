@@ -52,4 +52,4 @@ jobs:
           SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
         run: |
           ssh-keyscan -H hazemkrimi.tech >> ~/.ssh/known_hosts
-          rsync -avz --delete public deploy@hazemkrimi.tech:/var/www/hazemkrimi.tech
+          rsync -avz --delete public/* deploy@hazemkrimi.tech:/var/www/hazemkrimi.tech
