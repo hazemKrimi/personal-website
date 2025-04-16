@@ -2,6 +2,7 @@
 title: "You Don't Always Need Docker!"
 description: "Why using docker and other abstractions hinders your ability to learn about system administration, performance and security and makes you use services that are expensive solutions for your small or personal projects."
 date: 2025-04-16
+publishDate: 2025-04-16
 ---
 
 ## What Even Was My Problem With Docker?
