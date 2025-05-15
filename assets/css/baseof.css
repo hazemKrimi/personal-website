@@ -68,8 +68,7 @@ body::-webkit-scrollbar-thumb {
 .arrow,
 .eye,
 .calendar,
-.clock,
-.share {
+.clock {
   stroke: var(--text);
 }
 
