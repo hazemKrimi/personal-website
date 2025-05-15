@@ -2,7 +2,6 @@
 {{ $partialsStyles := resources.Get "css/partials.css" | toCSS | minify }}
 {{ $baseScripts := resources.Get "js/baseof.js" | js.Build | minify }}
 {{ $mobileNavigationScripts := resources.Get "js/mobile-navigation.js" | js.Build | minify }}
-{{ $contactFormScripts := resources.Get "js/contact-form.js" | js.Build | minify }}
 
 {{ $androidChromeIcon := resources.Get "android-chrome-192x192.png" }}
 {{ $appleTouchIcon := resources.Get "apple-touch-icon.png" }}
@@ -66,7 +65,6 @@
 
     <script defer src="{{ $baseScripts.Permalink }}"></script>
     <script defer src="{{ $mobileNavigationScripts.Permalink }}"></script>
-    <script defer src="{{ $contactFormScripts.Permalink }}"></script>
     {{ block "scripts" . }}{{ end }}
   </head>
   <body>

@@ -20,14 +20,6 @@ main #metadata div span {
   column-gap: 0.25rem;
 }
 
-main #metadata div #share {
-  display: none;
-}
-
-main #metadata #share {
-  cursor: pointer;
-}
-
 main #content ul,
 main #content ol,
 main #content .highlight {
@@ -58,9 +50,5 @@ main #content .highlight pre {
 
   main #metadata div {
     column-gap: 0.75rem;
-  }
-
-  main #metadata div #share {
-    display: inline-flex;
   }
 }

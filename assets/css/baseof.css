@@ -69,9 +69,6 @@ body::-webkit-scrollbar-thumb {
 .eye,
 .calendar,
 .clock,
-.share {
-  stroke: var(--text);
-}
 
 #links .twitter,
 #links .rss,
