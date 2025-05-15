@@ -1,6 +1,7 @@
 ---
 title: "The Importance Of Contributing To Open Source"
 description: "How I started contributing to open source projects? And what can software engineers learn and benefit from doing so?"
+keywords: ["Open Source", "Contribution", "Software Engineering", "Software Development", "Computer Science", "Experience"]
 date: 2025-05-15
 ---
 

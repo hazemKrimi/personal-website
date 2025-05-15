@@ -27,7 +27,7 @@
     >
     <meta
       name="keywords"
-      content="{{ if .Params.keywords }}{{ .Params.keywords }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}"
+      content='{{ if .Params.Keywords }}{{ delimit .Params.Keywords ", " }}{{ else }}{{ delimit .Site.Params.defaultKeywords ", " }}{{ end }}'
     >
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="{{ .Page.Title }} | Hazem Krimi">
