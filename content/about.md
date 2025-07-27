@@ -27,7 +27,9 @@ I started my career as a Front End developer in a software agency in Tunisia cal
 
 Then I started working remotely in a company based in the UK called [Cielo Costa](https://cielocosta.com) which is all about providing custom solutions to improves internal business processes.
 
-Currently, I am working at [Finteum](https://finteum.com) which is creating a global financial market for intraday liquidity, enabling interbank lending for hours at a time.
+Afterwards, I started working at [Finteum](https://finteum.com) which is creating a global financial market for intraday liquidity, enabling interbank lending for hours at a time.
+
+Currently, I am working at [ProveAI](https://proveai.com) which is creating a platform for AI management that helps organizations centralize and manage their AI models while maintaining strict oversight of data access and usage.
 
 ### My Hobbies
 
