@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Hazem Krimi</title>
+    <link>http://localhost:40885/blog/</link>
+    <description>Recent content in Blog on Hazem Krimi</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>me@hazemkrimi.tech (Hazem Krimi)</managingEditor>
+    <webMaster>me@hazemkrimi.tech (Hazem Krimi)</webMaster>
+    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:40885/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Importance Of Contributing To Open Source</title>
+      <link>http://localhost:40885/blog/importance-of-contributing-to-open-source/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate><author>me@hazemkrimi.tech (Hazem Krimi)</author>
+      <guid>http://localhost:40885/blog/importance-of-contributing-to-open-source/</guid>
+      <description>&lt;p&gt;I recently started contributing to open source projects that I was using because I wanted to give back to those projects since they provide utilities I use on a daily basis either at work or on personal matters.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-will-you-learn-and-benefit-as-a-software-engineer&#34;&gt;What Will You Learn And Benefit As A Software Engineer?&lt;/h2&gt;&#xA;&lt;p&gt;Working on an open source project is similar to working on a project at a company. Since each project usually has a team of dedicated maintainers, resembling senior developers or tech leads, who review pull requests and merge them, are responsible for releases of the project and are responsible for its future direction by having a roadmap for example.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

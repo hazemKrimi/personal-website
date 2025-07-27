@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:40885/blog/importance-of-contributing-to-open-source/</loc>
+    <lastmod>2025-05-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/projects/crimson-quirks-ui/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/projects/hack-assembler/</loc>
+    <lastmod>2025-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/projects/touch-programming/</loc>
+    <lastmod>2025-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/projects/jack-vm-translator/</loc>
+    <lastmod>2024-05-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/about/</loc>
+    <lastmod>2023-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/blog/</loc>
+    <lastmod>2023-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/</loc>
+    <lastmod>2023-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/projects/</loc>
+    <lastmod>2023-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/projects/discord-bot/</loc>
+    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:40885/tags/</loc>
+  </url>
+</urlset>
