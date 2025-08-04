@@ -5,25 +5,19 @@
 {{ end }}
 
 {{ define "main" }}
-    <div id="container">
-        <div>
-            {{ partial "breadcrumb.html" . }}
-        
-            <section id="metadata">
-                <h1>{{ .Title }}</h1>
-                <div>
-                    <span>{{ readFile "assets/icons/calendar.svg" | safeHTML }} {{ .Date.Format .Site.Params.dateFormat }}</span>
-                    <span>{{ readFile "assets/icons/clock.svg" | safeHTML }} {{ printf "%d minute(s) read" .ReadingTime }}</span>
-                </div>
-            </section>
-            
-            <section id="content">
-                <div>
-                    {{ .Content }}
-                </div>
-            </section>
-        </div>
+    {{ partial "breadcrumb.html" . }}
 
-        {{ partial "table-of-contents.html" . }}
-    </div>
+    <section id="metadata">
+        <h1>{{ .Title }}</h1>
+        <div>
+            <span>{{ readFile "assets/icons/calendar.svg" | safeHTML }} {{ .Date.Format .Site.Params.dateFormat }}</span>
+            <span>{{ readFile "assets/icons/clock.svg" | safeHTML }} {{ printf "%d minute(s) read" .ReadingTime }}</span>
+        </div>
+    </section>
+    
+    <section id="content">
+        <div>
+            {{ .Content }}
+        </div>
+    </section>
 {{ end }}
