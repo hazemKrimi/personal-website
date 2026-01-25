@@ -3,6 +3,7 @@ title: "The Switch To Linux And The Beginning Of My Self-Hosting Journey"
 description: "How I got into Linux and how that eventually led me to get into self-hosting."
 keywords: ["Self Hosting", "Linux", "Homelab", "VM", "GPU Passthrough"]
 date: 2026-01-24
+draft: true
 ---
 
 I made the full switch into Linux in 2023 thanks to following YouTubers like [Luke Smith](https://www.youtube.com/@LukeSmithxyz) and [Mental Outlaw](https://www.youtube.com/MentalOutlaw) to name a few and then got into the rabbit hole of self-hosting on a budget therefore it is safe for me to say that I am somewhat experienced in this practice so I will walk you in this post on my setups over those 3 years, what I learned and what are my plans for the future.
