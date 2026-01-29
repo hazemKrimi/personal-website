@@ -14,11 +14,11 @@ Back then I only had a desktop that I bought the year before and was using Windo
 - Intel Core i5 10400.
 - 16 GB DDR4 RAM.
 - NVIDIA GeForce RTX 3050 8GB VRAM.
-- 1 TB SSD.
+- 1 TB NVMe.
 
-Here is a picture of my desktop where I first bought it (apologies about the image quality):
+Here is a picture of my desktop where I first bought it (apologies for the image quality):
 
-![Picture of my desktop in 2023](./2023-desktop.jpg)
+![Picture of my desktop in 2023](./desktop.webp)
 
 For me the main reason for making the switch to Linux is that I wanted to learn it hands on and dedicate my computer for software development, I started out with Debian 11 as my first distro.
 I wasn't doing too much gaming but I came up with a solution for some of the games I was playing with friends that had Anti-Cheat and that was a VM with GPU passthrough thanks to QEMU/KVM which was built in and allowed me to have a config in such a way that Windows and the Anti-Cheat software can't figure that they are running in a VM.
@@ -46,4 +46,27 @@ Having to manage a server comes with learning more tools related to System Admin
 
 And here is a sneak peek at my latest analytics stats:
 
-![GIF of my website analytics](./analytics.gif)
+{{< video autoplay="true" controls="false" loop="true" src="./analytics.webm" >}}
+
+## My Home Server
+
+The next thing I did was to get some sort of personal cloud that is hosted locally mainly to sync and backup files between my devices and block ads in my local network. For that I started out with a Raspberry Pi 4 that had 8 GB of RAM in which I connected a 500 GB SSD external drive and for cooling I got heatsinks and a cpu fan and kept it running 24/7 and it worked surprisingly well for a good amount of time. I used [Syncthing](https://syncthing.net/) for file synchronization and [PiHole](https://pi-hole.net/) as my local network DNS server to block unwanted incoming traffic. Here are pictures of my Raspberry Pi and how I mounted it to my old desk in 2024:
+
+![Picture of my RPi](./pi.webp)
+
+![Picture of my RPi mounted to my old desk](./pi-boxed-ssd.webp)
+
+Then in 2025 I got a new desktop so I used the old one as my home server. I upgraded the RAM to 32 GB and the CPU to an i5 12400 and got an SSD on which I installed [Proxmox VE](https://pve.proxmox.com/wiki/Main_Page). Thanks to the [community scripts](https://community-scripts.github.io/ProxmoxVE/) I was able to get the stuff I had on the Pi migrated to my home server with ease into separate LXCs and VMs. I also added the ability to connect to my home server remotely through VPN using [Wireguard](https://www.wireguard.com/) and since my ip at home is dynamic I registered a subdomain as a DDNS record and used [ddclient](https://ddclient.net/) on the server to automatically send the new ip every time it changes. Here are some guides I used to configure PCIe passthrough both to VMs and LXCs to pass my GPU for better performance:
+
+- [Proxmox PCIe Passthrough](https://www.youtube.com/watch?v=_hOBAGKLQkI)
+- [Proxmox LXC GPU Passthrough Written Guide](https://digitalspaceport.com/proxmox-lxc-docker-gpu-passthrough-setup-guide/)
+
+And here is my home server running 24/7 and connected to a UPS to stay up for a while in case of a power outage (the other UPS is connected to other devices like the router):
+
+![Picture of my home server](./home-server.webp)
+
+## Next Steps
+
+Getting into Linux and self-hosting made me better at system administration and got me excited and hopeful about having as much autonomy as possible with the tools I use especially with the current times where almost every commercial software dedicated to normal consumers hoards and sells data to be used for ads even in paid products. Although it is not for everyone since it involves a lot of configuration which requires patience but for me it is so I will continue to incoporate free and open source tools into my "personal cloud" to keep learning as a software engineer and to keep control of my digital footprint.
+
+One step I recently took in that direction is installing my own search engine using [SearXNG](https://docs.searxng.org/) on my VPS which I can use on all of my devices. Other steps I plan to take is to get into more Linux distros (I tried debian based, Arch and Nix) and most importantly contribute back to the open source tools in any way I can whether financially or through assistance in development.

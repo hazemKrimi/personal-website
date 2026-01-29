@@ -1,0 +1,12 @@
+{{- with .Page.Resources.Get (.Get "src") }}
+  <video 
+    {{ if eq ($.Get "autoplay" | default "false") "true" }}autoplay muted playsinline{{ end }}
+    {{ if eq ($.Get "controls" | default "true") "true" }}controls{{ end }}
+    {{ if eq ($.Get "loop" | default "false") "true" }}loop{{ end }}
+    preload="metadata"
+    style="width: 100%; height: auto;">
+    <source src="{{ .RelPermalink }}" type="{{ ($.Get "type" | default "video/webm") }}">
+  >
+    Your browser does not support the video tag.
+  </video>
+{{- end -}}
