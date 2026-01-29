@@ -61,9 +61,13 @@ Then in 2025 I got a new desktop so I used the old one as my home server. I upgr
 - [Proxmox PCIe Passthrough](https://www.youtube.com/watch?v=_hOBAGKLQkI)
 - [Proxmox LXC GPU Passthrough Written Guide](https://digitalspaceport.com/proxmox-lxc-docker-gpu-passthrough-setup-guide/)
 
-And here is my home server running 24/7 and connected to a UPS to stay up for a while in case of a power outage (the other UPS is connected to other devices like the router):
+Here is my home server running 24/7 and connected to a UPS to stay up for a while in case of a power outage (the other UPS is connected to other devices like the router):
 
 ![Picture of my home server](./home-server.webp)
+
+And here is its proxmox dashboard from where I can access LXCs and VMs or monitor and manage resources:
+
+![Proxmox dashboard](./proxmox.webp)
 
 ## Next Steps
 
