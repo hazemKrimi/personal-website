@@ -33,12 +33,6 @@ main #content .highlight pre {
   padding: 0rem;
 }
 
-main #content img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
 @media only screen and (max-width: 1024px) {
   main #container {
     display: block;
